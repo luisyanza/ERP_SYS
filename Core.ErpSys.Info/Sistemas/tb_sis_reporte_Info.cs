@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Core.ErpSys.Info.Sistemas
 {
+    /// <summary>
+    /// clase de reporteria
+    /// </summary>
    public class tb_sis_reporte_Info
     {
         public string IdReporte { get; set; }
