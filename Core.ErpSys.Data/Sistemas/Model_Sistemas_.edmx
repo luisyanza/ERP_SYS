@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ERP_SYSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ERP_SYSModelStoreContainer">
+          <EntitySet Name="tb_sis_Formulario" EntityType="ERP_SYSModel.Store.tb_sis_Formulario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_reporte" EntityType="ERP_SYSModel.Store.tb_sis_reporte" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="tb_sis_Formulario">
+          <Key>
+            <PropertyRef Name="IdForm" />
+          </Key>
+          <Property Name="IdForm" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_form" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="titulo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_sis_reporte">
+          <Key>
+            <PropertyRef Name="IdReporte" />
+          </Key>
+          <Property Name="IdReporte" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="cod_reporte" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_reporte" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ERP_SYSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities_Sistemas" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_sis_Formulario" EntityType="ERP_SYSModel.tb_sis_Formulario" />
+          <EntitySet Name="tb_sis_reporte" EntityType="ERP_SYSModel.tb_sis_reporte" />
+        </EntityContainer>
+        <EntityType Name="tb_sis_Formulario">
+          <Key>
+            <PropertyRef Name="IdForm" />
+          </Key>
+          <Property Name="IdForm" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nom_form" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Name="titulo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb_sis_reporte">
+          <Key>
+            <PropertyRef Name="IdReporte" />
+          </Key>
+          <Property Name="IdReporte" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="cod_reporte" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nom_reporte" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ERP_SYSModelStoreContainer" CdmEntityContainer="Entities_Sistemas">
+          <EntitySetMapping Name="tb_sis_Formulario">
+            <EntityTypeMapping TypeName="ERP_SYSModel.tb_sis_Formulario">
+              <MappingFragment StoreEntitySet="tb_sis_Formulario">
+                <ScalarProperty Name="IdForm" ColumnName="IdForm" />
+                <ScalarProperty Name="nom_form" ColumnName="nom_form" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_reporte">
+            <EntityTypeMapping TypeName="ERP_SYSModel.tb_sis_reporte">
+              <MappingFragment StoreEntitySet="tb_sis_reporte">
+                <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
+                <ScalarProperty Name="cod_reporte" ColumnName="cod_reporte" />
+                <ScalarProperty Name="nom_reporte" ColumnName="nom_reporte" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
