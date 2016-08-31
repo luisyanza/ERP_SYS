@@ -19,11 +19,11 @@ namespace Core.ErpSys.Bus.Sistemas
             return Odata.Get_List_Reporte();
         }
 
-        public List<tb_sis_reporte_Info> Get_List_Reporte(DateTime fechaIni, DateTime fechaFin)
-        {
-            return Odata.Get_List_Reporte(fechaIni, fechaFin);
+        //public List<tb_sis_reporte_Info> Get_List_Reporte(DateTime fechaIni, DateTime fechaFin)
+        //{
+        //    return Odata.Get_List_Reporte(fechaIni, fechaFin);
 
-        }
+        //}
 
         public tb_sis_reporte_Info Get_Info_Reporte(string IdReporte)
         {

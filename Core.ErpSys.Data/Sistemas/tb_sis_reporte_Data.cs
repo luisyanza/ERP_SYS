@@ -22,7 +22,7 @@ namespace Core.ErpSys.Data.Sistemas
 
           foreach (var item in selectq)
           {
-              ListInfo.Add(new tb_sis_reporte_Info(item.IdReporte, item.nom_reporte));
+              ListInfo.Add(new tb_sis_reporte_Info(item.IdReporte, item.nom_reporte, item.cod_reporte,item.estado ));
           }
 
             
@@ -31,26 +31,26 @@ namespace Core.ErpSys.Data.Sistemas
 
        }
 
-       public List<tb_sis_reporte_Info> Get_List_Reporte(DateTime fechaIni, DateTime fechaFin)
-       {
-           List<tb_sis_reporte_Info> ListInfo = new List<tb_sis_reporte_Info>();
+       //public List<tb_sis_reporte_Info> Get_List_Reporte(DateTime fechaIni, DateTime fechaFin)
+       //{
+       //    List<tb_sis_reporte_Info> ListInfo = new List<tb_sis_reporte_Info>();
 
 
-           Entities_Sistemas OBase = new Entities_Sistemas();
+       //    Entities_Sistemas OBase = new Entities_Sistemas();
 
-           var selectq = from q in OBase.tb_sis_reporte
-                         select q;
+       //    var selectq = from q in OBase.tb_sis_reporte
+       //                  select q;
 
-           foreach (var item in selectq)
-           {
-               ListInfo.Add(new tb_sis_reporte_Info(item.IdReporte, item.nom_reporte));
-           }
+       //    foreach (var item in selectq)
+       //    {
+       //        ListInfo.Add(new tb_sis_reporte_Info(item.IdReporte, item.nom_reporte, item.cod_reporte,item.estado));
+       //    }
 
 
 
-           return ListInfo;
+       //    return ListInfo;
 
-       }
+       //}
 
        public tb_sis_reporte_Info Get_Info_Reporte(string IdReporte)
        {
@@ -68,6 +68,8 @@ namespace Core.ErpSys.Data.Sistemas
            {
                Info.IdReporte = item.IdReporte;
                Info.nom_reporte = item.nom_reporte;
+               Info.cod_reporte = item.cod_reporte;
+               Info.estado = item.estado;
            }
 
 
@@ -80,12 +82,10 @@ namespace Core.ErpSys.Data.Sistemas
 
            using (Entities_Sistemas context = new Entities_Sistemas())
            {
-               Entities_Sistemas fact = new Entities_Sistemas();
-
-               var addressG = new tb_sis_reporte();
+                var addressG = new tb_sis_reporte();
                addressG.IdReporte = Info.IdReporte;
                addressG.nom_reporte = Info.nom_reporte;
-               addressG.cod_reporte = "";
+               addressG.cod_reporte = Info.cod_reporte;
                addressG.estado = true;
                context.tb_sis_reporte.Add(addressG);
                context.SaveChanges();
@@ -106,6 +106,7 @@ namespace Core.ErpSys.Data.Sistemas
                if (contact != null)
                {
                    contact.nom_reporte = Info.nom_reporte;
+                   contact.cod_reporte = Info.cod_reporte;
 
                    context.SaveChanges();
                }
@@ -122,7 +123,6 @@ namespace Core.ErpSys.Data.Sistemas
                if (contact != null)
                {
                    contact.estado = false;
-
                   
                    context.SaveChanges();
                }

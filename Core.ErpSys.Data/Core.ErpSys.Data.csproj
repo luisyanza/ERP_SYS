@@ -37,8 +37,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +82,12 @@
     <Compile Include="SeguridadAcceso\seg_usuario_sesion.cs">
       <DependentUpon>Model_Seguridad_Acceso.tt</DependentUpon>
     </Compile>
+    <Compile Include="SeguridadAcceso\tb_seg_menu_Data.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_menu_x_seg_usuario_Data.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_perfil_Data.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_perfil_x_seg_menu_Data.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_usuario_Data.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_usuario_sesion_Data.cs" />
     <Compile Include="Sistemas\Model_Sistemas_.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +106,7 @@
     <Compile Include="Sistemas\tb_sis_Formulario.cs">
       <DependentUpon>Model_Sistemas_.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sistemas\tb_sis_Formulario_Data.cs" />
     <Compile Include="Sistemas\tb_sis_reporte.cs">
       <DependentUpon>Model_Sistemas_.tt</DependentUpon>
     </Compile>

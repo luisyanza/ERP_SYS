@@ -40,6 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_menu_Bus.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_menu_x_seg_usuario_Bus.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_perfil_Bus.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_perfil_x_seg_menu_Bus.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_usuario_Bus.cs" />
+    <Compile Include="SeguridadAcceso\tb_seg_usuario_sesion_Bus.cs" />
+    <Compile Include="Sistemas\tb_sis_Formulario_Bus.cs" />
     <Compile Include="Sistemas\tb_sis_reporte_Bus.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,9 +59,7 @@
       <Name>Core.ErpSys.Info</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SeguridadAcceso\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
