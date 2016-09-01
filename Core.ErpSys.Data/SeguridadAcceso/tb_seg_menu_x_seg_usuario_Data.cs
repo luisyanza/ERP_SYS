@@ -38,6 +38,8 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
         }
 
+       
+
         public Boolean GrabarDB(tb_seg_menu_x_seg_usuario_Info Info)
         {
             try

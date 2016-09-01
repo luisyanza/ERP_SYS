@@ -73,6 +73,43 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
         }
 
+        public tb_seg_usuario_Info Get_Info_Usuario(string IdUsuario,string password)
+        {
+            tb_seg_usuario_Info Info = new tb_seg_usuario_Info();
+
+            try
+            {
+
+                Entities_Seguridad_Accesos OBase = new Entities_Seguridad_Accesos();
+
+                var selectq = from q in OBase.seg_usuario
+                              where q.IdUsuario == IdUsuario
+                              && q.contrasenia == password
+                              select q;
+
+                foreach (var item in selectq)
+                {
+                    Info.IdUsuario = item.IdUsuario;
+                    Info.nom_usuario = item.nom_usuario;
+                    Info.contrasenia = item.contrasenia;
+                    Info.Estado = item.Estado;
+                    Info.IdPerfil = item.IdPerfil;
+                    Info.Exigir_directivas_seguridad = item.Exigir_directivas_seguridad;
+                    Info.Exigir_expiracion_contrasenia = item.Exigir_expiracion_contrasenia;
+                    Info.usuario_debe_cambiar_contra_inicio_sesion = item.usuario_debe_cambiar_contra_inicio_sesion;
+                    Info.Fecha_expiracion_contrasenia = item.Fecha_expiracion_contrasenia;
+
+                }
+            }
+            catch (Exception)
+            {
+                return new tb_seg_usuario_Info();
+            }
+
+            return Info;
+
+        }
+
         public Boolean GrabarDB(tb_seg_usuario_Info Info)
         {
             try

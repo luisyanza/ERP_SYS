@@ -39,6 +39,34 @@ namespace Core.ErpSys.Data.SeguridadAcceso
             }
 
 
+        public List<tb_seg_menu_Info> Get_List_Menu(string IdUsuario)
+        {
+            List<tb_seg_menu_Info> ListInfo = new List<tb_seg_menu_Info>();
+
+            try
+            {
+
+                Entities_Seguridad_Accesos OBase = new Entities_Seguridad_Accesos();
+
+                var selectq = from q in OBase.seg_menu 
+                              
+                              select q;
+
+                foreach (var item in selectq)
+                {
+                    ListInfo.Add(new tb_seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre, item.estado, item.path_web, item.nom_webform, item.observacion, item.IdFormulario, item.IdReporte, item.esFormulario, item.esReporte));
+                }
+
+
+            }
+            catch (Exception)
+            {
+                return new List<tb_seg_menu_Info>();
+            }
+
+            return ListInfo;
+        }
+
         public tb_seg_menu_Info Get_Info_Menu(string IdMenu)
             {
                 tb_seg_menu_Info Info = new tb_seg_menu_Info();

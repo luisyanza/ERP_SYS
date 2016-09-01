@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core.ErpSys.Bus.SeguridadAcceso
 {
-    class tb_seg_perfil_x_seg_menu_Bus
+    public class tb_seg_perfil_x_seg_menu_Bus
     {
+
     }
 }

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Core.ErpSys.Data.SeguridadAcceso ;
 using Core.ErpSys.Info.SeguridadAcceso;
+using Core.ErpSys.Data.SeguridadAcceso ;
 
 namespace Core.ErpSys.Bus.SeguridadAcceso
 {
