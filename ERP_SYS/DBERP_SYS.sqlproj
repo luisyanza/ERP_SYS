@@ -71,6 +71,8 @@
     <Build Include="dbo\Tables\seg_perfil.sql" />
     <Build Include="dbo\Tables\seg_menu_x_seg_usuario.sql" />
     <Build Include="dbo\Tables\seg_menu.sql" />
+    <Build Include="dbo\Tables\tb_catalogo_tipo.sql" />
+    <Build Include="dbo\Tables\tb_catalogo.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Datos_inicio.sql" />
