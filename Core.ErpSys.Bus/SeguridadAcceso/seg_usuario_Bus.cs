@@ -8,35 +8,35 @@ using Core.ErpSys.Data.SeguridadAcceso ;
 
 namespace Core.ErpSys.Bus.SeguridadAcceso
 {
-    public class tb_seg_usuario_Bus
+    public class seg_usuario_Bus
     {
-        tb_seg_usuario_Data Odata = new tb_seg_usuario_Data();
+        seg_usuario_Data Odata = new seg_usuario_Data();
 
-        public List<tb_seg_usuario_Info> Get_List_Usuario()
+        public List<seg_usuario_Info> Get_List_Usuario()
         {
             return Odata.Get_List_Usuario();
         }
 
-        public tb_seg_usuario_Info Get_Info_Usuario(string IdUsuario)
+        public seg_usuario_Info Get_Info_Usuario(string IdUsuario)
         {
 
             return Odata.Get_Info_Usuario(IdUsuario);
 
         }
 
-        public Boolean GrabarDB(tb_seg_usuario_Info Info)
+        public Boolean GrabarDB(seg_usuario_Info Info)
         {
             return Odata.GrabarDB(Info);
 
         }
 
-        public Boolean ModificarDB(tb_seg_usuario_Info Info)
+        public Boolean ModificarDB(seg_usuario_Info Info)
         {
             return Odata.ModificarDB(Info);
 
         }
 
-        public Boolean AnularDB(tb_seg_usuario_Info Info)
+        public Boolean AnularDB(seg_usuario_Info Info)
         {
             return Odata.AnularDB(Info);
 

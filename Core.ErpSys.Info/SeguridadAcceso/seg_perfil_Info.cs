@@ -9,7 +9,7 @@ namespace Core.ErpSys.Info.SeguridadAcceso
     /// <summary>
     /// Info de tabla de perfiles
     /// </summary>
-    public class tb_seg_perfil_Info
+    public class seg_perfil_Info
     {
 
         public int IdPerfil { get; set; }
@@ -18,12 +18,12 @@ namespace Core.ErpSys.Info.SeguridadAcceso
 
 
 
-        public tb_seg_perfil_Info()
+        public seg_perfil_Info()
         {
 
 
         }
-        public tb_seg_perfil_Info( int	_IdPerfil,	string	_nom_perfil,	bool	_estado)
+        public seg_perfil_Info( int	_IdPerfil,	string	_nom_perfil,	bool	_estado)
         {
             IdPerfil = _IdPerfil;
             nom_perfil = _nom_perfil;

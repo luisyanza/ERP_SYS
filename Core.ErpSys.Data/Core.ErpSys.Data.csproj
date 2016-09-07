@@ -82,12 +82,12 @@
     <Compile Include="SeguridadAcceso\seg_usuario_sesion.cs">
       <DependentUpon>Model_Seguridad_Acceso.tt</DependentUpon>
     </Compile>
-    <Compile Include="SeguridadAcceso\tb_seg_menu_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_menu_x_seg_usuario_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_x_seg_menu_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_sesion_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_x_seg_usuario_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_x_seg_menu_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_sesion_Data.cs" />
     <Compile Include="Sistemas\Model_Sistemas_.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

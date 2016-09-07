@@ -7,13 +7,13 @@ using Core.ErpSys.Info.SeguridadAcceso;
 
 namespace Core.ErpSys.Data.SeguridadAcceso
 {
-    public class tb_seg_menu_Data
+    public class seg_menu_Data
     {
 
 
-        public List<tb_seg_menu_Info> Get_List_Menu()
+        public List<seg_menu_Info> Get_List_Menu()
             {
-                List<tb_seg_menu_Info> ListInfo = new List<tb_seg_menu_Info>();
+                List<seg_menu_Info> ListInfo = new List<seg_menu_Info>();
 
                 try
                 {
@@ -25,23 +25,23 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                     foreach (var item in selectq)
                     {
-                        ListInfo.Add(new tb_seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre ,item.estado, item.path_web, item.nom_webform , item.observacion , item.IdFormulario , item.IdReporte,item.esFormulario,item.esReporte ));
+                        ListInfo.Add(new seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre ,item.estado, item.path_web, item.nom_webform , item.observacion , item.IdFormulario , item.IdReporte,item.esFormulario,item.esReporte ));
                     }
 
 
                 }
                 catch (Exception)
                 {
-                    return new List<tb_seg_menu_Info>();
+                    return new List<seg_menu_Info>();
                 }
 
                 return ListInfo;
             }
 
 
-        public List<tb_seg_menu_Info> Get_List_Menu(string IdUsuario)
+        public List<seg_menu_Info> Get_List_Menu(string IdUsuario)
         {
-            List<tb_seg_menu_Info> ListInfo = new List<tb_seg_menu_Info>();
+            List<seg_menu_Info> ListInfo = new List<seg_menu_Info>();
 
             try
             {
@@ -54,22 +54,22 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                 foreach (var item in selectq)
                 {
-                    ListInfo.Add(new tb_seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre, item.estado, item.path_web, item.nom_webform, item.observacion, item.IdFormulario, item.IdReporte, item.esFormulario, item.esReporte));
+                    ListInfo.Add(new seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre, item.estado, item.path_web, item.nom_webform, item.observacion, item.IdFormulario, item.IdReporte, item.esFormulario, item.esReporte));
                 }
 
 
             }
             catch (Exception)
             {
-                return new List<tb_seg_menu_Info>();
+                return new List<seg_menu_Info>();
             }
 
             return ListInfo;
         }
 
-        public tb_seg_menu_Info Get_Info_Menu(string IdMenu)
+        public seg_menu_Info Get_Info_Menu(string IdMenu)
             {
-                tb_seg_menu_Info Info = new tb_seg_menu_Info();
+                seg_menu_Info Info = new seg_menu_Info();
 
                 try
                 {
@@ -100,14 +100,14 @@ namespace Core.ErpSys.Data.SeguridadAcceso
                 }
                 catch (Exception)
                 {
-                    return new tb_seg_menu_Info();
+                    return new seg_menu_Info();
                 }
 
                 return Info;
 
             }
 
-        public Boolean GrabarDB(tb_seg_menu_Info Info)
+        public Boolean GrabarDB(seg_menu_Info Info)
             {
                 try
                 {
@@ -129,7 +129,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
                         addressG.esFormulario = Info.esFormulario;
                         addressG.esReporte = Info.esReporte;
 
-                        context. seg_menu.Add(addressG);
+                        context.seg_menu.Add(addressG);
                         context.SaveChanges();
 
                     }
@@ -143,7 +143,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
             }
 
-        public Boolean ModificarDB(tb_seg_menu_Info Info)
+        public Boolean ModificarDB(seg_menu_Info Info)
             {
                 try
                 {
@@ -178,7 +178,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
             }
 
-        public Boolean AnularDB(tb_seg_menu_Info Info)
+        public Boolean AnularDB(seg_menu_Info Info)
             {
                 try
                 {

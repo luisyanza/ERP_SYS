@@ -7,12 +7,12 @@ using Core.ErpSys.Info.SeguridadAcceso;
 
 namespace Core.ErpSys.Data.SeguridadAcceso
 {
-    public class tb_seg_usuario_Data
+    public class seg_usuario_Data
     {
 
-        public List<tb_seg_usuario_Info> Get_List_Usuario()
+        public List<seg_usuario_Info> Get_List_Usuario()
         {
-            List<tb_seg_usuario_Info> ListInfo = new List<tb_seg_usuario_Info>();
+            List<seg_usuario_Info> ListInfo = new List<seg_usuario_Info>();
 
             try
             {
@@ -24,22 +24,22 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                 foreach (var item in selectq)
                 {
-                    ListInfo.Add(new tb_seg_usuario_Info(item.IdUsuario, item.nom_usuario, item.contrasenia, item.Estado, item.IdPerfil, item.Exigir_directivas_seguridad, item.Exigir_expiracion_contrasenia, item.usuario_debe_cambiar_contra_inicio_sesion, item.Fecha_expiracion_contrasenia));
+                    ListInfo.Add(new seg_usuario_Info(item.IdUsuario, item.nom_usuario, item.contrasenia, item.Estado, item.IdPerfil, item.Exigir_directivas_seguridad, item.Exigir_expiracion_contrasenia, item.usuario_debe_cambiar_contra_inicio_sesion, item.Fecha_expiracion_contrasenia));
                 }
 
             }
             catch (Exception)
             {
-                return new List<tb_seg_usuario_Info>();
+                return new List<seg_usuario_Info>();
             }
 
             return ListInfo;
         }
 
 
-        public tb_seg_usuario_Info Get_Info_Usuario(string IdUsuario)
+        public seg_usuario_Info Get_Info_Usuario(string IdUsuario)
         {
-            tb_seg_usuario_Info Info = new tb_seg_usuario_Info();
+            seg_usuario_Info Info = new seg_usuario_Info();
 
             try
             {
@@ -66,16 +66,16 @@ namespace Core.ErpSys.Data.SeguridadAcceso
             }
             catch (Exception)
             {
-                return new tb_seg_usuario_Info();
+                return new seg_usuario_Info();
             }
 
             return Info;
 
         }
 
-        public tb_seg_usuario_Info Get_Info_Usuario(string IdUsuario,string password)
+        public seg_usuario_Info Get_Info_Usuario(string IdUsuario,string password)
         {
-            tb_seg_usuario_Info Info = new tb_seg_usuario_Info();
+            seg_usuario_Info Info = new seg_usuario_Info();
 
             try
             {
@@ -103,14 +103,14 @@ namespace Core.ErpSys.Data.SeguridadAcceso
             }
             catch (Exception)
             {
-                return new tb_seg_usuario_Info();
+                return new seg_usuario_Info();
             }
 
             return Info;
 
         }
 
-        public Boolean GrabarDB(tb_seg_usuario_Info Info)
+        public Boolean GrabarDB(seg_usuario_Info Info)
         {
             try
             {
@@ -139,7 +139,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
         }
 
-        public Boolean ModificarDB(tb_seg_usuario_Info Info)
+        public Boolean ModificarDB(seg_usuario_Info Info)
         {
             try
             {
@@ -172,7 +172,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
         }
 
-        public Boolean AnularDB(tb_seg_usuario_Info Info)
+        public Boolean AnularDB(seg_usuario_Info Info)
         {
             try
             {

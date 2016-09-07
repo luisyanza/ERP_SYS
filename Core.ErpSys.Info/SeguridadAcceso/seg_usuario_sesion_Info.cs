@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.ErpSys.Info.SeguridadAcceso
 {
-    public class tb_seg_usuario_sesion_Info
+    public class seg_usuario_sesion_Info
     { 
         public decimal  IdRegistro { get; set; }
         public string IdUsuario { get; set; }
@@ -16,11 +16,11 @@ namespace Core.ErpSys.Info.SeguridadAcceso
         public string equipo { get; set; }
 
 
-        public tb_seg_usuario_sesion_Info()
+        public seg_usuario_sesion_Info()
         {
 
         }
-        public tb_seg_usuario_sesion_Info(decimal	_IdRegistro,string	_IdUsuario,	DateTime _fecha_hora,	string	_tipo,	string	_ip,	string	_equipo)
+        public seg_usuario_sesion_Info(decimal	_IdRegistro,string	_IdUsuario,	DateTime _fecha_hora,	string	_tipo,	string	_ip,	string	_equipo)
         {
             IdRegistro = _IdRegistro;
             IdUsuario = _IdUsuario;

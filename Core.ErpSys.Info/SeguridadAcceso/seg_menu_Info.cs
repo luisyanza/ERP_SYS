@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.ErpSys.Info.SeguridadAcceso
 {
-    public class tb_seg_menu_Info
+    public class seg_menu_Info
     {
 
         public string IdMenu { get; set; }
@@ -22,12 +22,12 @@ namespace Core.ErpSys.Info.SeguridadAcceso
         public bool? esFormulario { get; set; }
         public bool? esReporte { get; set; }
 
-        public tb_seg_menu_Info()
+        public seg_menu_Info()
         {
 
         }
 
-        public tb_seg_menu_Info(string _IdMenu, string _cod_menu , string _nom_menu, string _IdMenuPadre ,  bool _estado, string _path_web , string _nom_webform, string _observacion, string _IdFormulario, string _IdReporte, bool? _esFormulario, bool? _esReporte )
+        public seg_menu_Info(string _IdMenu, string _cod_menu , string _nom_menu, string _IdMenuPadre ,  bool _estado, string _path_web , string _nom_webform, string _observacion, string _IdFormulario, string _IdReporte, bool? _esFormulario, bool? _esReporte )
         {
             IdMenu = _IdMenu;
             cod_menu = _cod_menu;

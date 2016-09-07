@@ -8,12 +8,12 @@ using Core.ErpSys.Info.SeguridadAcceso;
 
 namespace Core.ErpSys.Data.SeguridadAcceso
 {
-    public class tb_seg_usuario_sesion_Data
+    public class seg_usuario_sesion_Data
     {
 
-        public List<tb_seg_usuario_sesion_Info> Get_List_Usuario_Sesion()
+        public List<seg_usuario_sesion_Info> Get_List_Usuario_Sesion()
         {
-            List<tb_seg_usuario_sesion_Info> ListInfo = new List<tb_seg_usuario_sesion_Info>();
+            List<seg_usuario_sesion_Info> ListInfo = new List<seg_usuario_sesion_Info>();
 
             try
             {
@@ -25,22 +25,22 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                 foreach (var item in selectq)
                 {
-                    ListInfo.Add(new tb_seg_usuario_sesion_Info(item.IdRegistro,item.IdUsuario,item.fecha_hora, item.tipo,item.ip,item.equipo));
+                    ListInfo.Add(new seg_usuario_sesion_Info(item.IdRegistro,item.IdUsuario,item.fecha_hora, item.tipo,item.ip,item.equipo));
 
                 }
 
             }
             catch (Exception)
             {
-                return new List<tb_seg_usuario_sesion_Info>();
+                return new List<seg_usuario_sesion_Info>();
             }
 
             return ListInfo;
         }
 
-        public List<tb_seg_usuario_sesion_Info> Get_List_Usuario_Sesion(DateTime fechaIni, DateTime fechaFin)
+        public List<seg_usuario_sesion_Info> Get_List_Usuario_Sesion(DateTime fechaIni, DateTime fechaFin)
         {
-            List<tb_seg_usuario_sesion_Info> ListInfo = new List<tb_seg_usuario_sesion_Info>();
+            List<seg_usuario_sesion_Info> ListInfo = new List<seg_usuario_sesion_Info>();
 
             try
             {
@@ -53,23 +53,23 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                 foreach (var item in selectq)
                 {
-                    ListInfo.Add(new tb_seg_usuario_sesion_Info(item.IdRegistro, item.IdUsuario, item.fecha_hora, item.tipo, item.ip, item.equipo));
+                    ListInfo.Add(new seg_usuario_sesion_Info(item.IdRegistro, item.IdUsuario, item.fecha_hora, item.tipo, item.ip, item.equipo));
 
                 }
 
             }
             catch (Exception)
             {
-                return new List<tb_seg_usuario_sesion_Info>();
+                return new List<seg_usuario_sesion_Info>();
             }
 
             return ListInfo;
         }
 
 
-        public tb_seg_usuario_sesion_Info Get_Info_Registro(decimal  IdRegistro)
+        public seg_usuario_sesion_Info Get_Info_Registro(decimal  IdRegistro)
         {
-            tb_seg_usuario_sesion_Info Info = new tb_seg_usuario_sesion_Info();
+            seg_usuario_sesion_Info Info = new seg_usuario_sesion_Info();
 
             try
             {
@@ -93,14 +93,14 @@ namespace Core.ErpSys.Data.SeguridadAcceso
             }
             catch (Exception)
             {
-                return new tb_seg_usuario_sesion_Info();
+                return new seg_usuario_sesion_Info();
             }
 
             return Info;
 
         }
 
-        public Boolean GrabarDB(tb_seg_usuario_sesion_Info Info)
+        public Boolean GrabarDB(seg_usuario_sesion_Info Info)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
         }
 
-        public Boolean ModificarDB(tb_seg_usuario_sesion_Info Info)
+        public Boolean ModificarDB(seg_usuario_sesion_Info Info)
         {
             try
             {
