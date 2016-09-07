@@ -12,6 +12,7 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
     {
         seg_usuario_Data Odata = new seg_usuario_Data();
 
+
         public List<seg_usuario_Info> Get_List_Usuario()
         {
             return Odata.Get_List_Usuario();
