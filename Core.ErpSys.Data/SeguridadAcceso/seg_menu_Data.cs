@@ -25,7 +25,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                     foreach (var item in selectq)
                     {
-                        ListInfo.Add(new seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre ,item.estado, item.path_web, item.nom_webform , item.observacion , item.IdFormulario , item.IdReporte,item.esFormulario,item.esReporte ));
+                        ListInfo.Add(new seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre ,item.estado, item.posicion , item.nivel , item.path_web, item.nom_webform , item.observacion , item.IdFormulario , item.IdReporte,item.esFormulario,item.esReporte ));
                     }
 
 
@@ -48,13 +48,18 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                 Entities_Seguridad_Accesos OBase = new Entities_Seguridad_Accesos();
 
-                var selectq = from q in OBase.seg_menu 
-                              
-                              select q;
+               
+                var selectq = from menu in OBase.seg_menu
+                              join rel in OBase.seg_menu_x_seg_usuario
+                              on menu.IdMenu equals rel.IdMenu into MenuUsuario
+                              from menu2 in MenuUsuario
+                              where menu2.IdUsuario == IdUsuario
+                              select menu2;
+
 
                 foreach (var item in selectq)
                 {
-                    ListInfo.Add(new seg_menu_Info(item.IdMenu, item.cod_menu, item.nom_menu, item.IdMenuPadre, item.estado, item.path_web, item.nom_webform, item.observacion, item.IdFormulario, item.IdReporte, item.esFormulario, item.esReporte));
+                    ListInfo.Add(new seg_menu_Info(item.IdMenu, item.seg_menu.cod_menu, item.seg_menu.nom_menu, item.seg_menu.IdMenuPadre, item.seg_menu.estado,item.seg_menu.posicion,item.seg_menu.nivel, item.seg_menu.path_web, item.seg_menu.nom_webform, item.observacion, item.seg_menu.IdFormulario, item.seg_menu.IdReporte, item.seg_menu.esFormulario, item.seg_menu.esReporte));
                 }
 
 
@@ -121,6 +126,8 @@ namespace Core.ErpSys.Data.SeguridadAcceso
                         addressG.nom_menu = Info.nom_menu;
                         addressG.IdMenuPadre = Info.IdMenuPadre;
                         addressG.estado = true ;
+                        addressG.nivel = Info.nivel;
+                        addressG.posicion = Info.posicion;
                         addressG.path_web = Info.path_web;
                         addressG.nom_webform = Info.nom_webform;
                         addressG.observacion = Info.observacion;

@@ -67,7 +67,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
         }
 
 
-        public seg_usuario_sesion_Info Get_Info_Registro(decimal  IdRegistro)
+        public seg_usuario_sesion_Info Get_Info_Usuario_Sesion(decimal  IdRegistro)
         {
             seg_usuario_sesion_Info Info = new seg_usuario_sesion_Info();
 

@@ -25,6 +25,7 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
             }
 
         }
+
         public List<seg_menu_Info> Get_List_Menu(string IdUsuario)
         {
 
@@ -68,7 +69,6 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
         
         }
 
-
         public Boolean ModificarDB(seg_menu_Info Info)
         {
 
@@ -82,6 +82,7 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
                 return false;
             } 
         }
+
         public Boolean AnularDB(seg_menu_Info Info)
         {
             try

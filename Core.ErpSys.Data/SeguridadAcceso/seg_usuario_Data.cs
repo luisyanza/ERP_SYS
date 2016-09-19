@@ -36,7 +36,6 @@ namespace Core.ErpSys.Data.SeguridadAcceso
             return ListInfo;
         }
 
-
         public seg_usuario_Info Get_Info_Usuario(string IdUsuario)
         {
             seg_usuario_Info Info = new seg_usuario_Info();

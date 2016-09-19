@@ -17,10 +17,10 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
             return Odata.Get_List_Usuario_Sesion();
         }
 
-        public seg_usuario_sesion_Info Get_Info_Registro(decimal  IdRegistro)
+        public seg_usuario_sesion_Info Get_Info_Usuario_Sesion(decimal IdRegistro)
         {
 
-            return Odata.Get_Info_Registro(IdRegistro);
+            return Odata.Get_Info_Usuario_Sesion(IdRegistro);
 
         }
 

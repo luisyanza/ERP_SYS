@@ -103,6 +103,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_Sistemas_.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Sistemas\tb_catalogo.cs">
+      <DependentUpon>Model_Sistemas_.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sistemas\tb_catalogo_tipo.cs">
+      <DependentUpon>Model_Sistemas_.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_Catalogo_Tipo_Data.cs" />
     <Compile Include="Sistemas\tb_sis_Formulario.cs">
       <DependentUpon>Model_Sistemas_.tt</DependentUpon>
     </Compile>

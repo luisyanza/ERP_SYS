@@ -12,7 +12,6 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
     {
         seg_usuario_Data Odata = new seg_usuario_Data();
 
-
         public List<seg_usuario_Info> Get_List_Usuario()
         {
             return Odata.Get_List_Usuario();
@@ -27,8 +26,17 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
 
         public Boolean GrabarDB(seg_usuario_Info Info)
         {
-            return Odata.GrabarDB(Info);
-
+            try
+            {
+                return Odata.GrabarDB(Info);
+                
+            }
+            catch (Exception)
+            {
+                
+                return false;
+            }
+           
         }
 
         public Boolean ModificarDB(seg_usuario_Info Info)

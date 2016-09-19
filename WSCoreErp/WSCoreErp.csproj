@@ -59,11 +59,16 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SeguridadAcceso\WS_Seg_Menu.svc" />
     <Content Include="Service1.svc" />
     <Content Include="Sistemas\WS_Sis_Reporte.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SeguridadAcceso\IWS_Seg_Menu.cs" />
+    <Compile Include="SeguridadAcceso\WS_Seg_Menu.svc.cs">
+      <DependentUpon>WS_Seg_Menu.svc</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

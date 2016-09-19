@@ -73,6 +73,18 @@
     <Build Include="dbo\Tables\seg_menu.sql" />
     <Build Include="dbo\Tables\tb_catalogo_tipo.sql" />
     <Build Include="dbo\Tables\tb_catalogo.sql" />
+    <Build Include="dbo\Tables\tb_sucursal.sql" />
+    <Build Include="dbo\Tables\tb_puntoVta.sql" />
+    <Build Include="dbo\Tables\tb_persona.sql" />
+    <Build Include="dbo\Tables\tb_Impuesto_tipo.sql" />
+    <Build Include="dbo\Tables\tb_impuesto.sql" />
+    <Build Include="dbo\Tables\tb_empresa.sql" />
+    <Build Include="dbo\Tables\in_producto.sql" />
+    <Build Include="dbo\Tables\fa_cliente.sql" />
+    <Build Include="dbo\Tables\fa_cbteVta_tipo.sql" />
+    <Build Include="dbo\Tables\fa_cbteVta_Talonario.sql" />
+    <Build Include="dbo\Tables\fa_cbteVta_det.sql" />
+    <Build Include="dbo\Tables\fa_cbteVta.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Datos_inicio.sql" />
