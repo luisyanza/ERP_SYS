@@ -48,6 +48,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="General\Model_General.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_General.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\Model_General.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\Model_General.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_General.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_catalogo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_Catalogo_Data.cs" />
+    <Compile Include="General\tb_catalogo_tipo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_empresa.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_impuesto.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_Impuesto_tipo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_persona.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_puntoVta.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_sucursal.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeguridadAcceso\Model_Seguridad_Acceso.Context.cs">
       <AutoGen>True</AutoGen>
@@ -109,7 +149,6 @@
     <Compile Include="Sistemas\tb_catalogo_tipo.cs">
       <DependentUpon>Model_Sistemas_.tt</DependentUpon>
     </Compile>
-    <Compile Include="General\tb_Catalogo_Tipo_Data.cs" />
     <Compile Include="Sistemas\tb_sis_Formulario.cs">
       <DependentUpon>Model_Sistemas_.tt</DependentUpon>
     </Compile>
@@ -133,6 +172,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <EntityDeploy Include="General\Model_General.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_General.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="General\Model_General.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_General.edmx</DependentUpon>
+      <LastGenOutput>Model_General.Context.cs</LastGenOutput>
+    </None>
+    <None Include="General\Model_General.edmx.diagram">
+      <DependentUpon>Model_General.edmx</DependentUpon>
+    </None>
+    <None Include="General\Model_General.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_General.edmx</DependentUpon>
+      <LastGenOutput>Model_General.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="SeguridadAcceso\Model_Seguridad_Acceso.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
