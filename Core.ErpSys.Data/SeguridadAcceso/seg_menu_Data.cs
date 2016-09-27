@@ -160,7 +160,7 @@ namespace Core.ErpSys.Data.SeguridadAcceso
 
                         if (contact != null)
                         {
-                            
+
                             contact.cod_menu = Info.cod_menu;
                             contact.nom_menu = Info.nom_menu;
                             contact.IdMenuPadre = Info.IdMenuPadre;
@@ -173,6 +173,8 @@ namespace Core.ErpSys.Data.SeguridadAcceso
                             contact.esReporte = Info.esReporte;
                             context.SaveChanges();
                         }
+                        else
+                            return false;
                     }
                 }
                 catch (Exception)

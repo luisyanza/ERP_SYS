@@ -43,7 +43,10 @@
     <Compile Include="General\enum_catalogo.cs" />
     <Compile Include="General\tb_catalogo_Info.cs" />
     <Compile Include="General\tb_catalogo_tipo_Info.cs" />
+    <Compile Include="General\tb_empresa_Info.cs" />
     <Compile Include="General\tb_persona_Info.cs" />
+    <Compile Include="General\tb_puntoVta_Info.cs" />
+    <Compile Include="General\tb_sucursal_Info.cs" />
     <Compile Include="Log_Exception\BusException.cs" />
     <Compile Include="Log_Exception\DalException.cs" />
     <Compile Include="Log_Exception\DataException.cs" />
