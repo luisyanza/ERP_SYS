@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\fa_cbteVta_tipo_Info.cs" />
     <Compile Include="Facturacion\fa_cliente_Info.cs" />
+    <Compile Include="General\tb_impuesto_Info.cs" />
+    <Compile Include="General\tb_Impuesto_tipo_Info.cs" />
     <Compile Include="Inventario\in_producto_Info.cs" />
     <Compile Include="General\cl_parametrosGenerales_Info.cs" />
     <Compile Include="General\enum_catalogo.cs" />

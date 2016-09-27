@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERP_SYSModel2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERP_SYSModel2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ERP_SYSModel2StoreContainer">
           <EntitySet Name="tb_catalogo" EntityType="ERP_SYSModel2.Store.tb_catalogo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_catalogo_tipo" EntityType="ERP_SYSModel2.Store.tb_catalogo_tipo" store:Type="Tables" Schema="dbo" />
@@ -59,7 +59,7 @@
             <PropertyRef Name="IdImpuesto" />
           </Key>
           <Property Name="IdImpuesto" Type="varchar" Nullable="false" MaxLength="20" />
-          <Property Name="nom_Impuesto_tipo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_Impuesto" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="IdImpuesto_tipo" Type="varchar" Nullable="false" MaxLength="20" />
         </EntityType>
         <EntityType Name="tb_Impuesto_tipo">
@@ -146,8 +146,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_SYSModel2" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -155,7 +154,6 @@
           <EntitySet Name="tb_catalogo" EntityType="ERP_SYSModel2.tb_catalogo" />
           <EntitySet Name="tb_catalogo_tipo" EntityType="ERP_SYSModel2.tb_catalogo_tipo" />
           <EntitySet Name="tb_empresa" EntityType="ERP_SYSModel2.tb_empresa" />
-          <EntitySet Name="tb_impuesto" EntityType="ERP_SYSModel2.tb_impuesto" />
           <EntitySet Name="tb_Impuesto_tipo" EntityType="ERP_SYSModel2.tb_Impuesto_tipo" />
           <EntitySet Name="tb_persona" EntityType="ERP_SYSModel2.tb_persona" />
           <EntitySet Name="tb_puntoVta" EntityType="ERP_SYSModel2.tb_puntoVta" />
@@ -164,13 +162,14 @@
             <End Role="tb_empresa" EntitySet="tb_empresa" />
             <End Role="tb_sucursal" EntitySet="tb_sucursal" />
           </AssociationSet>
-          <AssociationSet Name="FK_tb_impuesto_tb_Impuesto_tipo" Association="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo">
-            <End Role="tb_Impuesto_tipo" EntitySet="tb_Impuesto_tipo" />
-            <End Role="tb_impuesto" EntitySet="tb_impuesto" />
-          </AssociationSet>
           <AssociationSet Name="FK_tb_puntoVta_tb_sucursal" Association="ERP_SYSModel2.FK_tb_puntoVta_tb_sucursal">
             <End Role="tb_sucursal" EntitySet="tb_sucursal" />
             <End Role="tb_puntoVta" EntitySet="tb_puntoVta" />
+          </AssociationSet>
+          <EntitySet Name="tb_impuesto" EntityType="ERP_SYSModel2.tb_impuesto" />
+          <AssociationSet Name="FK_tb_impuesto_tb_Impuesto_tipo" Association="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo">
+            <End Role="tb_Impuesto_tipo" EntitySet="tb_Impuesto_tipo" />
+            <End Role="tb_impuesto" EntitySet="tb_impuesto" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="tb_catalogo">
@@ -200,15 +199,6 @@
           <Property Name="ruc_empresa" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="tb_sucursal" Relationship="ERP_SYSModel2.FK_tb_sucursal_tb_empresa" FromRole="tb_empresa" ToRole="tb_sucursal" />
-        </EntityType>
-        <EntityType Name="tb_impuesto">
-          <Key>
-            <PropertyRef Name="IdImpuesto" />
-          </Key>
-          <Property Name="IdImpuesto" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="nom_Impuesto_tipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="IdImpuesto_tipo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="tb_Impuesto_tipo" Relationship="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" FromRole="tb_impuesto" ToRole="tb_Impuesto_tipo" />
         </EntityType>
         <EntityType Name="tb_Impuesto_tipo">
           <Key>
@@ -272,18 +262,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tb_impuesto_tb_Impuesto_tipo">
-          <End Role="tb_Impuesto_tipo" Type="ERP_SYSModel2.tb_Impuesto_tipo" Multiplicity="1" />
-          <End Role="tb_impuesto" Type="ERP_SYSModel2.tb_impuesto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Impuesto_tipo">
-              <PropertyRef Name="IdImpuesto_tipo" />
-            </Principal>
-            <Dependent Role="tb_impuesto">
-              <PropertyRef Name="IdImpuesto_tipo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tb_puntoVta_tb_sucursal">
           <End Role="tb_sucursal" Type="ERP_SYSModel2.tb_sucursal" Multiplicity="1" />
           <End Role="tb_puntoVta" Type="ERP_SYSModel2.tb_puntoVta" Multiplicity="*" />
@@ -295,6 +273,27 @@
             <Dependent Role="tb_puntoVta">
               <PropertyRef Name="IdEmpresa" />
               <PropertyRef Name="IdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_impuesto">
+          <Key>
+            <PropertyRef Name="IdImpuesto" />
+          </Key>
+          <Property Type="String" Name="IdImpuesto" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Impuesto" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdImpuesto_tipo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_Impuesto_tipo" Relationship="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" FromRole="tb_impuesto" ToRole="tb_Impuesto_tipo" />
+        </EntityType>
+        <Association Name="FK_tb_impuesto_tb_Impuesto_tipo">
+          <End Type="ERP_SYSModel2.tb_Impuesto_tipo" Role="tb_Impuesto_tipo" Multiplicity="1" />
+          <End Type="ERP_SYSModel2.tb_impuesto" Role="tb_impuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Impuesto_tipo">
+              <PropertyRef Name="IdImpuesto_tipo" />
+            </Principal>
+            <Dependent Role="tb_impuesto">
+              <PropertyRef Name="IdImpuesto_tipo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -331,15 +330,6 @@
                 <ScalarProperty Name="nom_empresa" ColumnName="nom_empresa" />
                 <ScalarProperty Name="ruc_empresa" ColumnName="ruc_empresa" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_impuesto">
-            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_impuesto">
-              <MappingFragment StoreEntitySet="tb_impuesto">
-                <ScalarProperty Name="IdImpuesto" ColumnName="IdImpuesto" />
-                <ScalarProperty Name="nom_Impuesto_tipo" ColumnName="nom_Impuesto_tipo" />
-                <ScalarProperty Name="IdImpuesto_tipo" ColumnName="IdImpuesto_tipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -387,6 +377,15 @@
                 <ScalarProperty Name="cod_establecimiento" ColumnName="cod_establecimiento" />
                 <ScalarProperty Name="nom_sucursal" ColumnName="nom_sucursal" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_impuesto">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_impuesto">
+              <MappingFragment StoreEntitySet="tb_impuesto">
+                <ScalarProperty Name="IdImpuesto_tipo" ColumnName="IdImpuesto_tipo" />
+                <ScalarProperty Name="nom_Impuesto" ColumnName="nom_Impuesto" />
+                <ScalarProperty Name="IdImpuesto" ColumnName="IdImpuesto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

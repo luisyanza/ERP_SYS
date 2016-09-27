@@ -28,10 +28,10 @@ namespace Core.ErpSys.Data.General
         public DbSet<tb_catalogo> tb_catalogo { get; set; }
         public DbSet<tb_catalogo_tipo> tb_catalogo_tipo { get; set; }
         public DbSet<tb_empresa> tb_empresa { get; set; }
-        public DbSet<tb_impuesto> tb_impuesto { get; set; }
         public DbSet<tb_Impuesto_tipo> tb_Impuesto_tipo { get; set; }
         public DbSet<tb_persona> tb_persona { get; set; }
         public DbSet<tb_puntoVta> tb_puntoVta { get; set; }
         public DbSet<tb_sucursal> tb_sucursal { get; set; }
+        public DbSet<tb_impuesto> tb_impuesto { get; set; }
     }
 }

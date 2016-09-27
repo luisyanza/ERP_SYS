@@ -8,14 +8,14 @@
         <EntityTypeShape EntityType="ERP_SYSModel2.tb_catalogo" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERP_SYSModel2.tb_catalogo_tipo" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERP_SYSModel2.tb_empresa" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_impuesto" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ERP_SYSModel2.tb_Impuesto_tipo" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERP_SYSModel2.tb_persona" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERP_SYSModel2.tb_puntoVta" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ERP_SYSModel2.tb_sucursal" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="ERP_SYSModel2.FK_tb_sucursal_tb_empresa" ManuallyRouted="false" />
-        <AssociationConnector Association="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" ManuallyRouted="false" />
         <AssociationConnector Association="ERP_SYSModel2.FK_tb_puntoVta_tb_sucursal" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_impuesto" Width="1.5" PointX="10.563268118800256" PointY="30.662573620054207" />
+        <AssociationConnector Association="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
