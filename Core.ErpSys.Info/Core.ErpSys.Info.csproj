@@ -41,9 +41,9 @@
   <ItemGroup>
     <Compile Include="General\cl_parametrosGenerales_Info.cs" />
     <Compile Include="General\enum_catalogo.cs" />
-    <Compile Include="General\tb_Catalogo_Info.cs" />
-    <Compile Include="General\tb_Catalogo_Tipo_Info.cs" />
-    <Compile Include="General\tb_persona_info.cs" />
+    <Compile Include="General\tb_catalogo_Info.cs" />
+    <Compile Include="General\tb_catalogo_tipo_Info.cs" />
+    <Compile Include="General\tb_persona_Info.cs" />
     <Compile Include="Log_Exception\BusException.cs" />
     <Compile Include="Log_Exception\DalException.cs" />
     <Compile Include="Log_Exception\DataException.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.ErpSys.Info.General
 {
-    public class tb_Catalogo_Info
+    public class tb_catalogo_Info
     {
         
         public string IdCatalogo { get; set; }
@@ -14,12 +14,12 @@ namespace Core.ErpSys.Info.General
         public bool estado { get; set; }
         public string IdCatalogo_tipo { get; set; }
 
-        public tb_Catalogo_Info()
+        public tb_catalogo_Info()
         {
 
         }
 
-        public tb_Catalogo_Info(string _IdCatalogo, string _nom_catalogo, bool _estado, string _IdCatalogo_tipo)
+        public tb_catalogo_Info(string _IdCatalogo, string _nom_catalogo, bool _estado, string _IdCatalogo_tipo)
         {
             // TODO: Complete member initialization
             this.IdCatalogo = _IdCatalogo;

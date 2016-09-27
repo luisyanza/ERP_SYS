@@ -7,12 +7,12 @@ using Core.ErpSys.Info.General;
 
 namespace Core.ErpSys.Data.General
 {
-    public class tb_Catalogo_Data
+    public class tb_catalogo_Data
     {
 
-        public List<tb_Catalogo_Info> Get_List_Catalogo()
+        public List<tb_catalogo_Info> Get_List_Catalogo()
         {
-            List<tb_Catalogo_Info> ListInfo = new List<tb_Catalogo_Info>();
+            List<tb_catalogo_Info> ListInfo = new List<tb_catalogo_Info>();
             try
             {
                 Entities_General OBase = new Entities_General();
@@ -23,20 +23,20 @@ namespace Core.ErpSys.Data.General
 
                 foreach ( tb_catalogo item in selectq)
                 {
-                    ListInfo.Add(new tb_Catalogo_Info(item.IdCatalogo, item.nom_catalogo, item.estado, item.IdCatalogo_tipo));
+                    ListInfo.Add(new tb_catalogo_Info(item.IdCatalogo, item.nom_catalogo, item.estado, item.IdCatalogo_tipo));
                 }
 
             }
             catch (Exception)
             {
-                return new List<tb_Catalogo_Info>();
+                return new List<tb_catalogo_Info>();
             }
             return ListInfo;
         }
 
-        public List<tb_Catalogo_Info> Get_List_Catalogo(string IdCatalogo_tipo)
+        public List<tb_catalogo_Info> Get_List_Catalogo(string IdCatalogo_tipo)
         {
-            List<tb_Catalogo_Info> ListInfo = new List<tb_Catalogo_Info>();
+            List<tb_catalogo_Info> ListInfo = new List<tb_catalogo_Info>();
             try
             {
                 Entities_General OBase = new Entities_General();
@@ -57,19 +57,19 @@ namespace Core.ErpSys.Data.General
                 {
                     if (item.IdTip == IdCatalogo_tipo)
                     {
-                        ListInfo.Add(new tb_Catalogo_Info(item.IdCat, item.NomCat, item.EstCat, item.IdTip));
+                        ListInfo.Add(new tb_catalogo_Info(item.IdCat, item.NomCat, item.EstCat, item.IdTip));
                     }
                 }
 
             }
             catch (Exception)
             {
-                return new List<tb_Catalogo_Info>();
+                return new List<tb_catalogo_Info>();
             }
             return ListInfo;
         }
 
-        public Boolean ModificarDB(tb_Catalogo_Info Info) {
+        public Boolean ModificarDB(tb_catalogo_Info Info) {
             try
             {
                 using(Entities_General context = new Entities_General())
@@ -92,7 +92,7 @@ namespace Core.ErpSys.Data.General
         
         }
 
-        public Boolean AnularDB(tb_Catalogo_Info Info)
+        public Boolean AnularDB(tb_catalogo_Info Info)
         {
             try
             {

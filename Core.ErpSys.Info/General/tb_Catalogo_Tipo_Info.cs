@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.ErpSys.Info.General
 {
-   public class tb_Catalogo_Tipo_Info
+   public class tb_catalogo_tipo_Info
     {
         public string IdCatalogo_tipo { get; set; }
         public string nom_catalogo_tipo { get; set; }
