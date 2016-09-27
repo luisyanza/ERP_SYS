@@ -7,8 +7,7 @@ using Core.ErpSys.Info.General;
 namespace Core.ErpSys.Data.General
 {
     public class tb_empresa_Data
-    {
-        public List<tb_empresa_Info> Get_List_Empresa()
+    {public List<tb_empresa_Info> Get_List_Empresa()
         {
             List<tb_empresa_Info> ListInfo = new List<tb_empresa_Info>();
 
@@ -155,5 +154,6 @@ namespace Core.ErpSys.Data.General
             return true;
 
         }
+        
     }
 }

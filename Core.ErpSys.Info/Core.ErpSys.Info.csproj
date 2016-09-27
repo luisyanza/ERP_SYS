@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\fa_cliente_Info.cs" />
+    <Compile Include="Inventario\in_producto_Info.cs" />
     <Compile Include="General\cl_parametrosGenerales_Info.cs" />
     <Compile Include="General\enum_catalogo.cs" />
     <Compile Include="General\tb_catalogo_Info.cs" />
