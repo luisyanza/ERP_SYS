@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[fac_devol_venta] (
+    [IdEmpresa]                     INT           NOT NULL,
+    [IdSucursal]                    INT           NOT NULL,
+    [IdPuntoVta]                    INT           NOT NULL,
+    [IdDevolucion]                  NUMERIC (18)  NOT NULL,
+    [CodDevolucion]                 VARCHAR (20)  NOT NULL,
+    [IdNota]                        NUMERIC (18)  NOT NULL,
+    [IdCliente]                     NUMERIC (18)  NOT NULL,
+    [IdVendedor]                    INT           NOT NULL,
+    [IdCbteVta]                     NUMERIC (18)  NOT NULL,
+    [dv_fecha]                      DATETIME      NOT NULL,
+    [Estado]                        BIT           NOT NULL,
+    [dv_Observacion]                VARCHAR (MAX) NOT NULL,
+    [IdUsuario]                     VARCHAR (50)  NULL,
+    [MotivoAnulacion]               VARCHAR (50)  NULL,
+    [mvInv_IdEmpresa]               INT           NULL,
+    [mvInv_IdSucursal]              INT           NULL,
+    [mvInv_IdBodega]                INT           NULL,
+    [mvInv_IdMovi_inven_tipo]       INT           NULL,
+    [mvInv_IdNumMovi]               NUMERIC (18)  NULL,
+    [mvInv_IdEmpresa_x_Anu]         INT           NULL,
+    [mvInv_IdSucursal_x_Anu]        INT           NULL,
+    [mvInv_IdBodega_x_Anu]          INT           NULL,
+    [mvInv_IdMovi_inven_tipo_x_Anu] INT           NULL,
+    [mvInv_IdNumMovi_x_Anu]         NUMERIC (18)  NULL,
+    CONSTRAINT [PK_fa_devol_venta] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdPuntoVta] ASC, [IdDevolucion] ASC)
+);
+

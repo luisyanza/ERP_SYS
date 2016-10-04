@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[fac_orden_pedido] (
+    [IdEmpresa]          INT            NOT NULL,
+    [IdSucursal]         INT            NOT NULL,
+    [IdPuntoVta]         INT            NOT NULL,
+    [IdPedido]           NUMERIC (18)   NOT NULL,
+    [CodPedido]          VARCHAR (20)   NULL,
+    [IdCliente]          NUMERIC (18)   NOT NULL,
+    [IdVendedor]         INT            NOT NULL,
+    [cp_fecha]           DATETIME       NOT NULL,
+    [cp_diasPlazo]       INT            NOT NULL,
+    [cp_fechaVenc]       DATETIME       NOT NULL,
+    [cp_observacion]     VARCHAR (1000) NOT NULL,
+    [cp_tipopago]        CHAR (3)       NOT NULL,
+    [Estado]             BIT            NOT NULL,
+    [IdEstadoAprobacion] CHAR (1)       NOT NULL,
+    [IdUsuario]          VARCHAR (20)   NULL,
+    [Fecha_Transac]      DATETIME       NULL,
+    [IdUsuarioUltMod]    VARCHAR (20)   NULL,
+    [Fecha_UltMod]       DATETIME       NULL,
+    [IdUsuarioUltAnu]    VARCHAR (20)   NULL,
+    [Fecha_UltAnu]       DATETIME       NULL,
+    [nom_pc]             VARCHAR (50)   NULL,
+    [ip]                 VARCHAR (25)   NULL,
+    [MotivoAnulacion]    VARCHAR (500)  NULL,
+    [Entregado]          BIT            NULL,
+    CONSTRAINT [PK_fa_pedido] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdSucursal] ASC, [IdPuntoVta] ASC, [IdPedido] ASC)
+);
+
