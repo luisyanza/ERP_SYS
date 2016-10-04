@@ -4,11 +4,30 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERP_SYSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERP_SYSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ERP_SYSModelStoreContainer">
+          <EntitySet Name="tb_catalogo" EntityType="ERP_SYSModel.Store.tb_catalogo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_catalogo_tipo" EntityType="ERP_SYSModel.Store.tb_catalogo_tipo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_sis_Formulario" EntityType="ERP_SYSModel.Store.tb_sis_Formulario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_sis_reporte" EntityType="ERP_SYSModel.Store.tb_sis_reporte" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
+        <EntityType Name="tb_catalogo">
+          <Key>
+            <PropertyRef Name="IdCatalogo" />
+          </Key>
+          <Property Name="IdCatalogo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_catalogo" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="IdCatalogo_tipo" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_catalogo_tipo">
+          <Key>
+            <PropertyRef Name="IdCatalogo_tipo" />
+          </Key>
+          <Property Name="IdCatalogo_tipo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_catalogo_tipo" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="tb_sis_Formulario">
           <Key>
             <PropertyRef Name="IdForm" />
@@ -23,17 +42,36 @@
             <PropertyRef Name="IdReporte" />
           </Key>
           <Property Name="IdReporte" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="cod_reporte" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="nom_reporte" Type="varchar" Nullable="false" MaxLength="500" />
-          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="Nom_reporte" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Nom_Corto_reporte" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="IdModulo" Type="varchar" MaxLength="20" />
+          <Property Name="VistaRpt" Type="varchar" MaxLength="50" />
+          <Property Name="Formulario" Type="varchar" MaxLength="50" />
+          <Property Name="Class_NomReporte" Type="varchar" MaxLength="50" />
+          <Property Name="nom_Asembly" Type="varchar" MaxLength="50" />
+          <Property Name="Orden" Type="int" />
+          <Property Name="Observacion" Type="text" />
+          <Property Name="imagen" Type="image" />
+          <Property Name="VersionActual" Type="int" />
+          <Property Name="Tipo_Balance" Type="varchar" MaxLength="10" />
+          <Property Name="SQuery" Type="varchar(max)" />
+          <Property Name="Class_Info" Type="varchar" MaxLength="50" />
+          <Property Name="Class_Bus" Type="varchar" MaxLength="50" />
+          <Property Name="Class_Data" Type="varchar" MaxLength="50" />
+          <Property Name="IdGrupo_Reporte" Type="int" />
+          <Property Name="se_Muestra_Admin_Reporte" Type="bit" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="Store_proce_rpt" Type="varchar" MaxLength="50" />
+          <Property Name="Disenio_reporte" Type="varbinary(max)" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_SYSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Entities_Sistemas" p1:LazyLoadingEnabled="true">
           <EntitySet Name="tb_sis_Formulario" EntityType="ERP_SYSModel.tb_sis_Formulario" />
+          <EntitySet Name="tb_catalogo" EntityType="ERP_SYSModel.tb_catalogo" />
+          <EntitySet Name="tb_catalogo_tipo" EntityType="ERP_SYSModel.tb_catalogo_tipo" />
           <EntitySet Name="tb_sis_reporte" EntityType="ERP_SYSModel.tb_sis_reporte" />
         </EntityContainer>
         <EntityType Name="tb_sis_Formulario">
@@ -45,14 +83,49 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="titulo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
         </EntityType>
+        <EntityType Name="tb_catalogo">
+          <Key>
+            <PropertyRef Name="IdCatalogo" />
+          </Key>
+          <Property Type="String" Name="IdCatalogo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_catalogo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="IdCatalogo_tipo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_catalogo_tipo">
+          <Key>
+            <PropertyRef Name="IdCatalogo_tipo" />
+          </Key>
+          <Property Type="String" Name="IdCatalogo_tipo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_catalogo_tipo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+        </EntityType>
         <EntityType Name="tb_sis_reporte">
           <Key>
             <PropertyRef Name="IdReporte" />
           </Key>
-          <Property Name="IdReporte" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="cod_reporte" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nom_reporte" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Type="String" Name="IdReporte" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nom_reporte" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nom_Corto_reporte" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdModulo" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VistaRpt" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Formulario" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_NomReporte" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Asembly" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Orden" />
+          <Property Type="String" Name="Observacion" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="imagen" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="VersionActual" />
+          <Property Type="String" Name="Tipo_Balance" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SQuery" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_Info" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_Bus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_Data" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdGrupo_Reporte" />
+          <Property Type="Boolean" Name="se_Muestra_Admin_Reporte" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="String" Name="Store_proce_rpt" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Disenio_reporte" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -70,13 +143,50 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tb_catalogo">
+            <EntityTypeMapping TypeName="ERP_SYSModel.tb_catalogo">
+              <MappingFragment StoreEntitySet="tb_catalogo">
+                <ScalarProperty Name="IdCatalogo_tipo" ColumnName="IdCatalogo_tipo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_catalogo" ColumnName="nom_catalogo" />
+                <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_catalogo_tipo">
+            <EntityTypeMapping TypeName="ERP_SYSModel.tb_catalogo_tipo">
+              <MappingFragment StoreEntitySet="tb_catalogo_tipo">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_catalogo_tipo" ColumnName="nom_catalogo_tipo" />
+                <ScalarProperty Name="IdCatalogo_tipo" ColumnName="IdCatalogo_tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tb_sis_reporte">
             <EntityTypeMapping TypeName="ERP_SYSModel.tb_sis_reporte">
               <MappingFragment StoreEntitySet="tb_sis_reporte">
+                <ScalarProperty Name="Disenio_reporte" ColumnName="Disenio_reporte" />
+                <ScalarProperty Name="Store_proce_rpt" ColumnName="Store_proce_rpt" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="se_Muestra_Admin_Reporte" ColumnName="se_Muestra_Admin_Reporte" />
+                <ScalarProperty Name="IdGrupo_Reporte" ColumnName="IdGrupo_Reporte" />
+                <ScalarProperty Name="Class_Data" ColumnName="Class_Data" />
+                <ScalarProperty Name="Class_Bus" ColumnName="Class_Bus" />
+                <ScalarProperty Name="Class_Info" ColumnName="Class_Info" />
+                <ScalarProperty Name="SQuery" ColumnName="SQuery" />
+                <ScalarProperty Name="Tipo_Balance" ColumnName="Tipo_Balance" />
+                <ScalarProperty Name="VersionActual" ColumnName="VersionActual" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="nom_Asembly" ColumnName="nom_Asembly" />
+                <ScalarProperty Name="Class_NomReporte" ColumnName="Class_NomReporte" />
+                <ScalarProperty Name="Formulario" ColumnName="Formulario" />
+                <ScalarProperty Name="VistaRpt" ColumnName="VistaRpt" />
+                <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+                <ScalarProperty Name="Nom_Corto_reporte" ColumnName="Nom_Corto_reporte" />
+                <ScalarProperty Name="Nom_reporte" ColumnName="Nom_reporte" />
                 <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
-                <ScalarProperty Name="cod_reporte" ColumnName="cod_reporte" />
-                <ScalarProperty Name="nom_reporte" ColumnName="nom_reporte" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

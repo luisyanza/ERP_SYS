@@ -4,9 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ecc4a49c0bfd484899f5cb380a67ec17" Name="Diagrama1">
+      <Diagram DiagramId="ecc4a49c0bfd484899f5cb380a67ec17" Name="Diagrama1" ZoomLevel="77">
         <EntityTypeShape EntityType="ERP_SYSModel.tb_sis_Formulario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel.tb_sis_reporte" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_SYSModel.tb_catalogo" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="ERP_SYSModel.tb_catalogo_tipo" Width="1.5" PointX="5.5" PointY="0.5" />
+        <EntityTypeShape EntityType="ERP_SYSModel.tb_sis_reporte" Width="1.5" PointX="8.125" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

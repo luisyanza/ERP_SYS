@@ -39,26 +39,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\fa_cbteVta_det_Info.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_Info.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_Talonario_Info.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_tipo_Info.cs" />
+    <Compile Include="Facturacion\fa_cliente_Info.cs" />
+    <Compile Include="General\tb_impuesto_Info.cs" />
+    <Compile Include="General\tb_Impuesto_tipo_Info.cs" />
+    <Compile Include="Inventario\in_producto_Info.cs" />
     <Compile Include="General\cl_parametrosGenerales_Info.cs" />
     <Compile Include="General\enum_catalogo.cs" />
-    <Compile Include="General\tb_Catalogo.cs" />
-    <Compile Include="General\tb_Catalogo_Tipo.cs" />
+    <Compile Include="General\tb_catalogo_Info.cs" />
+    <Compile Include="General\tb_catalogo_tipo_Info.cs" />
+    <Compile Include="General\tb_empresa_Info.cs" />
+    <Compile Include="General\tb_persona_Info.cs" />
+    <Compile Include="General\tb_puntoVta_Info.cs" />
+    <Compile Include="General\tb_sucursal_Info.cs" />
     <Compile Include="Log_Exception\BusException.cs" />
     <Compile Include="Log_Exception\DalException.cs" />
     <Compile Include="Log_Exception\DataException.cs" />
     <Compile Include="Log_Exception\Logger.cs" />
     <Compile Include="Log_Exception\LoggingManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_menu_Info.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_menu_x_seg_usuario_Info.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_Info.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_x_seg_menu_Info.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_Info.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_sesion_Info.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_Info.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_x_seg_usuario_Info.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_Info.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_x_seg_menu_Info.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_Info.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_sesion_Info.cs" />
     <Compile Include="Sistemas\tb_sis_Formulario_Info.cs" />
     <Compile Include="Sistemas\tb_sis_reporte_Info.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Contabilidad\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

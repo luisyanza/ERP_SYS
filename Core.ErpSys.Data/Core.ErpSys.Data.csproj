@@ -48,6 +48,106 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\fa_cbteVta.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fa_cbteVta_Data.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_det.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fa_cbteVta_det_Data.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_Talonario.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fa_cbteVta_Talonario_Data.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_tipo.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fa_cbteVta_tipo_Data.cs" />
+    <Compile Include="Facturacion\fa_cliente.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fa_cliente_Data.cs" />
+    <Compile Include="General\tb_impuesto_Data.cs" />
+    <Compile Include="General\tb_Impuesto_tipo_Data.cs" />
+    <Compile Include="Inventario\in_producto.cs">
+      <DependentUpon>ModelInventario.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\in_producto_Data.cs" />
+    <Compile Include="Facturacion\ModelFacturacion.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFacturacion.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\ModelFacturacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\ModelFacturacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFacturacion.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="General\Model_General.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_General.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\Model_General.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\Model_General.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_General.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_catalogo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_catalogo_Data.cs" />
+    <Compile Include="General\tb_catalogo_tipo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_empresa.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_empresa_Data.cs" />
+    <Compile Include="General\tb_impuesto.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_Impuesto_tipo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_persona.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_persona_Data.cs" />
+    <Compile Include="General\tb_puntoVta.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_puntoVta_Data.cs" />
+    <Compile Include="General\tb_sucursal.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_sucursal_Data.cs" />
+    <Compile Include="Inventario\ModelInventario.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInventario.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\ModelInventario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInventario.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\ModelInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelInventario.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeguridadAcceso\Model_Seguridad_Acceso.Context.cs">
       <AutoGen>True</AutoGen>
@@ -82,12 +182,12 @@
     <Compile Include="SeguridadAcceso\seg_usuario_sesion.cs">
       <DependentUpon>Model_Seguridad_Acceso.tt</DependentUpon>
     </Compile>
-    <Compile Include="SeguridadAcceso\tb_seg_menu_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_menu_x_seg_usuario_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_x_seg_menu_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_Data.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_sesion_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_x_seg_usuario_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_x_seg_menu_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_Data.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_sesion_Data.cs" />
     <Compile Include="Sistemas\Model_Sistemas_.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +202,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_Sistemas_.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistemas\tb_catalogo.cs">
+      <DependentUpon>Model_Sistemas_.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sistemas\tb_catalogo_tipo.cs">
+      <DependentUpon>Model_Sistemas_.tt</DependentUpon>
     </Compile>
     <Compile Include="Sistemas\tb_sis_Formulario.cs">
       <DependentUpon>Model_Sistemas_.tt</DependentUpon>
@@ -126,6 +232,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <EntityDeploy Include="General\Model_General.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_General.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Facturacion\ModelFacturacion.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelFacturacion.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Facturacion\ModelFacturacion.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelFacturacion.edmx</DependentUpon>
+      <LastGenOutput>ModelFacturacion.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Facturacion\ModelFacturacion.edmx.diagram">
+      <DependentUpon>ModelFacturacion.edmx</DependentUpon>
+    </None>
+    <None Include="Facturacion\ModelFacturacion.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelFacturacion.edmx</DependentUpon>
+      <LastGenOutput>ModelFacturacion.cs</LastGenOutput>
+    </None>
+    <None Include="General\Model_General.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_General.edmx</DependentUpon>
+      <LastGenOutput>Model_General.Context.cs</LastGenOutput>
+    </None>
+    <None Include="General\Model_General.edmx.diagram">
+      <DependentUpon>Model_General.edmx</DependentUpon>
+    </None>
+    <None Include="General\Model_General.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_General.edmx</DependentUpon>
+      <LastGenOutput>Model_General.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Inventario\ModelInventario.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelInventario.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Inventario\ModelInventario.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelInventario.edmx</DependentUpon>
+      <LastGenOutput>ModelInventario.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Inventario\ModelInventario.edmx.diagram">
+      <DependentUpon>ModelInventario.edmx</DependentUpon>
+    </None>
+    <None Include="Inventario\ModelInventario.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelInventario.edmx</DependentUpon>
+      <LastGenOutput>ModelInventario.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="SeguridadAcceso\Model_Seguridad_Acceso.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -160,6 +317,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contabilidad\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

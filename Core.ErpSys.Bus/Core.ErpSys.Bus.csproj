@@ -39,13 +39,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\fa_cbteVta_Bus.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_det_Bus.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_Talonario_Bus.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_tipo_Bus.cs" />
+    <Compile Include="Facturacion\fa_cliente_Bus.cs" />
+    <Compile Include="General\tb_impuesto_Bus.cs" />
+    <Compile Include="General\tb_Impuesto_tipo_Bus.cs" />
+    <Compile Include="Inventario\in_producto_Bus.cs" />
+    <Compile Include="General\tb_catalogo_Bus.cs" />
+    <Compile Include="General\tb_empresa_Bus.cs" />
+    <Compile Include="General\tb_persona_Bus.cs" />
+    <Compile Include="General\tb_puntoVta_Bus.cs" />
+    <Compile Include="General\tb_sucursal_Bus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_menu_Bus.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_menu_x_seg_usuario_Bus.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_Bus.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_perfil_x_seg_menu_Bus.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_Bus.cs" />
-    <Compile Include="SeguridadAcceso\tb_seg_usuario_sesion_Bus.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_Bus.cs" />
+    <Compile Include="SeguridadAcceso\seg_menu_x_seg_usuario_Bus.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_Bus.cs" />
+    <Compile Include="SeguridadAcceso\seg_perfil_x_seg_menu_Bus.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_Bus.cs" />
+    <Compile Include="SeguridadAcceso\seg_usuario_sesion_Bus.cs" />
     <Compile Include="Sistemas\tb_sis_Formulario_Bus.cs" />
     <Compile Include="Sistemas\tb_sis_reporte_Bus.cs" />
   </ItemGroup>
@@ -59,7 +72,9 @@
       <Name>Core.ErpSys.Info</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Contabilidad\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -36,7 +36,6 @@ namespace Core.ErpSys.Data.Sistemas
             return ListInfo;
         }
 
-
         public tb_sis_Formulario_Info Get_Info_Formulario(string IdFormulario)
         {
             tb_sis_Formulario_Info Info = new tb_sis_Formulario_Info();

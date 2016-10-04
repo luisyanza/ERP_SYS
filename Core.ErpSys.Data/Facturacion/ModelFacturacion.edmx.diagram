@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6f0dc4ba30a7421bb7ab606ecbc3de41" Name="Diagram1">
+        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta_det" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta_tipo" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cliente" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_det_fa_cbteVta" ManuallyRouted="false" />
+        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cliente" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta_Talonario" Width="1.5" PointX="5.04350948196068" PointY="25.62639000715054" />
+        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERP_SYSModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERP_SYSModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ERP_SYSModel1StoreContainer">
           <EntitySet Name="seg_menu" EntityType="ERP_SYSModel1.Store.seg_menu" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="seg_menu_x_seg_usuario" EntityType="ERP_SYSModel1.Store.seg_menu_x_seg_usuario" store:Type="Tables" Schema="dbo" />
@@ -42,6 +42,8 @@
           <Property Name="nom_menu" Type="varchar" Nullable="false" MaxLength="500" />
           <Property Name="IdMenuPadre" Type="varchar" MaxLength="50" />
           <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="posicion" Type="int" />
+          <Property Name="nivel" Type="int" />
           <Property Name="path_web" Type="varchar" Nullable="false" MaxLength="500" />
           <Property Name="nom_webform" Type="varchar" Nullable="false" MaxLength="500" />
           <Property Name="observacion" Type="varchar" Nullable="false" MaxLength="500" />
@@ -161,26 +163,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_SYSModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Entities_Seguridad_Accesos" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="seg_menu" EntityType="ERP_SYSModel1.seg_menu" />
           <EntitySet Name="seg_menu_x_seg_usuario" EntityType="ERP_SYSModel1.seg_menu_x_seg_usuario" />
           <EntitySet Name="seg_perfil" EntityType="ERP_SYSModel1.seg_perfil" />
           <EntitySet Name="seg_perfil_x_seg_menu" EntityType="ERP_SYSModel1.seg_perfil_x_seg_menu" />
           <EntitySet Name="seg_usuario" EntityType="ERP_SYSModel1.seg_usuario" />
           <EntitySet Name="seg_usuario_sesion" EntityType="ERP_SYSModel1.seg_usuario_sesion" />
-          <AssociationSet Name="FK_seg_menu_x_seg_usuario_seg_menu" Association="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_menu">
-            <End Role="seg_menu" EntitySet="seg_menu" />
-            <End Role="seg_menu_x_seg_usuario" EntitySet="seg_menu_x_seg_usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_seg_perfil_x_seg_menu_seg_menu" Association="ERP_SYSModel1.FK_seg_perfil_x_seg_menu_seg_menu">
-            <End Role="seg_menu" EntitySet="seg_menu" />
-            <End Role="seg_perfil_x_seg_menu" EntitySet="seg_perfil_x_seg_menu" />
-          </AssociationSet>
           <AssociationSet Name="FK_seg_menu_x_seg_usuario_seg_usuario" Association="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_usuario">
             <End Role="seg_usuario" EntitySet="seg_usuario" />
             <End Role="seg_menu_x_seg_usuario" EntitySet="seg_menu_x_seg_usuario" />
@@ -193,26 +185,16 @@
             <End Role="seg_usuario" EntitySet="seg_usuario" />
             <End Role="seg_usuario_sesion" EntitySet="seg_usuario_sesion" />
           </AssociationSet>
+          <EntitySet Name="seg_menu" EntityType="ERP_SYSModel1.seg_menu" />
+          <AssociationSet Name="FK_seg_menu_x_seg_usuario_seg_menu" Association="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_menu">
+            <End Role="seg_menu" EntitySet="seg_menu" />
+            <End Role="seg_menu_x_seg_usuario" EntitySet="seg_menu_x_seg_usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_seg_perfil_x_seg_menu_seg_menu" Association="ERP_SYSModel1.FK_seg_perfil_x_seg_menu_seg_menu">
+            <End Role="seg_menu" EntitySet="seg_menu" />
+            <End Role="seg_perfil_x_seg_menu" EntitySet="seg_perfil_x_seg_menu" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="seg_menu">
-          <Key>
-            <PropertyRef Name="IdMenu" />
-          </Key>
-          <Property Name="IdMenu" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="cod_menu" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nom_menu" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="IdMenuPadre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
-          <Property Name="path_web" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="nom_webform" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="observacion" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="IdFormulario" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="IdReporte" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="esFormulario" Type="Boolean" />
-          <Property Name="esReporte" Type="Boolean" />
-          <NavigationProperty Name="seg_menu_x_seg_usuario" Relationship="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_menu" FromRole="seg_menu" ToRole="seg_menu_x_seg_usuario" />
-          <NavigationProperty Name="seg_perfil_x_seg_menu" Relationship="ERP_SYSModel1.FK_seg_perfil_x_seg_menu_seg_menu" FromRole="seg_menu" ToRole="seg_perfil_x_seg_menu" />
-        </EntityType>
         <EntityType Name="seg_menu_x_seg_usuario">
           <Key>
             <PropertyRef Name="IdMenu" />
@@ -221,8 +203,8 @@
           <Property Name="IdMenu" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="IdUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="observacion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="seg_menu" Relationship="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_menu" FromRole="seg_menu_x_seg_usuario" ToRole="seg_menu" />
           <NavigationProperty Name="seg_usuario" Relationship="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_usuario" FromRole="seg_menu_x_seg_usuario" ToRole="seg_usuario" />
+          <NavigationProperty Name="seg_menu" Relationship="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_menu" FromRole="seg_menu_x_seg_usuario" ToRole="seg_menu" />
         </EntityType>
         <EntityType Name="seg_perfil">
           <Key>
@@ -241,8 +223,8 @@
           <Property Name="IdPerfil" Type="Int32" Nullable="false" />
           <Property Name="IdMenu" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="observacion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="seg_menu" Relationship="ERP_SYSModel1.FK_seg_perfil_x_seg_menu_seg_menu" FromRole="seg_perfil_x_seg_menu" ToRole="seg_menu" />
           <NavigationProperty Name="seg_perfil" Relationship="ERP_SYSModel1.FK_seg_perfil_x_seg_menu_seg_perfil" FromRole="seg_perfil_x_seg_menu" ToRole="seg_perfil" />
+          <NavigationProperty Name="seg_menu" Relationship="ERP_SYSModel1.FK_seg_perfil_x_seg_menu_seg_menu" FromRole="seg_perfil_x_seg_menu" ToRole="seg_menu" />
         </EntityType>
         <EntityType Name="seg_usuario">
           <Key>
@@ -272,30 +254,6 @@
           <Property Name="equipo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="seg_usuario" Relationship="ERP_SYSModel1.FK_seg_usuario_sesion_seg_usuario" FromRole="seg_usuario_sesion" ToRole="seg_usuario" />
         </EntityType>
-        <Association Name="FK_seg_menu_x_seg_usuario_seg_menu">
-          <End Role="seg_menu" Type="ERP_SYSModel1.seg_menu" Multiplicity="1" />
-          <End Role="seg_menu_x_seg_usuario" Type="ERP_SYSModel1.seg_menu_x_seg_usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="seg_menu">
-              <PropertyRef Name="IdMenu" />
-            </Principal>
-            <Dependent Role="seg_menu_x_seg_usuario">
-              <PropertyRef Name="IdMenu" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_seg_perfil_x_seg_menu_seg_menu">
-          <End Role="seg_menu" Type="ERP_SYSModel1.seg_menu" Multiplicity="1" />
-          <End Role="seg_perfil_x_seg_menu" Type="ERP_SYSModel1.seg_perfil_x_seg_menu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="seg_menu">
-              <PropertyRef Name="IdMenu" />
-            </Principal>
-            <Dependent Role="seg_perfil_x_seg_menu">
-              <PropertyRef Name="IdMenu" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_seg_menu_x_seg_usuario_seg_usuario">
           <End Role="seg_usuario" Type="ERP_SYSModel1.seg_usuario" Multiplicity="1" />
           <End Role="seg_menu_x_seg_usuario" Type="ERP_SYSModel1.seg_menu_x_seg_usuario" Multiplicity="*" />
@@ -332,30 +290,57 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="seg_menu">
+          <Key>
+            <PropertyRef Name="IdMenu" />
+          </Key>
+          <Property Type="String" Name="IdMenu" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cod_menu" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_menu" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdMenuPadre" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="Int32" Name="posicion" />
+          <Property Type="Int32" Name="nivel" />
+          <Property Type="String" Name="path_web" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_webform" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="observacion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdFormulario" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdReporte" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="esFormulario" />
+          <Property Type="Boolean" Name="esReporte" />
+          <NavigationProperty Name="seg_menu_x_seg_usuario" Relationship="ERP_SYSModel1.FK_seg_menu_x_seg_usuario_seg_menu" FromRole="seg_menu" ToRole="seg_menu_x_seg_usuario" />
+          <NavigationProperty Name="seg_perfil_x_seg_menu" Relationship="ERP_SYSModel1.FK_seg_perfil_x_seg_menu_seg_menu" FromRole="seg_menu" ToRole="seg_perfil_x_seg_menu" />
+        </EntityType>
+        <Association Name="FK_seg_menu_x_seg_usuario_seg_menu">
+          <End Type="ERP_SYSModel1.seg_menu" Role="seg_menu" Multiplicity="1" />
+          <End Type="ERP_SYSModel1.seg_menu_x_seg_usuario" Role="seg_menu_x_seg_usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seg_menu">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="seg_menu_x_seg_usuario">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_seg_perfil_x_seg_menu_seg_menu">
+          <End Type="ERP_SYSModel1.seg_menu" Role="seg_menu" Multiplicity="1" />
+          <End Type="ERP_SYSModel1.seg_perfil_x_seg_menu" Role="seg_perfil_x_seg_menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seg_menu">
+              <PropertyRef Name="IdMenu" />
+            </Principal>
+            <Dependent Role="seg_perfil_x_seg_menu">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ERP_SYSModel1StoreContainer" CdmEntityContainer="Entities_Seguridad_Accesos">
-          <EntitySetMapping Name="seg_menu">
-            <EntityTypeMapping TypeName="ERP_SYSModel1.seg_menu">
-              <MappingFragment StoreEntitySet="seg_menu">
-                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
-                <ScalarProperty Name="cod_menu" ColumnName="cod_menu" />
-                <ScalarProperty Name="nom_menu" ColumnName="nom_menu" />
-                <ScalarProperty Name="IdMenuPadre" ColumnName="IdMenuPadre" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="path_web" ColumnName="path_web" />
-                <ScalarProperty Name="nom_webform" ColumnName="nom_webform" />
-                <ScalarProperty Name="observacion" ColumnName="observacion" />
-                <ScalarProperty Name="IdFormulario" ColumnName="IdFormulario" />
-                <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
-                <ScalarProperty Name="esFormulario" ColumnName="esFormulario" />
-                <ScalarProperty Name="esReporte" ColumnName="esReporte" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="seg_menu_x_seg_usuario">
             <EntityTypeMapping TypeName="ERP_SYSModel1.seg_menu_x_seg_usuario">
               <MappingFragment StoreEntitySet="seg_menu_x_seg_usuario">
@@ -407,6 +392,26 @@
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="ip" ColumnName="ip" />
                 <ScalarProperty Name="equipo" ColumnName="equipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seg_menu">
+            <EntityTypeMapping TypeName="ERP_SYSModel1.seg_menu">
+              <MappingFragment StoreEntitySet="seg_menu">
+                <ScalarProperty Name="esReporte" ColumnName="esReporte" />
+                <ScalarProperty Name="esFormulario" ColumnName="esFormulario" />
+                <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
+                <ScalarProperty Name="IdFormulario" ColumnName="IdFormulario" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="nom_webform" ColumnName="nom_webform" />
+                <ScalarProperty Name="path_web" ColumnName="path_web" />
+                <ScalarProperty Name="nivel" ColumnName="nivel" />
+                <ScalarProperty Name="posicion" ColumnName="posicion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="IdMenuPadre" ColumnName="IdMenuPadre" />
+                <ScalarProperty Name="nom_menu" ColumnName="nom_menu" />
+                <ScalarProperty Name="cod_menu" ColumnName="cod_menu" />
+                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.ErpSys.Data.Sistemas;
 using Core.ErpSys.Info.Sistemas;
+using Core.ErpSys.Info.General;
+
 
 namespace Core.ErpSys.Bus.Sistemas
 {
