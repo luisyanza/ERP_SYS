@@ -14,7 +14,7 @@ namespace Core.ErpSys.Bus.SeguridadAcceso
         seg_perfil_x_seg_menu_Data Odata = new seg_perfil_x_seg_menu_Data();
 
         
-        public seg_perfil_x_seg_menu_Info Get_Info_Pefil_x_Menustring(string IdMenu, int IdPErfil)
+        public seg_perfil_x_seg_menu_Info Get_Info_Pefil_x_Menu(string IdMenu, int IdPErfil)
         {
 
             return Odata.Get_Info_Pefil_x_Menu(IdMenu,IdPErfil);

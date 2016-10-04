@@ -51,12 +51,15 @@
     <Compile Include="Facturacion\fa_cbteVta.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Facturacion\fa_cbteVta_Data.cs" />
     <Compile Include="Facturacion\fa_cbteVta_det.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Facturacion\fa_cbteVta_det_Data.cs" />
     <Compile Include="Facturacion\fa_cbteVta_Talonario.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Facturacion\fa_cbteVta_Talonario_Data.cs" />
     <Compile Include="Facturacion\fa_cbteVta_tipo.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>

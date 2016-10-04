@@ -14,36 +14,69 @@ namespace WSCoreErp.SeguridadAcceso
     public class Service1 : IWS_Seg_Menu
     {
 
-        seg_menu_Bus oBus = new seg_menu_Bus();
+        seg_menu_Bus oBusMenu = new seg_menu_Bus();
 
         public List<seg_menu_Info> Get_List_Menu()
         {
-            return oBus.Get_List_Menu();
+            return oBusMenu.Get_List_Menu();
         }
 
         public List<seg_menu_Info> Get_List_Menu_Usuario(string IdUsuario)
         {
-            return oBus.Get_List_Menu(IdUsuario);
+            return oBusMenu.Get_List_Menu(IdUsuario);
         }
 
         public seg_menu_Info Get_Info_Menu(string IdMenu)
         {
-            return oBus.Get_Info_Menu(IdMenu);
+            return oBusMenu.Get_Info_Menu(IdMenu);
         }
 
-        public bool GrabarDB(seg_menu_Info Info)
+        public bool GrabarDBMenu(seg_menu_Info Info)
         {
-            return oBus.GrabarDB(Info);
+            return oBusMenu.GrabarDB(Info);
         }
 
-        public bool ModificarDB(seg_menu_Info Info)
+        public bool ModificarDBMenu(seg_menu_Info Info)
         {
-            return oBus.ModificarDB(Info);
+            return oBusMenu.ModificarDB(Info);
         }
 
-        public bool AnularDB(seg_menu_Info Info)
+        public bool AnularDBMenu(seg_menu_Info Info)
         {
-            return oBus.AnularDB(Info);
+            return oBusMenu.AnularDB(Info);
         }
+
+        seg_menu_x_seg_usuario_Bus oBusMenuUsuario = new seg_menu_x_seg_usuario_Bus();
+
+        public seg_menu_x_seg_usuario_Info Get_Info_Menu_Usuario(string IdMenu, string IdUsuario)
+        {
+
+            return oBusMenuUsuario.Get_Info_Menu_Usuario(IdMenu, IdUsuario);
+
+        }
+
+        public Boolean GrabarDBMenu_x_Usuario(seg_menu_x_seg_usuario_Info Info)
+        {
+            return oBusMenuUsuario.GrabarDB(Info);
+
+        }
+
+        seg_perfil_x_seg_menu_Bus OBusPerfilMenu = new seg_perfil_x_seg_menu_Bus();
+
+
+        public seg_perfil_x_seg_menu_Info Get_Info_Pefil_x_Menu(string IdMenu, int IdPErfil)
+        {
+
+            return OBusPerfilMenu.Get_Info_Pefil_x_Menu(IdMenu, IdPErfil);
+
+        }
+
+        public Boolean GrabarDBPerfil_x_menu(seg_perfil_x_seg_menu_Info Info)
+        {
+            return OBusPerfilMenu.GrabarDB(Info);
+
+        }
+
+
     }
 }

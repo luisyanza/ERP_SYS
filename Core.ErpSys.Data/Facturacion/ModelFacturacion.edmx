@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERP_SYSModel3.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERP_SYSModel3.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ERP_SYSModel3StoreContainer">
           <EntitySet Name="fa_cbteVta" EntityType="ERP_SYSModel3.Store.fa_cbteVta" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="fa_cbteVta_det" EntityType="ERP_SYSModel3.Store.fa_cbteVta_det" store:Type="Tables" Schema="dbo" />
@@ -82,6 +82,7 @@
           <Property Name="IdCbteVtaTipo" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="num_CbteVta" Type="varchar" Nullable="false" MaxLength="150" />
           <Property Name="num_autorizacion" Type="varchar" MaxLength="150" />
+          <Property Name="usado" Type="bit" />
         </EntityType>
         <EntityType Name="fa_cbteVta_tipo">
           <Key>
@@ -168,24 +169,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_SYSModel3" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Entities_Facturacion" p1:LazyLoadingEnabled="true">
           <EntitySet Name="fa_cbteVta" EntityType="ERP_SYSModel3.fa_cbteVta" />
           <EntitySet Name="fa_cbteVta_det" EntityType="ERP_SYSModel3.fa_cbteVta_det" />
-          <EntitySet Name="fa_cbteVta_Talonario" EntityType="ERP_SYSModel3.fa_cbteVta_Talonario" />
           <EntitySet Name="fa_cbteVta_tipo" EntityType="ERP_SYSModel3.fa_cbteVta_tipo" />
           <EntitySet Name="fa_cliente" EntityType="ERP_SYSModel3.fa_cliente" />
           <AssociationSet Name="FK_fa_cbteVta_det_fa_cbteVta" Association="ERP_SYSModel3.FK_fa_cbteVta_det_fa_cbteVta">
             <End Role="fa_cbteVta" EntitySet="fa_cbteVta" />
             <End Role="fa_cbteVta_det" EntitySet="fa_cbteVta_det" />
-          </AssociationSet>
-          <AssociationSet Name="FK_fa_cbteVta_fa_cbteVta_Talonario" Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario">
-            <End Role="fa_cbteVta_Talonario" EntitySet="fa_cbteVta_Talonario" />
-            <End Role="fa_cbteVta" EntitySet="fa_cbteVta" />
           </AssociationSet>
           <AssociationSet Name="FK_fa_cbteVta_fa_cbteVta_tipo" Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_tipo">
             <End Role="fa_cbteVta_tipo" EntitySet="fa_cbteVta_tipo" />
@@ -193,6 +188,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_fa_cbteVta_fa_cliente" Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cliente">
             <End Role="fa_cliente" EntitySet="fa_cliente" />
+            <End Role="fa_cbteVta" EntitySet="fa_cbteVta" />
+          </AssociationSet>
+          <EntitySet Name="fa_cbteVta_Talonario" EntityType="ERP_SYSModel3.fa_cbteVta_Talonario" />
+          <AssociationSet Name="FK_fa_cbteVta_fa_cbteVta_Talonario" Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario">
+            <End Role="fa_cbteVta_Talonario" EntitySet="fa_cbteVta_Talonario" />
             <End Role="fa_cbteVta" EntitySet="fa_cbteVta" />
           </AssociationSet>
         </EntityContainer>
@@ -212,9 +212,9 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="observacion" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="fa_cbteVta_det" Relationship="ERP_SYSModel3.FK_fa_cbteVta_det_fa_cbteVta" FromRole="fa_cbteVta" ToRole="fa_cbteVta_det" />
-          <NavigationProperty Name="fa_cbteVta_Talonario" Relationship="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario" FromRole="fa_cbteVta" ToRole="fa_cbteVta_Talonario" />
           <NavigationProperty Name="fa_cbteVta_tipo" Relationship="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_tipo" FromRole="fa_cbteVta" ToRole="fa_cbteVta_tipo" />
           <NavigationProperty Name="fa_cliente" Relationship="ERP_SYSModel3.FK_fa_cbteVta_fa_cliente" FromRole="fa_cbteVta" ToRole="fa_cliente" />
+          <NavigationProperty Name="fa_cbteVta_Talonario" Relationship="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario" FromRole="fa_cbteVta" ToRole="fa_cbteVta_Talonario" />
         </EntityType>
         <EntityType Name="fa_cbteVta_det">
           <Key>
@@ -240,22 +240,6 @@
           <Property Name="IdImpuesto_Iva" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="total" Type="Double" Nullable="false" />
           <NavigationProperty Name="fa_cbteVta" Relationship="ERP_SYSModel3.FK_fa_cbteVta_det_fa_cbteVta" FromRole="fa_cbteVta_det" ToRole="fa_cbteVta" />
-        </EntityType>
-        <EntityType Name="fa_cbteVta_Talonario">
-          <Key>
-            <PropertyRef Name="IdEmpresa" />
-            <PropertyRef Name="IdSucursal" />
-            <PropertyRef Name="IdPuntoVta" />
-            <PropertyRef Name="IdCbteVtaTipo" />
-            <PropertyRef Name="num_CbteVta" />
-          </Key>
-          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
-          <Property Name="IdSucursal" Type="Int32" Nullable="false" />
-          <Property Name="IdPuntoVta" Type="Int32" Nullable="false" />
-          <Property Name="IdCbteVtaTipo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="num_CbteVta" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="num_autorizacion" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="fa_cbteVta" Relationship="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario" FromRole="fa_cbteVta_Talonario" ToRole="fa_cbteVta" />
         </EntityType>
         <EntityType Name="fa_cbteVta_tipo">
           <Key>
@@ -296,26 +280,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_fa_cbteVta_fa_cbteVta_Talonario">
-          <End Role="fa_cbteVta_Talonario" Type="ERP_SYSModel3.fa_cbteVta_Talonario" Multiplicity="0..1" />
-          <End Role="fa_cbteVta" Type="ERP_SYSModel3.fa_cbteVta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="fa_cbteVta_Talonario">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdSucursal" />
-              <PropertyRef Name="IdPuntoVta" />
-              <PropertyRef Name="IdCbteVtaTipo" />
-              <PropertyRef Name="num_CbteVta" />
-            </Principal>
-            <Dependent Role="fa_cbteVta">
-              <PropertyRef Name="IdEmpresa" />
-              <PropertyRef Name="IdSucursal" />
-              <PropertyRef Name="IdPuntoVta" />
-              <PropertyRef Name="IdCbteVtaTipo" />
-              <PropertyRef Name="num_CbteVta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_fa_cbteVta_fa_cbteVta_tipo">
           <End Role="fa_cbteVta_tipo" Type="ERP_SYSModel3.fa_cbteVta_tipo" Multiplicity="1" />
           <End Role="fa_cbteVta" Type="ERP_SYSModel3.fa_cbteVta" Multiplicity="*" />
@@ -341,6 +305,43 @@
             <Dependent Role="fa_cbteVta">
               <PropertyRef Name="IdEmpresa" />
               <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="fa_cbteVta_Talonario">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdSucursal" />
+            <PropertyRef Name="IdPuntoVta" />
+            <PropertyRef Name="IdCbteVtaTipo" />
+            <PropertyRef Name="num_CbteVta" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdSucursal" Nullable="false" />
+          <Property Type="Int32" Name="IdPuntoVta" Nullable="false" />
+          <Property Type="String" Name="IdCbteVtaTipo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="num_CbteVta" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="num_autorizacion" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="usado" />
+          <NavigationProperty Name="fa_cbteVta" Relationship="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario" FromRole="fa_cbteVta_Talonario" ToRole="fa_cbteVta" />
+        </EntityType>
+        <Association Name="FK_fa_cbteVta_fa_cbteVta_Talonario">
+          <End Type="ERP_SYSModel3.fa_cbteVta_Talonario" Role="fa_cbteVta_Talonario" Multiplicity="0..1" />
+          <End Type="ERP_SYSModel3.fa_cbteVta" Role="fa_cbteVta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fa_cbteVta_Talonario">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdSucursal" />
+              <PropertyRef Name="IdPuntoVta" />
+              <PropertyRef Name="IdCbteVtaTipo" />
+              <PropertyRef Name="num_CbteVta" />
+            </Principal>
+            <Dependent Role="fa_cbteVta">
+              <PropertyRef Name="IdEmpresa" />
+              <PropertyRef Name="IdSucursal" />
+              <PropertyRef Name="IdPuntoVta" />
+              <PropertyRef Name="IdCbteVtaTipo" />
+              <PropertyRef Name="num_CbteVta" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -387,18 +388,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="fa_cbteVta_Talonario">
-            <EntityTypeMapping TypeName="ERP_SYSModel3.fa_cbteVta_Talonario">
-              <MappingFragment StoreEntitySet="fa_cbteVta_Talonario">
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
-                <ScalarProperty Name="IdPuntoVta" ColumnName="IdPuntoVta" />
-                <ScalarProperty Name="IdCbteVtaTipo" ColumnName="IdCbteVtaTipo" />
-                <ScalarProperty Name="num_CbteVta" ColumnName="num_CbteVta" />
-                <ScalarProperty Name="num_autorizacion" ColumnName="num_autorizacion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="fa_cbteVta_tipo">
             <EntityTypeMapping TypeName="ERP_SYSModel3.fa_cbteVta_tipo">
               <MappingFragment StoreEntitySet="fa_cbteVta_tipo">
@@ -417,6 +406,19 @@
                 <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
                 <ScalarProperty Name="IdTipoCliente" ColumnName="IdTipoCliente" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fa_cbteVta_Talonario">
+            <EntityTypeMapping TypeName="ERP_SYSModel3.fa_cbteVta_Talonario">
+              <MappingFragment StoreEntitySet="fa_cbteVta_Talonario">
+                <ScalarProperty Name="usado" ColumnName="usado" />
+                <ScalarProperty Name="num_autorizacion" ColumnName="num_autorizacion" />
+                <ScalarProperty Name="num_CbteVta" ColumnName="num_CbteVta" />
+                <ScalarProperty Name="IdCbteVtaTipo" ColumnName="IdCbteVtaTipo" />
+                <ScalarProperty Name="IdPuntoVta" ColumnName="IdPuntoVta" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

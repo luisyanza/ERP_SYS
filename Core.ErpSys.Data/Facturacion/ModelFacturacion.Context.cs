@@ -27,8 +27,8 @@ namespace Core.ErpSys.Data.Facturacion
     
         public DbSet<fa_cbteVta> fa_cbteVta { get; set; }
         public DbSet<fa_cbteVta_det> fa_cbteVta_det { get; set; }
-        public DbSet<fa_cbteVta_Talonario> fa_cbteVta_Talonario { get; set; }
         public DbSet<fa_cbteVta_tipo> fa_cbteVta_tipo { get; set; }
         public DbSet<fa_cliente> fa_cliente { get; set; }
+        public DbSet<fa_cbteVta_Talonario> fa_cbteVta_Talonario { get; set; }
     }
 }

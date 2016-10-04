@@ -12,6 +12,10 @@ namespace WSCoreErp.SeguridadAcceso
     [ServiceContract]
     public interface IWS_Seg_Menu
     {
+        /// <summary>  Inicia seg_menu_Bus
+        /// Retorna La Lista del Menu completa
+        /// </summary>
+        /// <returns></returns>
         [OperationContract]
         List<seg_menu_Info> Get_List_Menu();
         
@@ -22,14 +26,28 @@ namespace WSCoreErp.SeguridadAcceso
         seg_menu_Info Get_Info_Menu(string IdMenu);
 
         [OperationContract]
-        Boolean GrabarDB(seg_menu_Info Info);
+        Boolean GrabarDBMenu(seg_menu_Info Info);
 
         [OperationContract]
-        Boolean ModificarDB(seg_menu_Info Info);
+        Boolean ModificarDBMenu(seg_menu_Info Info);
 
         [OperationContract]
-        Boolean AnularDB(seg_menu_Info Info);
+        Boolean AnularDBMenu(seg_menu_Info Info);
 
+        //seg_menu_x_seg_usuario_Bus
+
+        [OperationContract]
+        seg_menu_x_seg_usuario_Info Get_Info_Menu_Usuario(string IdMenu, string IdUsuario);
+
+        [OperationContract]
+        Boolean GrabarDBMenu_x_Usuario(seg_menu_x_seg_usuario_Info Info);
+
+        // seg_perfil_x_seg_menu_Bus
+        [OperationContract]
+        seg_perfil_x_seg_menu_Info Get_Info_Pefil_x_Menu(string IdMenu, int IdPErfil);
+
+        [OperationContract]
+        Boolean GrabarDBPerfil_x_menu(seg_perfil_x_seg_menu_Info Info);
 
 
 

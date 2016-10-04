@@ -30,8 +30,8 @@ namespace Core.ErpSys.Data.Facturacion
         public string observacion { get; set; }
     
         public virtual ICollection<fa_cbteVta_det> fa_cbteVta_det { get; set; }
-        public virtual fa_cbteVta_Talonario fa_cbteVta_Talonario { get; set; }
         public virtual fa_cbteVta_tipo fa_cbteVta_tipo { get; set; }
         public virtual fa_cliente fa_cliente { get; set; }
+        public virtual fa_cbteVta_Talonario fa_cbteVta_Talonario { get; set; }
     }
 }
