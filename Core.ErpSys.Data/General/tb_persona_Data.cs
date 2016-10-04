@@ -24,7 +24,7 @@ namespace Core.ErpSys.Data.General
                    
                     
                     ListInfo.Add(new tb_persona_Info(item.IdPersona, item.cod_persona , item.nombre , item.apellido 
-                        ,item.razon_social,  item.IdTipoDocumento ,item.Num_documento, item.IdTipoPersona ,item.estado);
+                        ,item.razon_social,  item.IdTipoDocumento ,item.Num_documento, item.IdTipoPersona ,item.estado));
                     
                 }
 

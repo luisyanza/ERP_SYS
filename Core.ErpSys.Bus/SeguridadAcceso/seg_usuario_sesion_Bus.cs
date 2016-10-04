@@ -8,7 +8,7 @@ using Core.ErpSys.Info.SeguridadAcceso;
 
 namespace Core.ErpSys.Bus.SeguridadAcceso
 {
-    public class tb_seg_usuario_sesion_sesion_Bus
+    public class seg_usuario_sesion_Bus
     {
         seg_usuario_sesion_Data Odata = new seg_usuario_sesion_Data();
 

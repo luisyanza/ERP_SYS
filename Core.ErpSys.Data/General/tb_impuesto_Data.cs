@@ -23,7 +23,7 @@ namespace Core.ErpSys.Data.General
 
                 foreach (var item in selectq )
                 {
-                    ListInfo.Add(new tb_impuesto_Info(item.IdImpuesto, item.nom_Impuesto_tipo, item.IdImpuesto_tipo));
+                    ListInfo.Add(new tb_impuesto_Info(item.IdImpuesto, item.nom_Impuesto, item.IdImpuesto_tipo));
 
                 }
             }

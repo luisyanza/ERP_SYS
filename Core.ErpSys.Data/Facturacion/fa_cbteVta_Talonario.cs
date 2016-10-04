@@ -25,6 +25,7 @@ namespace Core.ErpSys.Data.Facturacion
         public string IdCbteVtaTipo { get; set; }
         public string num_CbteVta { get; set; }
         public string num_autorizacion { get; set; }
+        public Nullable<bool> usado { get; set; }
     
         public virtual ICollection<fa_cbteVta> fa_cbteVta { get; set; }
     }

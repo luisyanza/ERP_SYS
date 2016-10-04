@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WSCoreErp.SeguridadAcceso.WS_Seg_Perfil_Usuario" CodeBehind="WS_Seg_Perfil_Usuario.svc.cs" %>

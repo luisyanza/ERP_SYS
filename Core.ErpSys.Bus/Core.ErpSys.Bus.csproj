@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\fa_cbteVta_Bus.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_det_Bus.cs" />
+    <Compile Include="Facturacion\fa_cbteVta_Talonario_Bus.cs" />
     <Compile Include="Facturacion\fa_cbteVta_tipo_Bus.cs" />
     <Compile Include="Facturacion\fa_cliente_Bus.cs" />
     <Compile Include="General\tb_impuesto_Bus.cs" />
