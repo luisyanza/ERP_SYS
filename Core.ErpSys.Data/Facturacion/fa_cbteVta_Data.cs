@@ -7,6 +7,7 @@ using Core.ErpSys.Info.Facturacion;
 using Core.ErpSys.Data.Facturacion;
 
 
+
 namespace Core.ErpSys.Data.Facturacion
 {
    public class fa_cbteVta_Data
