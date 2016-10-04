@@ -24,16 +24,17 @@ namespace Core.ErpSys.Bus.Facturacion
         
         }
 
-        public List<fa_cbteVta_Talonario_Info> GrabarDBTalonario(int IdEmpresa, int IdSucursal, int IdPuntoVta, string idCbteVtaTipo, string IniciaRango, int Rango)
+        public Boolean GrabarDBTalonario(int IdEmpresa, int IdSucursal, int IdPuntoVta, string idCbteVtaTipo, string IniciaRango, int Rango)
         {
             try
             {
+                 
                 return oDAta.GrabarDBTalonario(IdEmpresa, IdSucursal, IdPuntoVta, idCbteVtaTipo, IniciaRango, Rango);
             }
             catch (Exception)
             {
-
-                return new List<fa_cbteVta_Talonario_Info>(); 
+                return false; 
+                
             }
         
         }

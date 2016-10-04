@@ -16,6 +16,6 @@ namespace WSCoreErp.Facturacion
         fa_cbteVta_Talonario_Info Get_NumCbteVta_Talonario(int IdEmpresa, int IdSucursal, int IdPuntoVta, string IdCbteVtaTipo);
  
         [OperationContract]
-        List<fa_cbteVta_Talonario_Info> GrabarDBTalonario(int IdEmpresa, int IdSucursal, int IdPuntoVta, string idCbteVtaTipo, string IniciaRango, int Rango);
+        Boolean  GrabarDBTalonario(int IdEmpresa, int IdSucursal, int IdPuntoVta, string idCbteVtaTipo, string IniciaRango, int Rango);
     }
 }
