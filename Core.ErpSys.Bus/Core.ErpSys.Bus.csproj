@@ -41,10 +41,16 @@
   <ItemGroup>
     <Compile Include="Facturacion\fac_catalogo_Bus.cs" />
     <Compile Include="Facturacion\fac_cbteVta_Bus.cs" />
-    <Compile Include="Facturacion\fac_cbteVta_det_Bus.cs" />
-    <Compile Include="Facturacion\fac_cbteVta_Talonario_Bus.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_det_Bus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Facturacion\fac_cbteVta_Talonario_Bus.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cbteVta_tipo_Bus.cs" />
-    <Compile Include="Facturacion\fac_cliente_Bus.cs" />
+    <Compile Include="Facturacion\fac_cliente_Bus.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cliente_contactos_Bus.cs" />
     <Compile Include="Facturacion\fac_cliente_pto_emision_cliente_Bus.cs" />
     <Compile Include="Facturacion\fac_cliente_tipo_Bus.cs" />

@@ -40,12 +40,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facturacion\fac_catalogo_Info.cs" />
-    <Compile Include="Facturacion\fac_cbteVta_det_Info.cs" />
-    <Compile Include="Facturacion\fac_cbteVta_Info.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_det_Info.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Facturacion\fac_cbteVta_Info.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cbteVta_Talonario_Info.cs" />
     <Compile Include="Facturacion\fac_cbteVta_tipo_Info.cs" />
     <Compile Include="Facturacion\fac_cliente_contactos_Info.cs" />
-    <Compile Include="Facturacion\fac_cliente_Info.cs" />
+    <Compile Include="Facturacion\fac_cliente_Info.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cliente_pto_emision_cliente_Info.cs" />
     <Compile Include="Facturacion\fac_cliente_tipo_Info.cs" />
     <Compile Include="Facturacion\fac_cotizacion_det_Info.cs" />

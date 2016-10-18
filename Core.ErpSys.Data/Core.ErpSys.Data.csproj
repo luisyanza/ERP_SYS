@@ -58,11 +58,15 @@
     <Compile Include="Facturacion\fac_cbteVta.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fac_cbteVta_Data.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cbteVta_det.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fac_cbteVta_det_Data.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_det_Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cbteVta_Talonario.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
@@ -78,7 +82,9 @@
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
     <Compile Include="Facturacion\fac_cliente_contactos_Data.cs" />
-    <Compile Include="Facturacion\fac_cliente_Data.cs" />
+    <Compile Include="Facturacion\fac_cliente_Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cliente_pto_emision_cliente.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
