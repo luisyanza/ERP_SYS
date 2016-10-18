@@ -27,6 +27,6 @@
     [Fecha_UltAnu]             DATETIME       NULL,
     [nom_pc]                   VARCHAR (20)   NOT NULL,
     [ip]                       VARCHAR (25)   NOT NULL,
-    CONSTRAINT [PK_fa_cliente] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdCliente] ASC)
+    CONSTRAINT [PK_fac_cliente] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdCliente] ASC)
 );
 

@@ -5,16 +5,32 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e319b13c2f644377a5b70f48cbd36ba3" Name="Diagram1">
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_catalogo" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_catalogo_tipo" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_empresa" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_Impuesto_tipo" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_persona" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_puntoVta" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_sucursal" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="ERP_SYSModel2.FK_tb_sucursal_tb_empresa" ManuallyRouted="false" />
-        <AssociationConnector Association="ERP_SYSModel2.FK_tb_puntoVta_tb_sucursal" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ERP_SYSModel2.tb_impuesto" Width="1.5" PointX="10.563268118800256" PointY="30.662573620054207" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_banco" Width="1.5" PointX="11.728728487961334" PointY="27.920478818901106" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_Calendario" Width="1.5" PointX="6.4865013875470048" PointY="1.7840273537598679" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_catalogo" Width="1.5" PointX="10.202814660129516" PointY="22.429153229309783" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_catalogo_tipo" Width="1.5" PointX="1.1883523022701743" PointY="0.1891334355758193" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_ciudad" Width="1.5" PointX="11.372174726506776" PointY="7.1940353546263811" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_contacto" Width="1.5" PointX="8.5078535808752527" PointY="22.963525216543825" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_dia" Width="1.5" PointX="7.7569197191656194" PointY="22.43358560951128" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_empresa" Width="1.5" PointX="11.257996609088963" PointY="19.524040261061881" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_mes" Width="1.5" PointX="5.6802406784520674" PointY="27.204148111494327" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_modulo" Width="1.5" PointX="5.5763240277656934" PointY="9.0812469465105075" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_pais" Width="1.5" PointX="2.9287096238363115" PointY="15.970617227242615" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_parroquia" Width="1.5" PointX="4.0038369707781065" PointY="26.370187011719768" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_persona" Width="1.5" PointX="11.585041008696445" PointY="16.987607174081546" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_persona_direccion_tipo" Width="1.5" PointX="8.6762213728745561" PointY="16.375165410514533" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_provincia" Width="1.5" PointX="1.7645083674064412" PointY="10.156377469262283" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_puntoVta" Width="1.5" PointX="6.9056715531766741" PointY="24.647771876606985" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_sis_Formulario" Width="1.5" PointX="0.87558131146970264" PointY="26.657919881240428" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_sis_Log_Error_Vzen" Width="1.5" PointX="5.3136459390230693" PointY="29.492044805312549" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_sis_Mensajes_sys" Width="1.5" PointX="5.5104551210582509" PointY="23.52198157809767" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_sis_reporte" Width="1.5" PointX="3.6099865397484905" PointY="30.828812419822818" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_sucursal" Width="1.5" PointX="2.7802922869009397" PointY="20.375112468551432" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_tarjeta" Width="1.5" PointX="5.637970880436697" PointY="17.105282776572409" />
+        <AssociationConnector Association="ERP_SYSModel2.FK_tb_sucursal_tb_empresa" />
+        <AssociationConnector Association="ERP_SYSModel2.FK_tb_puntoVta_tb_sucursal" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_impuesto" Width="1.5" PointX="5.9658684683804717" PointY="10.699171026562885" />
+        <EntityTypeShape EntityType="ERP_SYSModel2.tb_Impuesto_tipo" Width="1.5" PointX="0.78071564099784729" PointY="26.532578123050079" />
         <AssociationConnector Association="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" />
       </Diagram>
     </edmx:Diagrams>

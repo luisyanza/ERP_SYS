@@ -23,7 +23,7 @@ namespace Core.ErpSys.Data.General
 
                 foreach (var item in selectq )
                 {
-                    ListInfo.Add(new tb_impuesto_Info(item.IdImpuesto, item.nom_Impuesto, item.IdImpuesto_tipo));
+                    ListInfo.Add(new tb_impuesto_Info(item.IdImpuesto, item.nom_Impuesto_tipo, item.IdImpuesto_tipo));
 
                 }
             }
@@ -44,7 +44,7 @@ namespace Core.ErpSys.Data.General
                 {
                     var addressG = new tb_impuesto(); 
                     addressG.IdImpuesto = Info.IdImpuesto;
-                    addressG.nom_Impuesto = Info.nom_Impuesto;
+                    addressG.nom_Impuesto_tipo = Info.nom_Impuesto_tipo;
                     addressG.IdImpuesto_tipo = Info.IdImpuesto_tipo;
 
                     context.tb_impuesto.Add(addressG);
@@ -72,7 +72,7 @@ namespace Core.ErpSys.Data.General
                     if (contact != null)
                     {
 
-                        contact.nom_Impuesto = Info.nom_Impuesto;
+                        contact.nom_Impuesto_tipo = Info.nom_Impuesto_tipo;
 
                     }
                     else

@@ -25,10 +25,33 @@ namespace Core.ErpSys.Data.Facturacion
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<fa_cbteVta> fa_cbteVta { get; set; }
-        public DbSet<fa_cbteVta_det> fa_cbteVta_det { get; set; }
-        public DbSet<fa_cbteVta_tipo> fa_cbteVta_tipo { get; set; }
-        public DbSet<fa_cliente> fa_cliente { get; set; }
-        public DbSet<fa_cbteVta_Talonario> fa_cbteVta_Talonario { get; set; }
+        public DbSet<fac_catalogo> fac_catalogo { get; set; }
+        public DbSet<fac_catalogo_tipo> fac_catalogo_tipo { get; set; }
+        public DbSet<fac_cbteVta> fac_cbteVta { get; set; }
+        public DbSet<fac_cbteVta_det> fac_cbteVta_det { get; set; }
+        public DbSet<fac_cbteVta_Talonario> fac_cbteVta_Talonario { get; set; }
+        public DbSet<fac_cbteVta_tipo> fac_cbteVta_tipo { get; set; }
+        public DbSet<fac_cliente> fac_cliente { get; set; }
+        public DbSet<fac_cliente_contactos> fac_cliente_contactos { get; set; }
+        public DbSet<fac_cliente_pto_emision_cliente> fac_cliente_pto_emision_cliente { get; set; }
+        public DbSet<fac_cliente_tipo> fac_cliente_tipo { get; set; }
+        public DbSet<fac_cotizacion> fac_cotizacion { get; set; }
+        public DbSet<fac_cotizacion_det> fac_cotizacion_det { get; set; }
+        public DbSet<fac_devol_venta> fac_devol_venta { get; set; }
+        public DbSet<fac_devol_venta_det> fac_devol_venta_det { get; set; }
+        public DbSet<fac_formaPago> fac_formaPago { get; set; }
+        public DbSet<fac_guia_remision> fac_guia_remision { get; set; }
+        public DbSet<fac_guia_remision_det> fac_guia_remision_det { get; set; }
+        public DbSet<fac_motivo_venta> fac_motivo_venta { get; set; }
+        public DbSet<fac_orden_pedido> fac_orden_pedido { get; set; }
+        public DbSet<fac_orden_pedido_det> fac_orden_pedido_det { get; set; }
+        public DbSet<fac_parametro> fac_parametro { get; set; }
+        public DbSet<fac_pedido_estadoAprobacion> fac_pedido_estadoAprobacion { get; set; }
+        public DbSet<fac_pedido_x_formaPago> fac_pedido_x_formaPago { get; set; }
+        public DbSet<fac_TerminoPago> fac_TerminoPago { get; set; }
+        public DbSet<fac_TerminoPago_Distribucion> fac_TerminoPago_Distribucion { get; set; }
+        public DbSet<fac_TipoNota> fac_TipoNota { get; set; }
+        public DbSet<fac_TipoNota_x_tbsucursal> fac_TipoNota_x_tbsucursal { get; set; }
+        public DbSet<fac_Vendedor> fac_Vendedor { get; set; }
     }
 }

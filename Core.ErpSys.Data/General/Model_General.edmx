@@ -6,14 +6,30 @@
     <edmx:StorageModels>
     <Schema Namespace="ERP_SYSModel2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ERP_SYSModel2StoreContainer">
+          <EntitySet Name="tb_banco" EntityType="ERP_SYSModel2.Store.tb_banco" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_Calendario" EntityType="ERP_SYSModel2.Store.tb_Calendario" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_catalogo" EntityType="ERP_SYSModel2.Store.tb_catalogo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_catalogo_tipo" EntityType="ERP_SYSModel2.Store.tb_catalogo_tipo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_ciudad" EntityType="ERP_SYSModel2.Store.tb_ciudad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_contacto" EntityType="ERP_SYSModel2.Store.tb_contacto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_dia" EntityType="ERP_SYSModel2.Store.tb_dia" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_empresa" EntityType="ERP_SYSModel2.Store.tb_empresa" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_impuesto" EntityType="ERP_SYSModel2.Store.tb_impuesto" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_Impuesto_tipo" EntityType="ERP_SYSModel2.Store.tb_Impuesto_tipo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_mes" EntityType="ERP_SYSModel2.Store.tb_mes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_modulo" EntityType="ERP_SYSModel2.Store.tb_modulo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_pais" EntityType="ERP_SYSModel2.Store.tb_pais" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_parroquia" EntityType="ERP_SYSModel2.Store.tb_parroquia" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_persona" EntityType="ERP_SYSModel2.Store.tb_persona" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_persona_direccion_tipo" EntityType="ERP_SYSModel2.Store.tb_persona_direccion_tipo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_provincia" EntityType="ERP_SYSModel2.Store.tb_provincia" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_puntoVta" EntityType="ERP_SYSModel2.Store.tb_puntoVta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_Formulario" EntityType="ERP_SYSModel2.Store.tb_sis_Formulario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_Log_Error_Vzen" EntityType="ERP_SYSModel2.Store.tb_sis_Log_Error_Vzen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_Mensajes_sys" EntityType="ERP_SYSModel2.Store.tb_sis_Mensajes_sys" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_sis_reporte" EntityType="ERP_SYSModel2.Store.tb_sis_reporte" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_sucursal" EntityType="ERP_SYSModel2.Store.tb_sucursal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tb_tarjeta" EntityType="ERP_SYSModel2.Store.tb_tarjeta" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_tb_impuesto_tb_Impuesto_tipo" Association="ERP_SYSModel2.Store.FK_tb_impuesto_tb_Impuesto_tipo">
             <End Role="tb_Impuesto_tipo" EntitySet="tb_Impuesto_tipo" />
             <End Role="tb_impuesto" EntitySet="tb_impuesto" />
@@ -27,6 +43,43 @@
             <End Role="tb_sucursal" EntitySet="tb_sucursal" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="tb_banco">
+          <Key>
+            <PropertyRef Name="IdBanco" />
+          </Key>
+          <Property Name="IdBanco" Type="int" Nullable="false" />
+          <Property Name="nom_banco" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="CodigoLegal" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="TieneFormatoTransferencia" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Calendario">
+          <Key>
+            <PropertyRef Name="IdCalendario" />
+          </Key>
+          <Property Name="IdCalendario" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="Nom_Fecha" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Nom_CortoFecha" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="dia_x_semana" Type="int" />
+          <Property Name="dia_x_mes" Type="int" />
+          <Property Name="Inicial_del_Dia" Type="char" MaxLength="2" />
+          <Property Name="NombreDia" Type="varchar" MaxLength="20" />
+          <Property Name="Mes_x_anio" Type="int" />
+          <Property Name="NombreMes" Type="varchar" MaxLength="30" />
+          <Property Name="IdMes" Type="int" />
+          <Property Name="NombreCortoMes" Type="varchar" MaxLength="15" />
+          <Property Name="AnioFiscal" Type="int" />
+          <Property Name="Semana_x_anio" Type="int" />
+          <Property Name="Nom_Semana" Type="varchar" MaxLength="25" />
+          <Property Name="IdSemana" Type="int" />
+          <Property Name="Trimestre_x_Anio" Type="int" />
+          <Property Name="Nom_Trimestre" Type="varchar" MaxLength="20" />
+          <Property Name="IdTrimestre" Type="int" />
+          <Property Name="IdPeriodo" Type="varchar" MaxLength="20" />
+          <Property Name="EsFeriado" Type="char" MaxLength="1" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="tb_catalogo">
           <Key>
             <PropertyRef Name="IdCatalogo" />
@@ -44,6 +97,65 @@
           <Property Name="nom_catalogo_tipo" Type="varchar" Nullable="false" MaxLength="150" />
           <Property Name="estado" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="tb_ciudad">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Name="IdCiudad" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Cod_Ciudad" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="nom_ciudad" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="IdProvincia" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="IdUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_Transac" Type="datetime" />
+          <Property Name="IdUsuarioUltMod" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltMod" Type="datetime" />
+          <Property Name="IdUsuarioUltAnu" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltAnu" Type="datetime" />
+          <Property Name="MotivoAnula" Type="varchar" MaxLength="100" />
+          <Property Name="nom_pc" Type="varchar" MaxLength="50" />
+          <Property Name="ip" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="tb_contacto">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdContacto" />
+          </Key>
+          <Property Name="IdEmpresa" Type="int" Nullable="false" />
+          <Property Name="IdContacto" Type="numeric" Nullable="false" />
+          <Property Name="IdPersona" Type="numeric" Nullable="false" />
+          <Property Name="CodContacto" Type="varchar" Nullable="false" MaxLength="51" />
+          <Property Name="Organizacion" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Cargo" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Mostrar_como" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Fecha_alta" Type="datetime" Nullable="false" />
+          <Property Name="Fecha_Ult_Contacto" Type="datetime" Nullable="false" />
+          <Property Name="IdCiudad" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="IdNacionalidad" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Notas" Type="text" Nullable="false" />
+          <Property Name="Pagina_Web" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Codigo_postal" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="foto" Type="image" />
+          <Property Name="UsuarioCreacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsuarioModificacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsuarioAnulacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="FechaAnulacion" Type="datetime" />
+          <Property Name="MotivoAnulacion" Type="nvarchar" MaxLength="150" />
+          <Property Name="Estado" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="IdPais" Type="varchar" MaxLength="10" />
+          <Property Name="IdProvincia" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="tb_dia">
+          <Key>
+            <PropertyRef Name="idDia" />
+          </Key>
+          <Property Name="idDia" Type="tinyint" Nullable="false" />
+          <Property Name="nom_dia" Type="varchar" MaxLength="25" />
+          <Property Name="cod_dia" Type="varchar" MaxLength="25" />
+          <Property Name="nom_Ingles" Type="varchar" MaxLength="25" />
+        </EntityType>
         <EntityType Name="tb_empresa">
           <Key>
             <PropertyRef Name="IdEmpresa" />
@@ -59,7 +171,7 @@
             <PropertyRef Name="IdImpuesto" />
           </Key>
           <Property Name="IdImpuesto" Type="varchar" Nullable="false" MaxLength="20" />
-          <Property Name="nom_Impuesto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_Impuesto_tipo" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="IdImpuesto_tipo" Type="varchar" Nullable="false" MaxLength="20" />
         </EntityType>
         <EntityType Name="tb_Impuesto_tipo">
@@ -69,19 +181,118 @@
           <Property Name="IdImpuesto_tipo" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="nom_Impuesto_tipo" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
+        <EntityType Name="tb_mes">
+          <Key>
+            <PropertyRef Name="IdMes" />
+          </Key>
+          <Property Name="IdMes" Type="int" Nullable="false" />
+          <Property Name="cod_mes" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="nom_mes" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="nom_mesIngles" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_modulo">
+          <Key>
+            <PropertyRef Name="IdModulo" />
+          </Key>
+          <Property Name="IdModulo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="nom_modulo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nom_Carpeta" Type="varchar" MaxLength="50" />
+          <Property Name="Se_Cierra" Type="bit" />
+        </EntityType>
+        <EntityType Name="tb_pais">
+          <Key>
+            <PropertyRef Name="IdPais" />
+          </Key>
+          <Property Name="IdPais" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CodPais" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="no_pais" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nacionalidad" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="IdUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_Transac" Type="datetime" />
+          <Property Name="IdUsuarioUltMod" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltMod" Type="datetime" />
+          <Property Name="IdUsuarioUltAnu" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltAnu" Type="datetime" />
+          <Property Name="MotivoAnula" Type="varchar" MaxLength="100" />
+          <Property Name="nom_pc" Type="varchar" MaxLength="50" />
+          <Property Name="ip" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_parroquia">
+          <Key>
+            <PropertyRef Name="IdParroquia" />
+          </Key>
+          <Property Name="IdParroquia" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="cod_parroquia" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_parroquia" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="IdCiudad_Canton" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="IdUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_Transac" Type="datetime" />
+          <Property Name="IdUsuarioUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_UltMod" Type="datetime" />
+          <Property Name="IdUsuarioUltAnu" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_UltAnu" Type="datetime" />
+          <Property Name="MotivoAnula" Type="varchar" MaxLength="150" />
+          <Property Name="nom_pc" Type="varchar" MaxLength="50" />
+          <Property Name="ip" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tb_persona">
           <Key>
             <PropertyRef Name="IdPersona" />
           </Key>
           <Property Name="IdPersona" Type="numeric" Nullable="false" />
           <Property Name="cod_persona" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="550" />
-          <Property Name="apellido" Type="varchar" Nullable="false" MaxLength="550" />
-          <Property Name="razon_social" Type="varchar" Nullable="false" MaxLength="550" />
+          <Property Name="pe_nombreCompleto" Type="varchar" Nullable="false" MaxLength="550" />
+          <Property Name="pe_nombre" Type="varchar" Nullable="false" MaxLength="550" />
+          <Property Name="pe_apellido" Type="varchar" Nullable="false" MaxLength="550" />
+          <Property Name="pe_razon_social" Type="varchar" Nullable="false" MaxLength="550" />
           <Property Name="IdTipoDocumento" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Num_documento" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="IdTipoPersona" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="pe_Naturaleza_cat" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_sexo" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="IdEstadoCivil_cat" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="pe_fechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="pe_correo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_correo1" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_correo2" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_telef_Casa" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_telef_Trab" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_telef_Contacto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_direccion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pe_fax" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="pe_casilla" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="IdTipoCta_acreditacion_cat" Type="varchar" MaxLength="50" />
+          <Property Name="num_cta_acreditacion" Type="varchar" MaxLength="50" />
+          <Property Name="IdBanco_acreditacion" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_persona_direccion_tipo">
+          <Key>
+            <PropertyRef Name="IdTipoDireccion" />
+          </Key>
+          <Property Name="IdTipoDireccion" Type="int" Nullable="false" />
+          <Property Name="nom_TipoDireccion" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_provincia">
+          <Key>
+            <PropertyRef Name="IdProvincia" />
+          </Key>
+          <Property Name="IdProvincia" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Cod_Provincia" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="nom_Provincia" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="IdPais" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="IdUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_Transac" Type="datetime" />
+          <Property Name="IdUsuarioUltMod" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltMod" Type="datetime" />
+          <Property Name="IdUsuarioUltAnu" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltAnu" Type="datetime" />
+          <Property Name="MotivoAnula" Type="varchar" MaxLength="100" />
+          <Property Name="nom_pc" Type="varchar" MaxLength="50" />
+          <Property Name="ip" Type="varchar" MaxLength="25" />
         </EntityType>
         <EntityType Name="tb_puntoVta">
           <Key>
@@ -96,6 +307,67 @@
           <Property Name="nom_puntoVta" Type="varchar" Nullable="false" MaxLength="250" />
           <Property Name="estado" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="tb_sis_Formulario">
+          <Key>
+            <PropertyRef Name="IdForm" />
+          </Key>
+          <Property Name="IdForm" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_form" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="titulo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_sis_Log_Error_Vzen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha_Trans" Type="datetime" />
+          <Property Name="Detalle" Type="nvarchar(max)" />
+          <Property Name="Tipo" Type="nvarchar(max)" />
+          <Property Name="Clase" Type="nvarchar(max)" />
+          <Property Name="Pantalla" Type="nvarchar(max)" />
+          <Property Name="Asamble" Type="nvarchar(max)" />
+          <Property Name="Usuario" Type="varchar" MaxLength="50" />
+          <Property Name="Ip" Type="varchar" MaxLength="50" />
+          <Property Name="PC" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_sis_Mensajes_sys">
+          <Key>
+            <PropertyRef Name="IdMensaje" />
+          </Key>
+          <Property Name="IdSecuencia" Type="numeric" Nullable="false" />
+          <Property Name="IdMensaje" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Mensaje_Esp" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Mensaje_Englesh" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_sis_reporte">
+          <Key>
+            <PropertyRef Name="IdReporte" />
+          </Key>
+          <Property Name="IdReporte" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nom_reporte" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Nom_Corto_reporte" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="IdModulo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="VistaRpt" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Formulario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class_NomReporte" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nom_Asembly" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Orden" Type="int" Nullable="false" />
+          <Property Name="Observacion" Type="text" Nullable="false" />
+          <Property Name="imagen" Type="image" Nullable="false" />
+          <Property Name="VersionActual" Type="int" Nullable="false" />
+          <Property Name="Tipo_Balance" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SQuery" Type="varchar(max)" Nullable="false" />
+          <Property Name="Class_Info" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class_Bus" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Class_Data" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdGrupo_Reporte" Type="int" Nullable="false" />
+          <Property Name="se_Muestra_Admin_Reporte" Type="bit" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="Store_proce_rpt" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Disenio_reporte" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="tb_sucursal">
           <Key>
             <PropertyRef Name="IdEmpresa" />
@@ -107,6 +379,22 @@
           <Property Name="cod_establecimiento" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="nom_sucursal" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_tarjeta">
+          <Key>
+            <PropertyRef Name="IdTarjeta" />
+          </Key>
+          <Property Name="IdTarjeta" Type="int" Nullable="false" />
+          <Property Name="nom_tarjeta" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="IdBanco" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_Transaccion" Type="datetime" />
+          <Property Name="IdUsuarioUltModi" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltMod" Type="datetime" />
+          <Property Name="IdUsuarioUltAnu" Type="varchar" MaxLength="20" />
+          <Property Name="Fecha_UltAnu" Type="datetime" />
+          <Property Name="MotivoAnulacion" Type="varchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_tb_impuesto_tb_Impuesto_tipo">
           <End Role="tb_Impuesto_tipo" Type="ERP_SYSModel2.Store.tb_Impuesto_tipo" Multiplicity="1" />
@@ -151,13 +439,28 @@
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_SYSModel2" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Entities_General" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_banco" EntityType="ERP_SYSModel2.tb_banco" />
+          <EntitySet Name="tb_Calendario" EntityType="ERP_SYSModel2.tb_Calendario" />
           <EntitySet Name="tb_catalogo" EntityType="ERP_SYSModel2.tb_catalogo" />
           <EntitySet Name="tb_catalogo_tipo" EntityType="ERP_SYSModel2.tb_catalogo_tipo" />
+          <EntitySet Name="tb_ciudad" EntityType="ERP_SYSModel2.tb_ciudad" />
+          <EntitySet Name="tb_contacto" EntityType="ERP_SYSModel2.tb_contacto" />
+          <EntitySet Name="tb_dia" EntityType="ERP_SYSModel2.tb_dia" />
           <EntitySet Name="tb_empresa" EntityType="ERP_SYSModel2.tb_empresa" />
-          <EntitySet Name="tb_Impuesto_tipo" EntityType="ERP_SYSModel2.tb_Impuesto_tipo" />
+          <EntitySet Name="tb_mes" EntityType="ERP_SYSModel2.tb_mes" />
+          <EntitySet Name="tb_modulo" EntityType="ERP_SYSModel2.tb_modulo" />
+          <EntitySet Name="tb_pais" EntityType="ERP_SYSModel2.tb_pais" />
+          <EntitySet Name="tb_parroquia" EntityType="ERP_SYSModel2.tb_parroquia" />
           <EntitySet Name="tb_persona" EntityType="ERP_SYSModel2.tb_persona" />
+          <EntitySet Name="tb_persona_direccion_tipo" EntityType="ERP_SYSModel2.tb_persona_direccion_tipo" />
+          <EntitySet Name="tb_provincia" EntityType="ERP_SYSModel2.tb_provincia" />
           <EntitySet Name="tb_puntoVta" EntityType="ERP_SYSModel2.tb_puntoVta" />
+          <EntitySet Name="tb_sis_Formulario" EntityType="ERP_SYSModel2.tb_sis_Formulario" />
+          <EntitySet Name="tb_sis_Log_Error_Vzen" EntityType="ERP_SYSModel2.tb_sis_Log_Error_Vzen" />
+          <EntitySet Name="tb_sis_Mensajes_sys" EntityType="ERP_SYSModel2.tb_sis_Mensajes_sys" />
+          <EntitySet Name="tb_sis_reporte" EntityType="ERP_SYSModel2.tb_sis_reporte" />
           <EntitySet Name="tb_sucursal" EntityType="ERP_SYSModel2.tb_sucursal" />
+          <EntitySet Name="tb_tarjeta" EntityType="ERP_SYSModel2.tb_tarjeta" />
           <AssociationSet Name="FK_tb_sucursal_tb_empresa" Association="ERP_SYSModel2.FK_tb_sucursal_tb_empresa">
             <End Role="tb_empresa" EntitySet="tb_empresa" />
             <End Role="tb_sucursal" EntitySet="tb_sucursal" />
@@ -167,60 +470,248 @@
             <End Role="tb_puntoVta" EntitySet="tb_puntoVta" />
           </AssociationSet>
           <EntitySet Name="tb_impuesto" EntityType="ERP_SYSModel2.tb_impuesto" />
+          <EntitySet Name="tb_Impuesto_tipo" EntityType="ERP_SYSModel2.tb_Impuesto_tipo" />
           <AssociationSet Name="FK_tb_impuesto_tb_Impuesto_tipo" Association="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo">
             <End Role="tb_Impuesto_tipo" EntitySet="tb_Impuesto_tipo" />
             <End Role="tb_impuesto" EntitySet="tb_impuesto" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="tb_banco">
+          <Key>
+            <PropertyRef Name="IdBanco" />
+          </Key>
+          <Property Type="Int32" Name="IdBanco" Nullable="false" />
+          <Property Type="String" Name="nom_banco" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="String" Name="CodigoLegal" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="TieneFormatoTransferencia" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_Calendario">
+          <Key>
+            <PropertyRef Name="IdCalendario" />
+          </Key>
+          <Property Type="Int32" Name="IdCalendario" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Nom_Fecha" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nom_CortoFecha" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="dia_x_semana" />
+          <Property Type="Int32" Name="dia_x_mes" />
+          <Property Type="String" Name="Inicial_del_Dia" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="NombreDia" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Mes_x_anio" />
+          <Property Type="String" Name="NombreMes" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdMes" />
+          <Property Type="String" Name="NombreCortoMes" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AnioFiscal" />
+          <Property Type="Int32" Name="Semana_x_anio" />
+          <Property Type="String" Name="Nom_Semana" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdSemana" />
+          <Property Type="Int32" Name="Trimestre_x_Anio" />
+          <Property Type="String" Name="Nom_Trimestre" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdTrimestre" />
+          <Property Type="String" Name="IdPeriodo" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EsFeriado" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Descripcion" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="tb_catalogo">
           <Key>
             <PropertyRef Name="IdCatalogo" />
           </Key>
-          <Property Name="IdCatalogo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nom_catalogo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
-          <Property Name="IdCatalogo_tipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="IdCatalogo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_catalogo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="IdCatalogo_tipo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tb_catalogo_tipo">
           <Key>
             <PropertyRef Name="IdCatalogo_tipo" />
           </Key>
-          <Property Name="IdCatalogo_tipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nom_catalogo_tipo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Type="String" Name="IdCatalogo_tipo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_catalogo_tipo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_ciudad">
+          <Key>
+            <PropertyRef Name="IdCiudad" />
+          </Key>
+          <Property Type="String" Name="IdCiudad" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cod_Ciudad" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_ciudad" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="String" Name="IdProvincia" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_Transac" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltMod" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltMod" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltAnu" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltAnu" Precision="3" />
+          <Property Type="String" Name="MotivoAnula" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_pc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ip" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_contacto">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdContacto" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Decimal" Name="IdContacto" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="IdPersona" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="CodContacto" Nullable="false" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Organizacion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cargo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mostrar_como" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_alta" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="Fecha_Ult_Contacto" Nullable="false" Precision="3" />
+          <Property Type="String" Name="IdCiudad" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdNacionalidad" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notas" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Pagina_Web" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Codigo_postal" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="foto" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="UsuarioCreacion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UsuarioModificacion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UsuarioAnulacion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaCreacion" Precision="3" />
+          <Property Type="DateTime" Name="FechaModificacion" Precision="3" />
+          <Property Type="DateTime" Name="FechaAnulacion" Precision="3" />
+          <Property Type="String" Name="MotivoAnulacion" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="IdPais" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdProvincia" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_dia">
+          <Key>
+            <PropertyRef Name="idDia" />
+          </Key>
+          <Property Type="Byte" Name="idDia" Nullable="false" />
+          <Property Type="String" Name="nom_dia" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cod_dia" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Ingles" MaxLength="25" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tb_empresa">
           <Key>
             <PropertyRef Name="IdEmpresa" />
           </Key>
-          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
-          <Property Name="cod_empresa" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nom_empresa" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="ruc_empresa" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="String" Name="cod_empresa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_empresa" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ruc_empresa" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
           <NavigationProperty Name="tb_sucursal" Relationship="ERP_SYSModel2.FK_tb_sucursal_tb_empresa" FromRole="tb_empresa" ToRole="tb_sucursal" />
         </EntityType>
-        <EntityType Name="tb_Impuesto_tipo">
+        <EntityType Name="tb_mes">
           <Key>
-            <PropertyRef Name="IdImpuesto_tipo" />
+            <PropertyRef Name="IdMes" />
           </Key>
-          <Property Name="IdImpuesto_tipo" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="nom_Impuesto_tipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="tb_impuesto" Relationship="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" FromRole="tb_Impuesto_tipo" ToRole="tb_impuesto" />
+          <Property Type="Int32" Name="IdMes" Nullable="false" />
+          <Property Type="String" Name="cod_mes" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_mes" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_mesIngles" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_modulo">
+          <Key>
+            <PropertyRef Name="IdModulo" />
+          </Key>
+          <Property Type="String" Name="IdModulo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_modulo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nom_Carpeta" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Se_Cierra" />
+        </EntityType>
+        <EntityType Name="tb_pais">
+          <Key>
+            <PropertyRef Name="IdPais" />
+          </Key>
+          <Property Type="String" Name="IdPais" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CodPais" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="no_pais" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nacionalidad" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="IdUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_Transac" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltMod" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltMod" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltAnu" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltAnu" Precision="3" />
+          <Property Type="String" Name="MotivoAnula" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_pc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ip" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_parroquia">
+          <Key>
+            <PropertyRef Name="IdParroquia" />
+          </Key>
+          <Property Type="String" Name="IdParroquia" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cod_parroquia" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_parroquia" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="IdCiudad_Canton" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdUsuario" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_Transac" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltMod" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltMod" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltAnu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltAnu" Precision="3" />
+          <Property Type="String" Name="MotivoAnula" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_pc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ip" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tb_persona">
           <Key>
             <PropertyRef Name="IdPersona" />
           </Key>
-          <Property Name="IdPersona" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="cod_persona" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nombre" Type="String" Nullable="false" MaxLength="550" Unicode="false" FixedLength="false" />
-          <Property Name="apellido" Type="String" Nullable="false" MaxLength="550" Unicode="false" FixedLength="false" />
-          <Property Name="razon_social" Type="String" Nullable="false" MaxLength="550" Unicode="false" FixedLength="false" />
-          <Property Name="IdTipoDocumento" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Num_documento" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="IdTipoPersona" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Type="Decimal" Name="IdPersona" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="cod_persona" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombre" Nullable="false" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_apellido" Nullable="false" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_razon_social" Nullable="false" MaxLength="550" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdTipoDocumento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Num_documento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdTipoPersona" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="pe_Naturaleza_cat" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_sexo" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="IdEstadoCivil_cat" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="pe_fechaNacimiento" Nullable="false" Precision="0" />
+          <Property Type="String" Name="pe_correo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_correo1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_correo2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_telef_Casa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_telef_Trab" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_telef_Contacto" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_direccion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_fax" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="pe_casilla" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="IdTipoCta_acreditacion_cat" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="num_cta_acreditacion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdBanco_acreditacion" />
+        </EntityType>
+        <EntityType Name="tb_persona_direccion_tipo">
+          <Key>
+            <PropertyRef Name="IdTipoDireccion" />
+          </Key>
+          <Property Type="Int32" Name="IdTipoDireccion" Nullable="false" />
+          <Property Type="String" Name="nom_TipoDireccion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_provincia">
+          <Key>
+            <PropertyRef Name="IdProvincia" />
+          </Key>
+          <Property Type="String" Name="IdProvincia" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cod_Provincia" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Provincia" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="String" Name="IdPais" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_Transac" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltMod" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltMod" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltAnu" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltAnu" Precision="3" />
+          <Property Type="String" Name="MotivoAnula" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_pc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ip" MaxLength="25" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tb_puntoVta">
           <Key>
@@ -228,31 +719,108 @@
             <PropertyRef Name="IdPuntoVta" />
             <PropertyRef Name="IdSucursal" />
           </Key>
-          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
-          <Property Name="IdPuntoVta" Type="Int32" Nullable="false" />
-          <Property Name="IdSucursal" Type="Int32" Nullable="false" />
-          <Property Name="cod_puntoVta" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nom_puntoVta" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdPuntoVta" Nullable="false" />
+          <Property Type="Int32" Name="IdSucursal" Nullable="false" />
+          <Property Type="String" Name="cod_puntoVta" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_puntoVta" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
           <NavigationProperty Name="tb_sucursal" Relationship="ERP_SYSModel2.FK_tb_puntoVta_tb_sucursal" FromRole="tb_puntoVta" ToRole="tb_sucursal" />
+        </EntityType>
+        <EntityType Name="tb_sis_Formulario">
+          <Key>
+            <PropertyRef Name="IdForm" />
+          </Key>
+          <Property Type="String" Name="IdForm" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_form" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
+          <Property Type="String" Name="titulo" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_sis_Log_Error_Vzen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Fecha_Trans" Precision="3" />
+          <Property Type="String" Name="Detalle" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tipo" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Clase" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pantalla" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Asamble" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Usuario" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ip" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PC" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_sis_Mensajes_sys">
+          <Key>
+            <PropertyRef Name="IdMensaje" />
+          </Key>
+          <Property Type="Decimal" Name="IdSecuencia" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="IdMensaje" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mensaje_Esp" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mensaje_Englesh" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_sis_reporte">
+          <Key>
+            <PropertyRef Name="IdReporte" />
+          </Key>
+          <Property Type="String" Name="IdReporte" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nom_reporte" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nom_Corto_reporte" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdModulo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VistaRpt" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Formulario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_NomReporte" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Asembly" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+          <Property Type="String" Name="Observacion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="imagen" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="VersionActual" Nullable="false" />
+          <Property Type="String" Name="Tipo_Balance" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SQuery" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_Info" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_Bus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Class_Data" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IdGrupo_Reporte" Nullable="false" />
+          <Property Type="Boolean" Name="se_Muestra_Admin_Reporte" Nullable="false" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="String" Name="Store_proce_rpt" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Disenio_reporte" Nullable="false" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="tb_sucursal">
           <Key>
             <PropertyRef Name="IdEmpresa" />
             <PropertyRef Name="IdSucursal" />
           </Key>
-          <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
-          <Property Name="IdSucursal" Type="Int32" Nullable="false" />
-          <Property Name="cod_sucursal" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="cod_establecimiento" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="nom_sucursal" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdSucursal" Nullable="false" />
+          <Property Type="String" Name="cod_sucursal" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cod_establecimiento" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_sucursal" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="estado" Nullable="false" />
           <NavigationProperty Name="tb_empresa" Relationship="ERP_SYSModel2.FK_tb_sucursal_tb_empresa" FromRole="tb_sucursal" ToRole="tb_empresa" />
           <NavigationProperty Name="tb_puntoVta" Relationship="ERP_SYSModel2.FK_tb_puntoVta_tb_sucursal" FromRole="tb_sucursal" ToRole="tb_puntoVta" />
         </EntityType>
+        <EntityType Name="tb_tarjeta">
+          <Key>
+            <PropertyRef Name="IdTarjeta" />
+          </Key>
+          <Property Type="Int32" Name="IdTarjeta" Nullable="false" />
+          <Property Type="String" Name="nom_tarjeta" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="Int32" Name="IdBanco" Nullable="false" />
+          <Property Type="String" Name="IdUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_Transaccion" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltModi" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltMod" Precision="3" />
+          <Property Type="String" Name="IdUsuarioUltAnu" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_UltAnu" Precision="3" />
+          <Property Type="String" Name="MotivoAnulacion" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
         <Association Name="FK_tb_sucursal_tb_empresa">
-          <End Role="tb_empresa" Type="ERP_SYSModel2.tb_empresa" Multiplicity="1" />
-          <End Role="tb_sucursal" Type="ERP_SYSModel2.tb_sucursal" Multiplicity="*" />
+          <End Type="ERP_SYSModel2.tb_empresa" Role="tb_empresa" Multiplicity="1" />
+          <End Type="ERP_SYSModel2.tb_sucursal" Role="tb_sucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_empresa">
               <PropertyRef Name="IdEmpresa" />
@@ -263,8 +831,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_tb_puntoVta_tb_sucursal">
-          <End Role="tb_sucursal" Type="ERP_SYSModel2.tb_sucursal" Multiplicity="1" />
-          <End Role="tb_puntoVta" Type="ERP_SYSModel2.tb_puntoVta" Multiplicity="*" />
+          <End Type="ERP_SYSModel2.tb_sucursal" Role="tb_sucursal" Multiplicity="1" />
+          <End Type="ERP_SYSModel2.tb_puntoVta" Role="tb_puntoVta" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_sucursal">
               <PropertyRef Name="IdEmpresa" />
@@ -281,9 +849,17 @@
             <PropertyRef Name="IdImpuesto" />
           </Key>
           <Property Type="String" Name="IdImpuesto" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nom_Impuesto" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Impuesto_tipo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="IdImpuesto_tipo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tb_Impuesto_tipo" Relationship="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" FromRole="tb_impuesto" ToRole="tb_Impuesto_tipo" />
+        </EntityType>
+        <EntityType Name="tb_Impuesto_tipo">
+          <Key>
+            <PropertyRef Name="IdImpuesto_tipo" />
+          </Key>
+          <Property Type="String" Name="IdImpuesto_tipo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nom_Impuesto_tipo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_impuesto" Relationship="ERP_SYSModel2.FK_tb_impuesto_tb_Impuesto_tipo" FromRole="tb_Impuesto_tipo" ToRole="tb_impuesto" />
         </EntityType>
         <Association Name="FK_tb_impuesto_tb_Impuesto_tipo">
           <End Type="ERP_SYSModel2.tb_Impuesto_tipo" Role="tb_Impuesto_tipo" Multiplicity="1" />
@@ -303,80 +879,359 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ERP_SYSModel2StoreContainer" CdmEntityContainer="Entities_General">
+          <EntitySetMapping Name="tb_banco">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_banco">
+              <MappingFragment StoreEntitySet="tb_banco">
+                <ScalarProperty Name="TieneFormatoTransferencia" ColumnName="TieneFormatoTransferencia" />
+                <ScalarProperty Name="CodigoLegal" ColumnName="CodigoLegal" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="nom_banco" ColumnName="nom_banco" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Calendario">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_Calendario">
+              <MappingFragment StoreEntitySet="tb_Calendario">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="EsFeriado" ColumnName="EsFeriado" />
+                <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+                <ScalarProperty Name="IdTrimestre" ColumnName="IdTrimestre" />
+                <ScalarProperty Name="Nom_Trimestre" ColumnName="Nom_Trimestre" />
+                <ScalarProperty Name="Trimestre_x_Anio" ColumnName="Trimestre_x_Anio" />
+                <ScalarProperty Name="IdSemana" ColumnName="IdSemana" />
+                <ScalarProperty Name="Nom_Semana" ColumnName="Nom_Semana" />
+                <ScalarProperty Name="Semana_x_anio" ColumnName="Semana_x_anio" />
+                <ScalarProperty Name="AnioFiscal" ColumnName="AnioFiscal" />
+                <ScalarProperty Name="NombreCortoMes" ColumnName="NombreCortoMes" />
+                <ScalarProperty Name="IdMes" ColumnName="IdMes" />
+                <ScalarProperty Name="NombreMes" ColumnName="NombreMes" />
+                <ScalarProperty Name="Mes_x_anio" ColumnName="Mes_x_anio" />
+                <ScalarProperty Name="NombreDia" ColumnName="NombreDia" />
+                <ScalarProperty Name="Inicial_del_Dia" ColumnName="Inicial_del_Dia" />
+                <ScalarProperty Name="dia_x_mes" ColumnName="dia_x_mes" />
+                <ScalarProperty Name="dia_x_semana" ColumnName="dia_x_semana" />
+                <ScalarProperty Name="Nom_CortoFecha" ColumnName="Nom_CortoFecha" />
+                <ScalarProperty Name="Nom_Fecha" ColumnName="Nom_Fecha" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="IdCalendario" ColumnName="IdCalendario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tb_catalogo">
             <EntityTypeMapping TypeName="ERP_SYSModel2.tb_catalogo">
               <MappingFragment StoreEntitySet="tb_catalogo">
-                <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
-                <ScalarProperty Name="nom_catalogo" ColumnName="nom_catalogo" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="IdCatalogo_tipo" ColumnName="IdCatalogo_tipo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_catalogo" ColumnName="nom_catalogo" />
+                <ScalarProperty Name="IdCatalogo" ColumnName="IdCatalogo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_catalogo_tipo">
             <EntityTypeMapping TypeName="ERP_SYSModel2.tb_catalogo_tipo">
               <MappingFragment StoreEntitySet="tb_catalogo_tipo">
-                <ScalarProperty Name="IdCatalogo_tipo" ColumnName="IdCatalogo_tipo" />
-                <ScalarProperty Name="nom_catalogo_tipo" ColumnName="nom_catalogo_tipo" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_catalogo_tipo" ColumnName="nom_catalogo_tipo" />
+                <ScalarProperty Name="IdCatalogo_tipo" ColumnName="IdCatalogo_tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ciudad">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_ciudad">
+              <MappingFragment StoreEntitySet="tb_ciudad">
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="nom_pc" ColumnName="nom_pc" />
+                <ScalarProperty Name="MotivoAnula" ColumnName="MotivoAnula" />
+                <ScalarProperty Name="Fecha_UltAnu" ColumnName="Fecha_UltAnu" />
+                <ScalarProperty Name="IdUsuarioUltAnu" ColumnName="IdUsuarioUltAnu" />
+                <ScalarProperty Name="Fecha_UltMod" ColumnName="Fecha_UltMod" />
+                <ScalarProperty Name="IdUsuarioUltMod" ColumnName="IdUsuarioUltMod" />
+                <ScalarProperty Name="Fecha_Transac" ColumnName="Fecha_Transac" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="nom_ciudad" ColumnName="nom_ciudad" />
+                <ScalarProperty Name="Cod_Ciudad" ColumnName="Cod_Ciudad" />
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_contacto">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_contacto">
+              <MappingFragment StoreEntitySet="tb_contacto">
+                <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="MotivoAnulacion" ColumnName="MotivoAnulacion" />
+                <ScalarProperty Name="FechaAnulacion" ColumnName="FechaAnulacion" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="UsuarioAnulacion" ColumnName="UsuarioAnulacion" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="Codigo_postal" ColumnName="Codigo_postal" />
+                <ScalarProperty Name="Pagina_Web" ColumnName="Pagina_Web" />
+                <ScalarProperty Name="Notas" ColumnName="Notas" />
+                <ScalarProperty Name="IdNacionalidad" ColumnName="IdNacionalidad" />
+                <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+                <ScalarProperty Name="Fecha_Ult_Contacto" ColumnName="Fecha_Ult_Contacto" />
+                <ScalarProperty Name="Fecha_alta" ColumnName="Fecha_alta" />
+                <ScalarProperty Name="Mostrar_como" ColumnName="Mostrar_como" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Organizacion" ColumnName="Organizacion" />
+                <ScalarProperty Name="CodContacto" ColumnName="CodContacto" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+                <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_dia">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_dia">
+              <MappingFragment StoreEntitySet="tb_dia">
+                <ScalarProperty Name="nom_Ingles" ColumnName="nom_Ingles" />
+                <ScalarProperty Name="cod_dia" ColumnName="cod_dia" />
+                <ScalarProperty Name="nom_dia" ColumnName="nom_dia" />
+                <ScalarProperty Name="idDia" ColumnName="idDia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_empresa">
             <EntityTypeMapping TypeName="ERP_SYSModel2.tb_empresa">
               <MappingFragment StoreEntitySet="tb_empresa">
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-                <ScalarProperty Name="cod_empresa" ColumnName="cod_empresa" />
-                <ScalarProperty Name="nom_empresa" ColumnName="nom_empresa" />
-                <ScalarProperty Name="ruc_empresa" ColumnName="ruc_empresa" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="ruc_empresa" ColumnName="ruc_empresa" />
+                <ScalarProperty Name="nom_empresa" ColumnName="nom_empresa" />
+                <ScalarProperty Name="cod_empresa" ColumnName="cod_empresa" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_Impuesto_tipo">
-            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_Impuesto_tipo">
-              <MappingFragment StoreEntitySet="tb_Impuesto_tipo">
-                <ScalarProperty Name="IdImpuesto_tipo" ColumnName="IdImpuesto_tipo" />
-                <ScalarProperty Name="nom_Impuesto_tipo" ColumnName="nom_Impuesto_tipo" />
+          <EntitySetMapping Name="tb_mes">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_mes">
+              <MappingFragment StoreEntitySet="tb_mes">
+                <ScalarProperty Name="nom_mesIngles" ColumnName="nom_mesIngles" />
+                <ScalarProperty Name="nom_mes" ColumnName="nom_mes" />
+                <ScalarProperty Name="cod_mes" ColumnName="cod_mes" />
+                <ScalarProperty Name="IdMes" ColumnName="IdMes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_modulo">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_modulo">
+              <MappingFragment StoreEntitySet="tb_modulo">
+                <ScalarProperty Name="Se_Cierra" ColumnName="Se_Cierra" />
+                <ScalarProperty Name="Nom_Carpeta" ColumnName="Nom_Carpeta" />
+                <ScalarProperty Name="nom_modulo" ColumnName="nom_modulo" />
+                <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_pais">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_pais">
+              <MappingFragment StoreEntitySet="tb_pais">
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="nom_pc" ColumnName="nom_pc" />
+                <ScalarProperty Name="MotivoAnula" ColumnName="MotivoAnula" />
+                <ScalarProperty Name="Fecha_UltAnu" ColumnName="Fecha_UltAnu" />
+                <ScalarProperty Name="IdUsuarioUltAnu" ColumnName="IdUsuarioUltAnu" />
+                <ScalarProperty Name="Fecha_UltMod" ColumnName="Fecha_UltMod" />
+                <ScalarProperty Name="IdUsuarioUltMod" ColumnName="IdUsuarioUltMod" />
+                <ScalarProperty Name="Fecha_Transac" ColumnName="Fecha_Transac" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="no_pais" ColumnName="no_pais" />
+                <ScalarProperty Name="CodPais" ColumnName="CodPais" />
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_parroquia">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_parroquia">
+              <MappingFragment StoreEntitySet="tb_parroquia">
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="nom_pc" ColumnName="nom_pc" />
+                <ScalarProperty Name="MotivoAnula" ColumnName="MotivoAnula" />
+                <ScalarProperty Name="Fecha_UltAnu" ColumnName="Fecha_UltAnu" />
+                <ScalarProperty Name="IdUsuarioUltAnu" ColumnName="IdUsuarioUltAnu" />
+                <ScalarProperty Name="Fecha_UltMod" ColumnName="Fecha_UltMod" />
+                <ScalarProperty Name="IdUsuarioUltMod" ColumnName="IdUsuarioUltMod" />
+                <ScalarProperty Name="Fecha_Transac" ColumnName="Fecha_Transac" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdCiudad_Canton" ColumnName="IdCiudad_Canton" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_parroquia" ColumnName="nom_parroquia" />
+                <ScalarProperty Name="cod_parroquia" ColumnName="cod_parroquia" />
+                <ScalarProperty Name="IdParroquia" ColumnName="IdParroquia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_persona">
             <EntityTypeMapping TypeName="ERP_SYSModel2.tb_persona">
               <MappingFragment StoreEntitySet="tb_persona">
-                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
-                <ScalarProperty Name="cod_persona" ColumnName="cod_persona" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="razon_social" ColumnName="razon_social" />
-                <ScalarProperty Name="IdTipoDocumento" ColumnName="IdTipoDocumento" />
-                <ScalarProperty Name="Num_documento" ColumnName="Num_documento" />
-                <ScalarProperty Name="IdTipoPersona" ColumnName="IdTipoPersona" />
+                <ScalarProperty Name="IdBanco_acreditacion" ColumnName="IdBanco_acreditacion" />
+                <ScalarProperty Name="num_cta_acreditacion" ColumnName="num_cta_acreditacion" />
+                <ScalarProperty Name="IdTipoCta_acreditacion_cat" ColumnName="IdTipoCta_acreditacion_cat" />
+                <ScalarProperty Name="pe_casilla" ColumnName="pe_casilla" />
+                <ScalarProperty Name="pe_fax" ColumnName="pe_fax" />
+                <ScalarProperty Name="pe_direccion" ColumnName="pe_direccion" />
+                <ScalarProperty Name="pe_telef_Contacto" ColumnName="pe_telef_Contacto" />
+                <ScalarProperty Name="pe_telef_Trab" ColumnName="pe_telef_Trab" />
+                <ScalarProperty Name="pe_telef_Casa" ColumnName="pe_telef_Casa" />
+                <ScalarProperty Name="pe_correo2" ColumnName="pe_correo2" />
+                <ScalarProperty Name="pe_correo1" ColumnName="pe_correo1" />
+                <ScalarProperty Name="pe_correo" ColumnName="pe_correo" />
+                <ScalarProperty Name="pe_fechaNacimiento" ColumnName="pe_fechaNacimiento" />
+                <ScalarProperty Name="IdEstadoCivil_cat" ColumnName="IdEstadoCivil_cat" />
+                <ScalarProperty Name="pe_sexo" ColumnName="pe_sexo" />
+                <ScalarProperty Name="pe_Naturaleza_cat" ColumnName="pe_Naturaleza_cat" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="IdTipoPersona" ColumnName="IdTipoPersona" />
+                <ScalarProperty Name="Num_documento" ColumnName="Num_documento" />
+                <ScalarProperty Name="IdTipoDocumento" ColumnName="IdTipoDocumento" />
+                <ScalarProperty Name="pe_razon_social" ColumnName="pe_razon_social" />
+                <ScalarProperty Name="pe_apellido" ColumnName="pe_apellido" />
+                <ScalarProperty Name="pe_nombre" ColumnName="pe_nombre" />
+                <ScalarProperty Name="pe_nombreCompleto" ColumnName="pe_nombreCompleto" />
+                <ScalarProperty Name="cod_persona" ColumnName="cod_persona" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_persona_direccion_tipo">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_persona_direccion_tipo">
+              <MappingFragment StoreEntitySet="tb_persona_direccion_tipo">
+                <ScalarProperty Name="nom_TipoDireccion" ColumnName="nom_TipoDireccion" />
+                <ScalarProperty Name="IdTipoDireccion" ColumnName="IdTipoDireccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_provincia">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_provincia">
+              <MappingFragment StoreEntitySet="tb_provincia">
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="nom_pc" ColumnName="nom_pc" />
+                <ScalarProperty Name="MotivoAnula" ColumnName="MotivoAnula" />
+                <ScalarProperty Name="Fecha_UltAnu" ColumnName="Fecha_UltAnu" />
+                <ScalarProperty Name="IdUsuarioUltAnu" ColumnName="IdUsuarioUltAnu" />
+                <ScalarProperty Name="Fecha_UltMod" ColumnName="Fecha_UltMod" />
+                <ScalarProperty Name="IdUsuarioUltMod" ColumnName="IdUsuarioUltMod" />
+                <ScalarProperty Name="Fecha_Transac" ColumnName="Fecha_Transac" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="nom_Provincia" ColumnName="nom_Provincia" />
+                <ScalarProperty Name="Cod_Provincia" ColumnName="Cod_Provincia" />
+                <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_puntoVta">
             <EntityTypeMapping TypeName="ERP_SYSModel2.tb_puntoVta">
               <MappingFragment StoreEntitySet="tb_puntoVta">
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-                <ScalarProperty Name="IdPuntoVta" ColumnName="IdPuntoVta" />
-                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
-                <ScalarProperty Name="cod_puntoVta" ColumnName="cod_puntoVta" />
-                <ScalarProperty Name="nom_puntoVta" ColumnName="nom_puntoVta" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_puntoVta" ColumnName="nom_puntoVta" />
+                <ScalarProperty Name="cod_puntoVta" ColumnName="cod_puntoVta" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdPuntoVta" ColumnName="IdPuntoVta" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_Formulario">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_sis_Formulario">
+              <MappingFragment StoreEntitySet="tb_sis_Formulario">
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_form" ColumnName="nom_form" />
+                <ScalarProperty Name="IdForm" ColumnName="IdForm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_Log_Error_Vzen">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_sis_Log_Error_Vzen">
+              <MappingFragment StoreEntitySet="tb_sis_Log_Error_Vzen">
+                <ScalarProperty Name="PC" ColumnName="PC" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Asamble" ColumnName="Asamble" />
+                <ScalarProperty Name="Pantalla" ColumnName="Pantalla" />
+                <ScalarProperty Name="Clase" ColumnName="Clase" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="Fecha_Trans" ColumnName="Fecha_Trans" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_Mensajes_sys">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_sis_Mensajes_sys">
+              <MappingFragment StoreEntitySet="tb_sis_Mensajes_sys">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Mensaje_Englesh" ColumnName="Mensaje_Englesh" />
+                <ScalarProperty Name="Mensaje_Esp" ColumnName="Mensaje_Esp" />
+                <ScalarProperty Name="IdMensaje" ColumnName="IdMensaje" />
+                <ScalarProperty Name="IdSecuencia" ColumnName="IdSecuencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_sis_reporte">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_sis_reporte">
+              <MappingFragment StoreEntitySet="tb_sis_reporte">
+                <ScalarProperty Name="Disenio_reporte" ColumnName="Disenio_reporte" />
+                <ScalarProperty Name="Store_proce_rpt" ColumnName="Store_proce_rpt" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="se_Muestra_Admin_Reporte" ColumnName="se_Muestra_Admin_Reporte" />
+                <ScalarProperty Name="IdGrupo_Reporte" ColumnName="IdGrupo_Reporte" />
+                <ScalarProperty Name="Class_Data" ColumnName="Class_Data" />
+                <ScalarProperty Name="Class_Bus" ColumnName="Class_Bus" />
+                <ScalarProperty Name="Class_Info" ColumnName="Class_Info" />
+                <ScalarProperty Name="SQuery" ColumnName="SQuery" />
+                <ScalarProperty Name="Tipo_Balance" ColumnName="Tipo_Balance" />
+                <ScalarProperty Name="VersionActual" ColumnName="VersionActual" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="nom_Asembly" ColumnName="nom_Asembly" />
+                <ScalarProperty Name="Class_NomReporte" ColumnName="Class_NomReporte" />
+                <ScalarProperty Name="Formulario" ColumnName="Formulario" />
+                <ScalarProperty Name="VistaRpt" ColumnName="VistaRpt" />
+                <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+                <ScalarProperty Name="Nom_Corto_reporte" ColumnName="Nom_Corto_reporte" />
+                <ScalarProperty Name="Nom_reporte" ColumnName="Nom_reporte" />
+                <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_sucursal">
             <EntityTypeMapping TypeName="ERP_SYSModel2.tb_sucursal">
               <MappingFragment StoreEntitySet="tb_sucursal">
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
-                <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
-                <ScalarProperty Name="cod_establecimiento" ColumnName="cod_establecimiento" />
-                <ScalarProperty Name="nom_sucursal" ColumnName="nom_sucursal" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nom_sucursal" ColumnName="nom_sucursal" />
+                <ScalarProperty Name="cod_establecimiento" ColumnName="cod_establecimiento" />
+                <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_tarjeta">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_tarjeta">
+              <MappingFragment StoreEntitySet="tb_tarjeta">
+                <ScalarProperty Name="MotivoAnulacion" ColumnName="MotivoAnulacion" />
+                <ScalarProperty Name="Fecha_UltAnu" ColumnName="Fecha_UltAnu" />
+                <ScalarProperty Name="IdUsuarioUltAnu" ColumnName="IdUsuarioUltAnu" />
+                <ScalarProperty Name="Fecha_UltMod" ColumnName="Fecha_UltMod" />
+                <ScalarProperty Name="IdUsuarioUltModi" ColumnName="IdUsuarioUltModi" />
+                <ScalarProperty Name="Fecha_Transaccion" ColumnName="Fecha_Transaccion" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdBanco" ColumnName="IdBanco" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="nom_tarjeta" ColumnName="nom_tarjeta" />
+                <ScalarProperty Name="IdTarjeta" ColumnName="IdTarjeta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -384,8 +1239,16 @@
             <EntityTypeMapping TypeName="ERP_SYSModel2.tb_impuesto">
               <MappingFragment StoreEntitySet="tb_impuesto">
                 <ScalarProperty Name="IdImpuesto_tipo" ColumnName="IdImpuesto_tipo" />
-                <ScalarProperty Name="nom_Impuesto" ColumnName="nom_Impuesto" />
+                <ScalarProperty Name="nom_Impuesto_tipo" ColumnName="nom_Impuesto_tipo" />
                 <ScalarProperty Name="IdImpuesto" ColumnName="IdImpuesto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Impuesto_tipo">
+            <EntityTypeMapping TypeName="ERP_SYSModel2.tb_Impuesto_tipo">
+              <MappingFragment StoreEntitySet="tb_Impuesto_tipo">
+                <ScalarProperty Name="nom_Impuesto_tipo" ColumnName="nom_Impuesto_tipo" />
+                <ScalarProperty Name="IdImpuesto_tipo" ColumnName="IdImpuesto_tipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

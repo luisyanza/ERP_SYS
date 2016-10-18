@@ -15,7 +15,7 @@ namespace Core.ErpSys.Data.General
     public partial class tb_impuesto
     {
         public string IdImpuesto { get; set; }
-        public string nom_Impuesto { get; set; }
+        public string nom_Impuesto_tipo { get; set; }
         public string IdImpuesto_tipo { get; set; }
     
         public virtual tb_Impuesto_tipo tb_Impuesto_tipo { get; set; }

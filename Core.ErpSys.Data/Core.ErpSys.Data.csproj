@@ -48,28 +48,161 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturacion\fa_cbteVta.cs">
+    <Compile Include="Facturacion\fac_catalogo.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fa_cbteVta_Data.cs" />
-    <Compile Include="Facturacion\fa_cbteVta_det.cs">
+    <Compile Include="Facturacion\fac_catalogo_Data.cs" />
+    <Compile Include="Facturacion\fac_catalogo_tipo.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fa_cbteVta_det_Data.cs" />
-    <Compile Include="Facturacion\fa_cbteVta_Talonario.cs">
+    <Compile Include="Facturacion\fac_cbteVta.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fa_cbteVta_Talonario_Data.cs" />
-    <Compile Include="Facturacion\fa_cbteVta_tipo.cs">
+    <Compile Include="Facturacion\fac_cbteVta_Data.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_det.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fa_cbteVta_tipo_Data.cs" />
-    <Compile Include="Facturacion\fa_cliente.cs">
+    <Compile Include="Facturacion\fac_cbteVta_det_Data.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_Talonario.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fa_cliente_Data.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_Talonario_Data.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_tipo.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_cbteVta_tipo_Data.cs" />
+    <Compile Include="Facturacion\fac_cliente.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_cliente_contactos.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_cliente_contactos_Data.cs" />
+    <Compile Include="Facturacion\fac_cliente_Data.cs" />
+    <Compile Include="Facturacion\fac_cliente_pto_emision_cliente.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_cliente_pto_emision_cliente_Data.cs" />
+    <Compile Include="Facturacion\fac_cliente_tipo.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_cliente_tipo_Data.cs" />
+    <Compile Include="Facturacion\fac_cotizacion.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_cotizacion_Data.cs" />
+    <Compile Include="Facturacion\fac_cotizacion_det.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_cotizacion_det_Data.cs" />
+    <Compile Include="Facturacion\fac_devol_venta.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_devol_venta_Data.cs" />
+    <Compile Include="Facturacion\fac_devol_venta_det.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_devol_venta_det_Data.cs" />
+    <Compile Include="Facturacion\fac_formaPago.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_formaPago_Data.cs" />
+    <Compile Include="Facturacion\fac_guia_remision.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_guia_remision_det.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_motivo_venta.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_motivo_venta_Data.cs" />
+    <Compile Include="Facturacion\fac_orden_pedido.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_orden_pedido_det.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_parametro.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_parametro_Data.cs" />
+    <Compile Include="Facturacion\fac_pedido_estadoAprobacion.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_pedido_x_formaPago.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_TerminoPago.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_TerminoPago_Data.cs" />
+    <Compile Include="Facturacion\fac_TerminoPago_Distribucion.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_TerminoPago_Distribucion_Data.cs" />
+    <Compile Include="Facturacion\fac_TipoNota.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_TipoNota_Data.cs" />
+    <Compile Include="Facturacion\fac_TipoNota_x_tbsucursal.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_TipoNota_x_tbsucursal_Data.cs" />
+    <Compile Include="Facturacion\fac_Vendedor.cs">
+      <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\fac_Vendedor_Data.cs" />
+    <Compile Include="General\tb_banco.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_Calendario.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_ciudad.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_contacto.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_dia.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
     <Compile Include="General\tb_impuesto_Data.cs" />
     <Compile Include="General\tb_Impuesto_tipo_Data.cs" />
+    <Compile Include="General\tb_mes.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_modulo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_pais.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_parroquia.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_persona_direccion_tipo.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_provincia.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_sis_Formulario.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_sis_Log_Error_Vzen.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_sis_Mensajes_sys.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_sis_reporte.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General\tb_tarjeta.cs">
+      <DependentUpon>Model_General.tt</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\in_producto.cs">
       <DependentUpon>ModelInventario.tt</DependentUpon>
     </Compile>

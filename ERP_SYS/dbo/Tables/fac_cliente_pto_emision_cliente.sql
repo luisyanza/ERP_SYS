@@ -9,6 +9,6 @@
     [mail1]          VARCHAR (50)  NOT NULL,
     [mail2]          VARCHAR (50)  NOT NULL,
     [Estado]         BIT           NOT NULL,
-    CONSTRAINT [PK_fa_cliente_pto_emision_cliente] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdCliente] ASC, [IdPuntoEmision] ASC)
+    CONSTRAINT [PK_fac_cliente_pto_emision_cliente] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [IdCliente] ASC, [IdPuntoEmision] ASC)
 );
 

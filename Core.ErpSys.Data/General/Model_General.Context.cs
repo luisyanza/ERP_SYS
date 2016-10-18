@@ -25,13 +25,29 @@ namespace Core.ErpSys.Data.General
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<tb_banco> tb_banco { get; set; }
+        public DbSet<tb_Calendario> tb_Calendario { get; set; }
         public DbSet<tb_catalogo> tb_catalogo { get; set; }
         public DbSet<tb_catalogo_tipo> tb_catalogo_tipo { get; set; }
+        public DbSet<tb_ciudad> tb_ciudad { get; set; }
+        public DbSet<tb_contacto> tb_contacto { get; set; }
+        public DbSet<tb_dia> tb_dia { get; set; }
         public DbSet<tb_empresa> tb_empresa { get; set; }
-        public DbSet<tb_Impuesto_tipo> tb_Impuesto_tipo { get; set; }
+        public DbSet<tb_mes> tb_mes { get; set; }
+        public DbSet<tb_modulo> tb_modulo { get; set; }
+        public DbSet<tb_pais> tb_pais { get; set; }
+        public DbSet<tb_parroquia> tb_parroquia { get; set; }
         public DbSet<tb_persona> tb_persona { get; set; }
+        public DbSet<tb_persona_direccion_tipo> tb_persona_direccion_tipo { get; set; }
+        public DbSet<tb_provincia> tb_provincia { get; set; }
         public DbSet<tb_puntoVta> tb_puntoVta { get; set; }
+        public DbSet<tb_sis_Formulario> tb_sis_Formulario { get; set; }
+        public DbSet<tb_sis_Log_Error_Vzen> tb_sis_Log_Error_Vzen { get; set; }
+        public DbSet<tb_sis_Mensajes_sys> tb_sis_Mensajes_sys { get; set; }
+        public DbSet<tb_sis_reporte> tb_sis_reporte { get; set; }
         public DbSet<tb_sucursal> tb_sucursal { get; set; }
+        public DbSet<tb_tarjeta> tb_tarjeta { get; set; }
         public DbSet<tb_impuesto> tb_impuesto { get; set; }
+        public DbSet<tb_Impuesto_tipo> tb_Impuesto_tipo { get; set; }
     }
 }

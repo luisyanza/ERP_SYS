@@ -5,15 +5,34 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6f0dc4ba30a7421bb7ab606ecbc3de41" Name="Diagram1">
-        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta_det" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta_tipo" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cliente" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_det_fa_cbteVta" ManuallyRouted="false" />
-        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_tipo" ManuallyRouted="false" />
-        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cliente" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ERP_SYSModel3.fa_cbteVta_Talonario" Width="1.5" PointX="5.04350948196068" PointY="25.62639000715054" />
-        <AssociationConnector Association="ERP_SYSModel3.FK_fa_cbteVta_fa_cbteVta_Talonario" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_catalogo" Width="1.5" PointX="8.215859942238712" PointY="14.09776828349464" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_catalogo_tipo" Width="1.5" PointX="11.737319614615906" PointY="6.9901528241998294" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cbteVta" Width="1.5" PointX="7.6986502258566443" PointY="26.171794605521388" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cbteVta_det" Width="1.5" PointX="8.4207572082154254" PointY="20.259779313700172" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cbteVta_Talonario" Width="1.5" PointX="2.0183783052574742" PointY="16.859508954388794" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cbteVta_tipo" Width="1.5" PointX="8.14313688508381" PointY="10.493372191904753" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cliente" Width="1.5" PointX="4.7008944063917237" PointY="21.353707710911383" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cliente_contactos" Width="1.5" PointX="9.016904402997767" PointY="20.599722991045436" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cliente_pto_emision_cliente" Width="1.5" PointX="7.121662424468278" PointY="13.56536000108596" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cliente_tipo" Width="1.5" PointX="5.2124567540420479" PointY="29.098443283279632" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cotizacion" Width="1.5" PointX="2.9998943838290377" PointY="13.888143262773818" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_cotizacion_det" Width="1.5" PointX="5.5579346183491563" PointY="3.3790401534079759" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_devol_venta" Width="1.5" PointX="8.1348059215279331" PointY="18.745706581857849" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_devol_venta_det" Width="1.5" PointX="11.611608316941004" PointY="0.026199325931351318" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_formaPago" Width="1.5" PointX="6.40906494036739" PointY="5.1932087117774453" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_guia_remision" Width="1.5" PointX="6.95014113138902" PointY="14.520996338930445" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_guia_remision_det" Width="1.5" PointX="7.4271609910890284" PointY="21.572193200500774" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_motivo_venta" Width="1.5" PointX="0.25072067242614954" PointY="1.6114927984827629" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_orden_pedido" Width="1.5" PointX="8.4668995125530753" PointY="31.467059537520193" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_orden_pedido_det" Width="1.5" PointX="11.728527059652157" PointY="9.9020527498340485" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_parametro" Width="1.5" PointX="5.2316755527777943" PointY="12.795570245383107" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_pedido_estadoAprobacion" Width="1.5" PointX="11.631729695774489" PointY="5.7399120357539095" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_pedido_x_formaPago" Width="1.5" PointX="10.338430433691679" PointY="5.7221985634985373" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_TerminoPago" Width="1.5" PointX="3.0258029974185878" PointY="4.5941018334562429" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_TerminoPago_Distribucion" Width="1.5" PointX="0.42478373852781193" PointY="0.10323266689816149" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_TipoNota" Width="1.5" PointX="5.2712318940419856" PointY="2.1585442731895226" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_TipoNota_x_tbsucursal" Width="1.5" PointX="3.6808652596924754" PointY="9.64938517364179" />
+        <EntityTypeShape EntityType="ERP_SYSModel3.fac_Vendedor" Width="1.5" PointX="1.1839008970111147" PointY="8.0208165831960816" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

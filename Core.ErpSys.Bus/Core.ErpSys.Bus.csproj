@@ -39,11 +39,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturacion\fa_cbteVta_Bus.cs" />
-    <Compile Include="Facturacion\fa_cbteVta_det_Bus.cs" />
-    <Compile Include="Facturacion\fa_cbteVta_Talonario_Bus.cs" />
-    <Compile Include="Facturacion\fa_cbteVta_tipo_Bus.cs" />
-    <Compile Include="Facturacion\fa_cliente_Bus.cs" />
+    <Compile Include="Facturacion\fac_catalogo_Bus.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_Bus.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_det_Bus.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_Talonario_Bus.cs" />
+    <Compile Include="Facturacion\fac_cbteVta_tipo_Bus.cs" />
+    <Compile Include="Facturacion\fac_cliente_Bus.cs" />
+    <Compile Include="Facturacion\fac_cliente_contactos_Bus.cs" />
+    <Compile Include="Facturacion\fac_cliente_pto_emision_cliente_Bus.cs" />
+    <Compile Include="Facturacion\fac_cliente_tipo_Bus.cs" />
+    <Compile Include="Facturacion\fac_cotizacion_Bus.cs" />
+    <Compile Include="Facturacion\fac_cotizacion_det_Bus.cs" />
+    <Compile Include="Facturacion\fac_devol_venta_Bus.cs" />
+    <Compile Include="Facturacion\fac_devol_venta_det_Bus.cs" />
+    <Compile Include="Facturacion\fac_formaPago_Bus.cs" />
+    <Compile Include="Facturacion\fac_motivo_venta_Bus.cs" />
+    <Compile Include="Facturacion\fac_parametro_Bus.cs" />
+    <Compile Include="Facturacion\fac_TerminoPago_Bus.cs" />
+    <Compile Include="Facturacion\fac_TerminoPago_Distribucion_Bus.cs" />
+    <Compile Include="Facturacion\fac_TipoNota_Bus.cs" />
+    <Compile Include="Facturacion\fac_TipoNota_x_tbsucursal_Bus.cs" />
+    <Compile Include="Facturacion\fac_Vendedor_Bus.cs" />
     <Compile Include="General\tb_impuesto_Bus.cs" />
     <Compile Include="General\tb_Impuesto_tipo_Bus.cs" />
     <Compile Include="Inventario\in_producto_Bus.cs" />

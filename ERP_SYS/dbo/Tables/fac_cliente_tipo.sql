@@ -15,6 +15,6 @@
     [nom_pc]                 VARCHAR (50)  NULL,
     [ip]                     VARCHAR (25)  NULL,
     [estado]                 BIT           NOT NULL,
-    CONSTRAINT [PK_fa_cliente_tipo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [Idtipo_cliente] ASC)
+    CONSTRAINT [PK_fac_cliente_tipo] PRIMARY KEY CLUSTERED ([IdEmpresa] ASC, [Idtipo_cliente] ASC)
 );
 

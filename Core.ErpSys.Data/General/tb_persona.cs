@@ -16,12 +16,29 @@ namespace Core.ErpSys.Data.General
     {
         public decimal IdPersona { get; set; }
         public string cod_persona { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string razon_social { get; set; }
+        public string pe_nombreCompleto { get; set; }
+        public string pe_nombre { get; set; }
+        public string pe_apellido { get; set; }
+        public string pe_razon_social { get; set; }
         public string IdTipoDocumento { get; set; }
         public string Num_documento { get; set; }
         public string IdTipoPersona { get; set; }
         public bool estado { get; set; }
+        public string pe_Naturaleza_cat { get; set; }
+        public string pe_sexo { get; set; }
+        public string IdEstadoCivil_cat { get; set; }
+        public System.DateTime pe_fechaNacimiento { get; set; }
+        public string pe_correo { get; set; }
+        public string pe_correo1 { get; set; }
+        public string pe_correo2 { get; set; }
+        public string pe_telef_Casa { get; set; }
+        public string pe_telef_Trab { get; set; }
+        public string pe_telef_Contacto { get; set; }
+        public string pe_direccion { get; set; }
+        public string pe_fax { get; set; }
+        public string pe_casilla { get; set; }
+        public string IdTipoCta_acreditacion_cat { get; set; }
+        public string num_cta_acreditacion { get; set; }
+        public Nullable<int> IdBanco_acreditacion { get; set; }
     }
 }
