@@ -13,6 +13,82 @@ namespace Core.ErpSys.Data.Facturacion
    public class fac_cbteVta_Data
     {
 
+        public List<fac_cbteVta_Info> Get_List_CbteVta(int IdEmpresa, int IdSucursal, int IdPuntoVta)
+        {
+            List<fac_cbteVta_Info> ListInfo = new List<fac_cbteVta_Info>();
+
+            try
+            {
+
+                Entities_Facturacion OBase = new Entities_Facturacion();
+
+                var selectq = from q in OBase.fac_cbteVta
+                              where q.IdEmpresa == IdEmpresa && q.IdSucursal == IdSucursal && q.IdPuntoVta == IdPuntoVta
+                              select q;
+
+                foreach (var item in selectq)
+                {
+                    ListInfo.Add(new fac_cbteVta_Info(item.IdEmpresa,item.IdCbteVtaTipo,item.IdCbteVta,item.CodCbteVta,item.num_CbteVta,
+                                                        item.IdSucursal,item.IdPuntoVta,item.IdTipoNota,item.IdCaja,item.IdCliente,
+                                                        item.estado,item.vt_Observacion,item.Fecha_Autorizacion,item.num_autorizacion,item.vt_plazo,
+                                                        item.vt_fecha_venc,item.vt_fecha));
+
+                }
+
+            }
+            catch (Exception)
+            {
+                return new List<fac_cbteVta_Info>();
+            }
+
+            return ListInfo;
+        }
+
+        public fac_cbteVta_Info Get_Info_CbteVta(int IdEmpresa, int IdSucursal, int IdPuntoVta, decimal IdCbteVta)
+        {
+            fac_cbteVta_Info Info = new fac_cbteVta_Info();
+
+            try
+            {
+
+                Entities_Facturacion OBase = new Entities_Facturacion();
+
+                var selectq = from q in OBase.fac_cbteVta
+                              where q.IdCbteVta == IdCbteVta && q.IdEmpresa == IdEmpresa && q.IdSucursal == IdSucursal && q.IdPuntoVta == IdPuntoVta
+                              select q;
+
+                foreach (var item in selectq)
+                {
+                    Info.IdEmpresa = item.IdEmpresa;
+                    Info.IdCbteVtaTipo = item.IdCbteVtaTipo;
+                    Info.IdCbteVta = item.IdCbteVta;
+                    Info.CodCbteVta = item.CodCbteVta;
+                    Info.num_CbteVta = item.num_CbteVta;
+                    Info.IdSucursal = item.IdSucursal;
+                    Info.IdPuntoVta = item.IdPuntoVta;
+                    Info.IdTipoNota = item.IdTipoNota;
+                    Info.IdCaja = item.IdCaja;
+                    Info.IdCliente = item.IdCliente;
+                    Info.estado = item.estado;
+                    Info.vt_Observacion = item.vt_Observacion;
+                    Info.Fecha_Autorizacion = item.Fecha_Autorizacion;
+                    Info.num_autorizacion = item.num_autorizacion;
+                    Info.vt_plazo = item.vt_plazo;
+                    Info.vt_fecha_venc = item.vt_fecha_venc;
+                    Info.vt_fecha = item.vt_fecha;
+
+                }
+            }
+            catch (Exception)
+            {
+                return new fac_cbteVta_Info();
+            }
+
+            return Info;
+
+        }
+
+
        public Boolean GrabarDB(fac_cbteVta_Info Info)
        {
            try

@@ -8,25 +8,24 @@ using Core.ErpSys.Data.Facturacion;
 
 namespace Core.ErpSys.Bus.Facturacion
 {
-    public class fac_TerminoPago_Bus
+    public class fac_pedido_estadoAprobacion_Bus
     {
 
-        fac_TerminoPago_Data oData = new fac_TerminoPago_Data();
-        public List<fac_TerminoPago_Info> Get_List_TerminoPago(fac_TerminoPago_Info Info)
-        { 
+        fac_pedido_estadoAprobacion_Data oData = new fac_pedido_estadoAprobacion_Data();
+        public List<fac_pedido_estadoAprobacion_Info> Get_List_EstadoAprobacion(fac_pedido_estadoAprobacion_Info Info)
+        {
             try
             {
-                return oData.Get_List_TerminoPago(Info);
+                return oData.Get_List_EstadoAprobacion(Info);
             }
             catch (Exception)
             {
 
-                return new List<fac_TerminoPago_Info>();
+                return new List<fac_pedido_estadoAprobacion_Info>();
             }
 
         }
-
-        public Boolean GrabarDB(fac_TerminoPago_Info Info)
+        public Boolean GrabarDB(fac_pedido_estadoAprobacion_Info Info)
         {
             try
             {
@@ -38,7 +37,7 @@ namespace Core.ErpSys.Bus.Facturacion
                 return false;
             }
         }
-        public Boolean ModificarDB(fac_TerminoPago_Info Info)
+        public Boolean ModificarDB(fac_pedido_estadoAprobacion_Info Info)
         {
             try
             {
@@ -50,7 +49,6 @@ namespace Core.ErpSys.Bus.Facturacion
                 return false;
             }
         }
-
 
     }
 }

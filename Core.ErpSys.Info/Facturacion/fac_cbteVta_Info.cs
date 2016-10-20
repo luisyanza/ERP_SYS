@@ -15,16 +15,16 @@ namespace Core.ErpSys.Info.Facturacion
         public string num_CbteVta { get; set; }
         public int IdSucursal { get; set; }
         public int IdPuntoVta { get; set; }
-        public int IdTipoNota { get; set; }
-        public int IdCaja { get; set; }
+        public int? IdTipoNota { get; set; }
+        public int? IdCaja { get; set; }
         public decimal IdCliente { get; set; }
         public Boolean estado { get; set; }
         public string vt_Observacion { get; set; }
-        public DateTime Fecha_Autorizacion { get; set; }
+        public DateTime? Fecha_Autorizacion { get; set; }
         public string num_autorizacion { get; set; }
         public int vt_plazo { get; set; }
-        public DateTime vt_fecha_venc { get; set; }
-        public DateTime vt_fecha { get; set; }
+        public DateTime? vt_fecha_venc { get; set; }
+        public DateTime? vt_fecha { get; set; }
         public List<fac_cbteVta_det_Info> List_detalle { get; set; }
 
         public fac_cbteVta_Info()
@@ -34,8 +34,8 @@ namespace Core.ErpSys.Info.Facturacion
         }
 
         public fac_cbteVta_Info(int _IdEmpresa,	string _IdCbteVtaTipo,	decimal _IdCbteVta,	string _CodCbteVta,	string _num_CbteVta,	int _IdSucursal,	int _IdPuntoVta,
-                                int _IdTipoNota,	int _IdCaja,	decimal _IdCliente,	Boolean _estado,	string _vt_Observacion,	DateTime _Fecha_Autorizacion,
-                                string _num_autorizacion,	int _vt_plazo,	DateTime _vt_fecha_venc,	DateTime _vt_fecha)
+                                int? _IdTipoNota,	int? _IdCaja,	decimal _IdCliente,	Boolean _estado,	string _vt_Observacion,	DateTime? _Fecha_Autorizacion,
+                                string _num_autorizacion,	int _vt_plazo,	DateTime? _vt_fecha_venc,	DateTime? _vt_fecha)
         {
             IdEmpresa = _IdEmpresa;
             IdCbteVtaTipo = _IdCbteVtaTipo;

@@ -13,6 +13,38 @@ namespace Core.ErpSys.Bus.Facturacion
     {
        fac_cbteVta_Data Odata= new fac_cbteVta_Data();
 
+       public List<fac_cbteVta_Info> Get_List_CbteVta(int IdEmpresa, int IdSucursal, int IdPuntoVta)
+       {
+           try
+           {
+               return Odata.Get_List_CbteVta(IdEmpresa, IdSucursal, IdPuntoVta);
+           }
+           catch (Exception)
+           {
+
+               return new List<fac_cbteVta_Info>(); ;
+           }
+       }
+
+       public fac_cbteVta_Info Get_Info_CbteVta(int IdEmpresa, int IdSucursal, int IdPuntoVta, decimal IdCbteVta)
+       {
+           try
+           {
+               fac_cbteVta_Info Info = new fac_cbteVta_Info();
+               Info = Odata.Get_Info_CbteVta(IdEmpresa, IdSucursal, IdPuntoVta, IdCbteVta);
+               if (Info.IdEmpresa > 0)
+               {
+                   fac_cbteVta_det_Bus oBusDet = new fac_cbteVta_det_Bus();
+                   Info.List_detalle = oBusDet.Get_List_CbteVta(IdEmpresa, IdCbteVta);
+               }
+               return Info;
+           }
+           catch (Exception)
+           {
+
+               return new fac_cbteVta_Info();
+           }
+       }
 
        public Boolean GrabarDB(fac_cbteVta_Info Info)
        {
@@ -49,7 +81,7 @@ namespace Core.ErpSys.Bus.Facturacion
            catch (Exception)
            {
                
-               throw;
+               return false ;
            }
 
        }
@@ -124,7 +156,7 @@ namespace Core.ErpSys.Bus.Facturacion
        
        }
 
-       private bool GetNumCbteVta(ref string Mensaje)
+       public Boolean GetNumCbteVta(ref string Mensaje)
        {
            throw new NotImplementedException();
        }

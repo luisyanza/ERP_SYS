@@ -25,11 +25,20 @@ namespace Core.ErpSys.Bus.Facturacion
                 return new List<fac_cotizacion_Info>(); ;
             }
         }
+
         public fac_cotizacion_Info Get_Info_cotizacion(int IdEmpresa, int IdSucursal, int IdPuntoVta, decimal Idcotizacion)
         {
             try
             {
-                return oData.Get_Info_cotizacion(IdEmpresa, IdSucursal, IdPuntoVta, Idcotizacion);
+                fac_cotizacion_Info Info = new fac_cotizacion_Info();
+                Info= oData.Get_Info_cotizacion(IdEmpresa, IdSucursal, IdPuntoVta, Idcotizacion);
+                if (Info.IdEmpresa > 0)
+                {
+                    fac_cotizacion_det_Bus OBusDet = new fac_cotizacion_det_Bus();
+                    Info.ListDetalle = OBusDet.Get_List_CotizacionDet(IdEmpresa, IdSucursal, IdPuntoVta, Idcotizacion);
+                
+                }
+                return Info;
             }
             catch (Exception)
             {
@@ -37,6 +46,7 @@ namespace Core.ErpSys.Bus.Facturacion
                 return new fac_cotizacion_Info();
             }
         }
+
         public Boolean GrabarDB(fac_cotizacion_Info Info)
         {
 

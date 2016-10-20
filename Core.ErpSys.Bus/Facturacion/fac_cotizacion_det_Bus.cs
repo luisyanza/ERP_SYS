@@ -112,5 +112,20 @@ namespace Core.ErpSys.Bus.Facturacion
                 return false;
             }
         }
+
+        public List<fac_cotizacion_det_Info> Get_List_CotizacionDet(int IdEmpresa, int idSucursal, int idPtoVta, decimal IdCotizacion)
+        {
+            try
+            {
+                return oData.Get_List_CotizacionDet(IdEmpresa, idSucursal, idPtoVta, IdCotizacion);
+            }
+            catch (Exception)
+            {
+                
+                return new List<fac_cotizacion_det_Info>();
+            }
+        
+        
+        }
     }
 }

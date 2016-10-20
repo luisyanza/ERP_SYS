@@ -24,11 +24,11 @@ namespace Core.ErpSys.Info.Facturacion
         public double por_impuesto_iva { get; set; }
         public string IdImpuesto_Iva { get; set; }
         public double total { get; set; }
-        public int IdPunto_Cargo { get; set; }
-        public int IdPunto_cargo_grupo { get; set; }
+        public int? IdPunto_Cargo { get; set; }
+        public int? IdPunto_cargo_grupo { get; set; }
         public string IdImpuesto_Ice { get; set; }
-        public double valor_impuesto_ice { get; set; }
-        public double por_impuesto_ice { get; set; }
+        public double? valor_impuesto_ice { get; set; }
+        public double? por_impuesto_ice { get; set; }
 
         public fac_cbteVta_det_Info()
         {
@@ -36,8 +36,8 @@ namespace Core.ErpSys.Info.Facturacion
         }
         public fac_cbteVta_det_Info(int _IdEmpresa,	string _IdCbteVtaTipo,	decimal _IdCbteVta,	int _secuencia,	decimal _IdProducto,	string _observacion_det,
                                     double _cantidad,double _precio,	double _por_descuento,	double _valor_descuento,	double _precio_final,	double _subtotal,	
-                                    double _valor_impuesto_iva, double _por_impuesto_iva,	string _IdImpuesto_Iva,	double _total,	int _IdPunto_Cargo,	
-                                    int _IdPunto_cargo_grupo, string _IdImpuesto_Ice, double _valor_impuesto_ice,	double _por_impuesto_ice)
+                                    double _valor_impuesto_iva, double _por_impuesto_iva,	string _IdImpuesto_Iva,	double _total,	int? _IdPunto_Cargo,	
+                                    int? _IdPunto_cargo_grupo, string _IdImpuesto_Ice, double? _valor_impuesto_ice,	double? _por_impuesto_ice)
         {
             IdEmpresa = _IdEmpresa;
             IdCbteVtaTipo = _IdCbteVtaTipo;

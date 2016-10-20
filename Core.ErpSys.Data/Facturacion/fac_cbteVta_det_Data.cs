@@ -84,5 +84,35 @@ namespace Core.ErpSys.Data.Facturacion
             }
         }
 
+        public List<fac_cbteVta_det_Info> Get_List_CbteVta(int IdEmpresa,  decimal IdCbteVta)
+        {
+           
+             try
+            {
+                List<fac_cbteVta_det_Info> ListInfo = new List<fac_cbteVta_det_Info>();
+                Entities_Facturacion OBase = new Entities_Facturacion();
+
+                var selectq = from q in OBase.fac_cbteVta_det
+                              where q.IdEmpresa == IdEmpresa &&  q.IdCbteVta == IdCbteVta
+                              select q;
+
+                foreach (var item in selectq)
+                {
+                    ListInfo.Add(new fac_cbteVta_det_Info(item.IdEmpresa,item.IdCbteVtaTipo,item.IdCbteVta,item.secuencia,item.IdProducto,
+                                                            item.observacion_det,item.cantidad,item.precio,item.por_descuento,item.valor_descuento,
+                                                            item.precio_final,item.subtotal,item.valor_impuesto_iva,item.por_impuesto_iva,item.IdImpuesto_Iva,
+                                                            item.total,item.IdPunto_Cargo,item.IdPunto_cargo_grupo,item.IdImpuesto_Ice,item.valor_impuesto_ice,
+                                                            item.por_impuesto_ice));
+
+                }
+                return ListInfo;
+            }
+            catch (Exception)
+            {
+                
+                return new List<fac_cbteVta_det_Info>();
+            }
+        }
+
     }
 }

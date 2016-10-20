@@ -12,6 +12,21 @@ namespace Core.ErpSys.Bus.Facturacion
     {
 
         fac_devol_venta_det_Data oData = new fac_devol_venta_det_Data();
+
+        public List<fac_devol_venta_det_Info> Get_List_DevolVentaDet(int IdEmpresa, int IdSucursal, int IdPtoVenta, decimal IdDevolucion )
+        {
+            try
+            {
+                return oData.Get_List_DevolVentaDet(IdEmpresa, IdSucursal, IdPtoVenta, IdDevolucion);
+
+            }
+            catch (Exception)
+            {
+                
+                return new List<fac_devol_venta_det_Info>();
+            }
+        }
+
         public Boolean GrabarDB(List<fac_devol_venta_det_Info> List_Info)
         {
             try
@@ -24,6 +39,7 @@ namespace Core.ErpSys.Bus.Facturacion
                 return false;
             }
         }
+
         public Boolean EliminarDB(int IdEmpresa, int IdSucursal, int IdPtoVenta, decimal IdDevolucion)
         {
             try
@@ -112,5 +128,6 @@ namespace Core.ErpSys.Bus.Facturacion
                 return false;
             }
         }
+
     }
 }

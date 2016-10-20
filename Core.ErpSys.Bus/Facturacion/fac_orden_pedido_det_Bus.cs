@@ -6,29 +6,27 @@ using System.Threading.Tasks;
 using Core.ErpSys.Info.Facturacion;
 using Core.ErpSys.Data.Facturacion;
 
-
 namespace Core.ErpSys.Bus.Facturacion
 {
-    public class fac_cbteVta_det_Bus
+    public class fac_orden_pedido_det_Bus
     {
+        fac_orden_pedido_det_Data Odata = new fac_orden_pedido_det_Data();
 
-        fac_cbteVta_det_Data Odata = new fac_cbteVta_det_Data();
-
-        public List<fac_cbteVta_det_Info> Get_List_CbteVta(int IdEmpresa, decimal IdCbteVta)
+        public List<fac_orden_pedido_det_Info> Get_List_OrdenPedidoDet(int IdEmpresa, int IdSucursal, int IdPtoVenta, decimal IdPedido)
         {
             try
             {
-                return Odata.Get_List_CbteVta(IdEmpresa, IdCbteVta);
+                return Odata.Get_List_OrdenPedidoDet(IdEmpresa, IdSucursal, IdPtoVenta, IdPedido);
 
             }
             catch (Exception)
             {
 
-                return new List<fac_cbteVta_det_Info>();
+                return new List<fac_orden_pedido_det_Info>();
             }
         }
 
-        public Boolean GrabarDB(List<fac_cbteVta_det_Info> List_Info)
+        public Boolean GrabarDB(List<fac_orden_pedido_det_Info> List_Info)
         {
             try
             {
@@ -42,11 +40,11 @@ namespace Core.ErpSys.Bus.Facturacion
             }
         }
 
-        public Boolean EliminarDB(int IdEmpresa, string IdTipoCbteVta, decimal IdCbte)
+        public Boolean EliminarDB(int IdEmpresa, int IdSucursal, int IdPtoVenta, decimal IdPedido)
         {
             try
             {
-                return Odata.EliminarDB(IdEmpresa, IdTipoCbteVta, IdCbte);
+                return Odata.EliminarDB(IdEmpresa, IdSucursal, IdPtoVenta, IdPedido);
 
             }
             catch (Exception)
@@ -55,7 +53,7 @@ namespace Core.ErpSys.Bus.Facturacion
             }
         }
 
-        internal bool Validar_Corregir_Objeto(fac_cbteVta_Info Info, ref string MensajeError)
+        internal bool Validar_Corregir_Objeto(fac_orden_pedido_Info Info, ref string MensajeError)
         {
             try
             {
@@ -66,7 +64,7 @@ namespace Core.ErpSys.Bus.Facturacion
                     MensajeError = "El comprobante no tiene detalle.";
                     return false;
                 }
-                foreach (fac_cbteVta_det_Info item in Info.List_detalle)
+                foreach (fac_orden_pedido_det_Info item in Info.List_detalle)
                 {
                     if (item.IdEmpresa == 0)
                     {
@@ -81,32 +79,14 @@ namespace Core.ErpSys.Bus.Facturacion
                         }
                     }
 
-                    if (string.IsNullOrEmpty(item.IdCbteVtaTipo))
-                    {
-                        if (string.IsNullOrEmpty(Info.IdCbteVtaTipo))
-                        {
-                            MensajeError = "Cbte Detalle PK TipoCbteVta no valido";
-                            return false;
-                        }
-                        else
-                            item.IdCbteVtaTipo = Info.IdCbteVtaTipo;
-                    }
+
                     if (item.IdProducto == 0)
                     {
                         MensajeError = "Cbte Detalle PK Producto no valido";
                         return false;
                     }
-                    if (string.IsNullOrEmpty(item.IdImpuesto_Iva))
-                    {
-                        MensajeError = "Cbte Detalle PK IdImpuesto_Iva no valido";
-                        return false;
-                    }
-                   
 
-                #endregion
-                #region Correcciones
 
-                    item.observacion_det = (item.observacion_det == null) ? "" : item.observacion_det;
 
                 #endregion
 

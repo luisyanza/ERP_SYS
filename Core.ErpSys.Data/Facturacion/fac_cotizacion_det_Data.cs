@@ -80,5 +80,33 @@ namespace Core.ErpSys.Data.Facturacion
             }
         }
 
+        public List<fac_cotizacion_det_Info> Get_List_CotizacionDet(int IdEmpresa, int IdSucursal, int IdPtoVenta, decimal IdCotizacion)
+        {
+            try
+            {
+                List<fac_cotizacion_det_Info> ListInfo = new List<fac_cotizacion_det_Info>();
+                Entities_Facturacion OBase = new Entities_Facturacion();
+
+                var selectq = from q in OBase.fac_cotizacion_det 
+                              where q.IdEmpresa == IdEmpresa && q.IdSucursal == IdSucursal && q.IdPuntoVta == IdPtoVenta && q.IdCotizacion == IdCotizacion
+                              select q;
+
+                foreach (var item in selectq)
+                {
+                    ListInfo.Add(new fac_cotizacion_det_Info(item.IdEmpresa, item.IdSucursal, item.IdPuntoVta, item.IdCotizacion, item.Secuencial,
+                                                                item.IdProducto, item.dc_cantidad, item.dc_precio, item.dc_por_desUni, item.dc_valor_desUni,
+                                                                item.dc_precioFinal, item.dc_subtotal, item.dc_valor_impuesto_iva, item.dc_detallexItems, item.dc_por_impuesto_iva,
+                                                                item.IdImpuesto_Iva, item.dc_total));
+
+                }
+                return ListInfo;
+            }
+            catch (Exception)
+            {
+
+                return new List<fac_cotizacion_det_Info>();
+            }
+        }
+
     }
 }

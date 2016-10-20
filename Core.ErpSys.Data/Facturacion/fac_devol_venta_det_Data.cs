@@ -81,5 +81,34 @@ namespace Core.ErpSys.Data.Facturacion
                 return false;
             }
         }
+
+        public List<fac_devol_venta_det_Info> Get_List_DevolVentaDet(int IdEmpresa, int IdSucursal, int IdPtoVenta, decimal IdDevolucion)
+        {
+            try
+            {
+                List<fac_devol_venta_det_Info> ListInfo = new List<fac_devol_venta_det_Info>();
+                Entities_Facturacion OBase = new Entities_Facturacion();
+
+                var selectq = from q in OBase.fac_devol_venta_det 
+                              where q.IdEmpresa == IdEmpresa && q.IdSucursal == IdSucursal && q.IdPuntoVta == IdPtoVenta && q.IdDevolucion == IdDevolucion
+                              select q;
+
+                foreach (var item in selectq)
+                {
+                    ListInfo.Add(new fac_devol_venta_det_Info(item.IdEmpresa,item.IdSucursal,item.IdPuntoVta,item.IdDevolucion,item.Secuencia,
+                                                                item.IdProducto,item.dv_cantidad,item.dv_Precio,item.dv_PorDescUni,item.dv_ValordescUni,
+                                                                item.dv_PrecioFinal,item.dv_subtotal,item.dv_valor_impuesto_iva,item.dv_costo_Uni,item.dv_detallexItems,
+                                                                item.dv_por_impuesto_iva,item.IdImpuesto_Iva,item.dv_total));
+
+                }
+                return ListInfo;
+            }
+            catch (Exception)
+            {
+                
+                return new List<fac_devol_venta_det_Info>();
+            }
+        }
+    
     }
 }

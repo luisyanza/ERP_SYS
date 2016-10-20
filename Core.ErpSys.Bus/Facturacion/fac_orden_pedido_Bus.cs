@@ -8,56 +8,48 @@ using Core.ErpSys.Data.Facturacion;
 
 namespace Core.ErpSys.Bus.Facturacion
 {
-    public class fac_devol_venta_Bus
+    public class fac_orden_pedido_Bus
     {
-        fac_devol_venta_Data oData = new fac_devol_venta_Data();
+        fac_orden_pedido_Data Odata = new fac_orden_pedido_Data();
 
-        public List<fac_devol_venta_Info> Get_List_Devolucion(int IdEmpresa, int IdSucursal, int IdPuntoVta)
+        public List<fac_orden_pedido_Info> Get_List_OrdenPedido(int IdEmpresa, int IdSucursal, int IdPuntoVta)
         {
             try
             {
-                return oData.Get_List_Devolucion(IdEmpresa, IdSucursal, IdPuntoVta);
+                return Odata.Get_List_OrdenPedido(IdEmpresa, IdSucursal, IdPuntoVta);
             }
             catch (Exception)
             {
 
-                return new List<fac_devol_venta_Info>(); ;
+                return new List<fac_orden_pedido_Info>(); ;
             }
         }
 
-        public fac_devol_venta_Info Get_Info_Devolucion(int IdEmpresa, int IdSucursal, int IdPuntoVta, decimal IdDevolucion)
+        public fac_orden_pedido_Info Get_Info_OrdenPedido(int IdEmpresa, int IdSucursal, int IdPuntoVta, decimal IdPedido)
         {
             try
             {
-                fac_devol_venta_Info Info = new fac_devol_venta_Info();
-
-
-                Info  = oData.Get_Info_Devolucion(IdEmpresa, IdSucursal, IdPuntoVta, IdDevolucion);
+                fac_orden_pedido_Info Info = new fac_orden_pedido_Info();
+                Info = Odata.Get_Info_OrdenPedido(IdEmpresa, IdSucursal, IdPuntoVta, IdPedido);
                 if (Info.IdEmpresa > 0)
                 {
-                    fac_devol_venta_det_Bus oBusDet = new fac_devol_venta_det_Bus();
-
-                    Info.ListDetalle = oBusDet.Get_List_DevolVentaDet(IdEmpresa, IdSucursal, IdPuntoVta, IdDevolucion);
-
+                    fac_orden_pedido_det_Bus oBusDet = new fac_orden_pedido_det_Bus();
+                    Info.List_detalle = oBusDet.Get_List_OrdenPedidoDet(IdEmpresa, IdSucursal, IdPuntoVta, IdPedido);
                 }
                 return Info;
-            
             }
             catch (Exception)
             {
 
-                return new fac_devol_venta_Info();
+                return new fac_orden_pedido_Info();
             }
         }
 
-
-        public Boolean GrabarDB(fac_devol_venta_Info Info)
+        public Boolean GrabarDB(fac_orden_pedido_Info Info)
         {
 
             try
             {
-
-
                 bool Respuesta = false;
                 string MensajeError = "";
 
@@ -66,29 +58,36 @@ namespace Core.ErpSys.Bus.Facturacion
                 if (Respuesta)
                 {
 
-                    Respuesta = oData.GrabarDB(Info);
+                    Respuesta = Odata.GrabarDB(Info);
                     if (Respuesta == true)
                     {
-                        fac_devol_venta_det_Bus Bus_deta = new fac_devol_venta_det_Bus();
+                        fac_orden_pedido_det_Bus Bus_deta = new fac_orden_pedido_det_Bus();
 
-                        Respuesta = Bus_deta.GrabarDB(Info.ListDetalle);
+                        Respuesta = Bus_deta.GrabarDB(Info.List_detalle);
+
 
                     }
-
+                    else
+                    {
+                        Odata.EliminarDB(Info.IdEmpresa, Info.IdSucursal, Info.IdPuntoVta, Info.IdPedido);
+                    }
                 }
 
 
                 return Respuesta;
+
             }
             catch (Exception)
             {
 
                 return false;
             }
+
         }
 
-        private bool Validar_Corregir_Objeto(fac_devol_venta_Info Info, ref string MensajeError)
+        public Boolean Validar_Corregir_Objeto(fac_orden_pedido_Info Info, ref string MensajeError)
         {
+
             try
             {
                 bool Respuesta = false;
@@ -116,15 +115,15 @@ namespace Core.ErpSys.Bus.Facturacion
                     return Respuesta;
                 }
 
+                
 
-
-                if (Info.ListDetalle.Count < 1)
+                if (Info.List_detalle.Count < 1)
                 {
-                    MensajeError = "La Devolucion debe tener al menos un item.";
+                    MensajeError = "El comprobante no tiene detalle.";
                     return false;
                 }
 
-                fac_devol_venta_det_Bus BusDet = new fac_devol_venta_det_Bus();
+                fac_orden_pedido_det_Bus BusDet = new fac_orden_pedido_det_Bus();
                 Respuesta = BusDet.Validar_Corregir_Objeto(Info, ref MensajeError);
 
                 if (Respuesta == false)
@@ -134,45 +133,21 @@ namespace Core.ErpSys.Bus.Facturacion
 
                 #region Correcciones
 
-                Info.dv_Observacion = (Info.dv_Observacion == null) ? "" : Info.dv_Observacion;
+                Info.cp_observacion = (Info.cp_observacion  == null) ? "" : Info.cp_observacion ;
 
                 #endregion
 
                 return Respuesta;
 
             }
-            catch (Exception)
+            catch (Exception)                
             {
 
                 return false;
             }
+
         }
 
-        public Boolean ModificarDB(fac_devol_venta_Info Info)
-        {
-
-            try
-            {
-                return oData.ModificarDB(Info);
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-        }
-        public Boolean AnularDB(fac_devol_venta_Info Info)
-        {
-
-            try
-            {
-                return oData.AnularDB(Info);
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-        }
+      
     }
 }

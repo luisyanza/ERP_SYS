@@ -8,56 +8,49 @@ using Core.ErpSys.Data.Facturacion;
 
 namespace Core.ErpSys.Bus.Facturacion
 {
-    public class fac_devol_venta_Bus
+    public class fac_guia_remision_Bus
     {
-        fac_devol_venta_Data oData = new fac_devol_venta_Data();
 
-        public List<fac_devol_venta_Info> Get_List_Devolucion(int IdEmpresa, int IdSucursal, int IdPuntoVta)
+        fac_guia_remision_Data Odata = new fac_guia_remision_Data();
+
+        public List<fac_guia_remision_Info> Get_List_GuiaRemision(int IdEmpresa, int IdSucursal, int IdPuntoVta)
         {
             try
             {
-                return oData.Get_List_Devolucion(IdEmpresa, IdSucursal, IdPuntoVta);
+                return Odata.Get_List_GuiaRemision(IdEmpresa, IdSucursal, IdPuntoVta);
             }
             catch (Exception)
             {
 
-                return new List<fac_devol_venta_Info>(); ;
+                return new List<fac_guia_remision_Info>(); ;
             }
         }
 
-        public fac_devol_venta_Info Get_Info_Devolucion(int IdEmpresa, int IdSucursal, int IdPuntoVta, decimal IdDevolucion)
+        public fac_guia_remision_Info Get_Info_GuiaRemision(int IdEmpresa, int IdSucursal, int IdPuntoVta, decimal IdGuiaRemision)
         {
             try
             {
-                fac_devol_venta_Info Info = new fac_devol_venta_Info();
-
-
-                Info  = oData.Get_Info_Devolucion(IdEmpresa, IdSucursal, IdPuntoVta, IdDevolucion);
+                fac_guia_remision_Info Info = new fac_guia_remision_Info();
+                Info = Odata.Get_Info_GuiaRemision(IdEmpresa, IdSucursal, IdPuntoVta, IdGuiaRemision);
                 if (Info.IdEmpresa > 0)
                 {
-                    fac_devol_venta_det_Bus oBusDet = new fac_devol_venta_det_Bus();
-
-                    Info.ListDetalle = oBusDet.Get_List_DevolVentaDet(IdEmpresa, IdSucursal, IdPuntoVta, IdDevolucion);
-
+                    fac_guia_remision_det_Bus oBusDet = new fac_guia_remision_det_Bus();
+                    Info.List_detalle = oBusDet.Get_List_GuiaRemision(IdEmpresa, IdSucursal,IdPuntoVta, IdGuiaRemision);
                 }
                 return Info;
-            
             }
             catch (Exception)
             {
 
-                return new fac_devol_venta_Info();
+                return new fac_guia_remision_Info();
             }
         }
 
-
-        public Boolean GrabarDB(fac_devol_venta_Info Info)
+        public Boolean GrabarDB(fac_guia_remision_Info Info)
         {
 
             try
             {
-
-
                 bool Respuesta = false;
                 string MensajeError = "";
 
@@ -66,29 +59,36 @@ namespace Core.ErpSys.Bus.Facturacion
                 if (Respuesta)
                 {
 
-                    Respuesta = oData.GrabarDB(Info);
+                    Respuesta = Odata.GrabarDB(Info);
                     if (Respuesta == true)
                     {
-                        fac_devol_venta_det_Bus Bus_deta = new fac_devol_venta_det_Bus();
+                        fac_guia_remision_det_Bus Bus_deta = new fac_guia_remision_det_Bus();
 
-                        Respuesta = Bus_deta.GrabarDB(Info.ListDetalle);
+                        Respuesta = Bus_deta.GrabarDB(Info.List_detalle);
+
 
                     }
-
+                    else
+                    {
+                        Odata.EliminarDB(Info.IdEmpresa, Info.IdSucursal,Info.IdPuntoVta  , Info.IdGuiaRemision);
+                    }
                 }
 
 
                 return Respuesta;
+
             }
             catch (Exception)
             {
 
                 return false;
             }
+
         }
 
-        private bool Validar_Corregir_Objeto(fac_devol_venta_Info Info, ref string MensajeError)
+        public Boolean Validar_Corregir_Objeto(fac_guia_remision_Info Info, ref string MensajeError)
         {
+
             try
             {
                 bool Respuesta = false;
@@ -104,7 +104,7 @@ namespace Core.ErpSys.Bus.Facturacion
                     MensajeError = "PK no validados Sucursal,";
                     return Respuesta;
                 }
-
+               
                 if (Info.IdPuntoVta == 0)
                 {
                     MensajeError = "PK no validado Punto Venta";
@@ -116,15 +116,18 @@ namespace Core.ErpSys.Bus.Facturacion
                     return Respuesta;
                 }
 
-
-
-                if (Info.ListDetalle.Count < 1)
+                if (GetNumGuiaRemision(ref MensajeError))
                 {
-                    MensajeError = "La Devolucion debe tener al menos un item.";
+                    Respuesta = false;
+                }
+
+                if (Info.List_detalle.Count < 1)
+                {
+                    MensajeError = "El comprobante no tiene detalle.";
                     return false;
                 }
 
-                fac_devol_venta_det_Bus BusDet = new fac_devol_venta_det_Bus();
+                fac_guia_remision_det_Bus BusDet = new fac_guia_remision_det_Bus();
                 Respuesta = BusDet.Validar_Corregir_Objeto(Info, ref MensajeError);
 
                 if (Respuesta == false)
@@ -134,7 +137,7 @@ namespace Core.ErpSys.Bus.Facturacion
 
                 #region Correcciones
 
-                Info.dv_Observacion = (Info.dv_Observacion == null) ? "" : Info.dv_Observacion;
+                Info.gi_Observacion = (Info.gi_Observacion == null) ? "" : Info.gi_Observacion;
 
                 #endregion
 
@@ -146,33 +149,12 @@ namespace Core.ErpSys.Bus.Facturacion
 
                 return false;
             }
+
         }
 
-        public Boolean ModificarDB(fac_devol_venta_Info Info)
+        public Boolean GetNumGuiaRemision(ref string Mensaje)
         {
-
-            try
-            {
-                return oData.ModificarDB(Info);
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-        }
-        public Boolean AnularDB(fac_devol_venta_Info Info)
-        {
-
-            try
-            {
-                return oData.AnularDB(Info);
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
+            throw new NotImplementedException();
         }
     }
 }
