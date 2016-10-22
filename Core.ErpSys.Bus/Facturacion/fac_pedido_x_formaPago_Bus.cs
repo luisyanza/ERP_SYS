@@ -16,13 +16,15 @@ namespace Core.ErpSys.Bus.Facturacion
         {
             return oData.GrabarDB(List_Info);
         }
+
         public Boolean EliminarDB(int IdEmpresa, int IdSucursal, int IdBodega, decimal IdPedido, string IdTipoFormaPago)
         {
             return oData.EliminarDB(IdEmpresa, IdSucursal, IdBodega, IdPedido, IdTipoFormaPago);
         }
-        public List<fac_pedido_x_formaPago_Info> Get_List_OrdenPedidoDet(int IdEmpresa, int IdSucursal, int IdBodega, decimal IdPedido, string IdTipoFormaPago)
+
+        public List<fac_pedido_x_formaPago_Info> Get_List_Pedido_x_FormaPago(int IdEmpresa, int IdSucursal, int IdBodega, decimal IdPedido, string IdTipoFormaPago)
         {
-            return oData.Get_List_OrdenPedidoDet(IdEmpresa, IdSucursal, IdBodega, IdPedido, IdTipoFormaPago);
+            return oData.Get_List_Pedido_x_FormaPago(IdEmpresa, IdSucursal, IdBodega, IdPedido, IdTipoFormaPago);
         }
     }
 }

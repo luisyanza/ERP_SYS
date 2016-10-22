@@ -8,7 +8,7 @@ using Core.ErpSys.Data.Facturacion;
 
 namespace Core.ErpSys.Bus.Facturacion
 {
-    public class fac_TerminoPago_Distribucion_Distribucion_Bus
+    public class fac_TerminoPago_Distribucion_Bus
     {
         fac_TerminoPago_Distribucion_Data oData = new fac_TerminoPago_Distribucion_Data();
         public List<fac_TerminoPago_Distribucion_Info> Get_List_TerminoPago_Distribucion(string  IdTerminoPago)
@@ -50,5 +50,7 @@ namespace Core.ErpSys.Bus.Facturacion
                 return false;
             }
         }
+
+
     }
 }

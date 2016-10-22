@@ -73,7 +73,7 @@ namespace Core.ErpSys.Data.Facturacion
             }
         }
 
-        public List<fac_pedido_x_formaPago_Info> Get_List_OrdenPedidoDet(int IdEmpresa, int IdSucursal, int IdBodega, decimal IdPedido, string IdTipoFormaPago)
+        public List<fac_pedido_x_formaPago_Info> Get_List_Pedido_x_FormaPago(int IdEmpresa, int IdSucursal, int IdBodega, decimal IdPedido, string IdTipoFormaPago)
         {
 
             try

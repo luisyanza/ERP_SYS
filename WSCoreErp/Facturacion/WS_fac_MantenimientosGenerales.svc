@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WSCoreErp.Facturacion.WS_fac_MantenimientosGenerales" CodeBehind="WS_fac_MantenimientosGenerales.svc.cs" %>
