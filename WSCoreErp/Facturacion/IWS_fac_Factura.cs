@@ -31,9 +31,7 @@ namespace WSCoreErp.Facturacion
         [OperationContract]
         List<fac_cbteVta_tipo_Info> Get_List_CbteVtaTipo();
 
-        [OperationContract]
-        fac_cbteVta_Talonario_Info Get_NumCbteVta_Talonario(int IdEmpresa, int IdSucursal, int IdPuntoVta, string IdCbteVtaTipo);
-
+        
         [OperationContract]
         bool GetNumCbteVta(ref string Mensaje);
 
@@ -43,9 +41,7 @@ namespace WSCoreErp.Facturacion
         [OperationContract]
         bool GrabarDBCbteVtaTipo(fac_cbteVta_tipo_Info Info);
 
-        [OperationContract]
-        bool GrabarDBTalonario(int IdEmpresa, int IdSucursal, int IdPuntoVta, string idCbteVtaTipo, string IniciaRango, int Rango);
-
+       
         [OperationContract]
         bool ModificarDBCbteVtaTipo(fac_cbteVta_tipo_Info Info);
     }

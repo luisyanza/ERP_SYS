@@ -36,15 +36,7 @@ namespace WSCoreErp.Facturacion
         {
             try
             {
-                fac_cotizacion_Info Info = new fac_cotizacion_Info();
-                Info = oBusCotizacion.Get_Info_cotizacion(IdEmpresa, IdSucursal, IdPuntoVta, Idcotizacion);
-                if (Info.IdEmpresa > 0)
-                {
-                    fac_cotizacion_det_Bus OBusDet = new fac_cotizacion_det_Bus();
-                    Info.ListDetalle = OBusDet.Get_List_CotizacionDet(IdEmpresa, IdSucursal, IdPuntoVta, Idcotizacion);
-
-                }
-                return Info;
+                return oBusCotizacion.Get_Info_cotizacion(IdEmpresa, IdSucursal, IdPuntoVta, Idcotizacion);
             }
             catch (Exception)
             {

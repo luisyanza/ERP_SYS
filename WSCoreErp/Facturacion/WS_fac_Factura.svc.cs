@@ -34,13 +34,13 @@ namespace WSCoreErp.Facturacion
         /// <summary>
         /// fac_cbteVta
         /// </summary>
-        fac_cbteVta_Bus OBus = new fac_cbteVta_Bus();
+        fac_cbteVta_Bus OBusCbteVta = new fac_cbteVta_Bus();
 
         public List<fac_cbteVta_Info> Get_List_CbteVta(int IdEmpresa, int IdSucursal, int IdPuntoVta)
         {
             try
             {
-                return OBus.Get_List_CbteVta(IdEmpresa, IdSucursal, IdPuntoVta);
+                return OBusCbteVta.Get_List_CbteVta(IdEmpresa, IdSucursal, IdPuntoVta);
             }
             catch (Exception)
             {
@@ -53,14 +53,7 @@ namespace WSCoreErp.Facturacion
         {
             try
             {
-                fac_cbteVta_Info Info = new fac_cbteVta_Info();
-                Info = OBus.Get_Info_CbteVta(IdEmpresa, IdSucursal, IdPuntoVta, IdCbteVta);
-                if (Info.IdEmpresa > 0)
-                {
-                    fac_cbteVta_det_Bus oBusDet = new fac_cbteVta_det_Bus();
-                    Info.List_detalle = oBusDet.Get_List_CbteVta(IdEmpresa, IdCbteVta);
-                }
-                return Info;
+                return OBusCbteVta.Get_Info_CbteVta(IdEmpresa, IdSucursal, IdPuntoVta, IdCbteVta);
             }
             catch (Exception)
             {
@@ -74,32 +67,7 @@ namespace WSCoreErp.Facturacion
 
             try
             {
-                bool Respuesta = false;
-                string MensajeError = "";
-
-                Respuesta = Validar_Corregir_Objeto(Info, ref MensajeError);
-
-                if (Respuesta)
-                {
-
-                    Respuesta = OBus.GrabarDB(Info);
-                    if (Respuesta == true)
-                    {
-                        fac_cbteVta_det_Bus Bus_deta = new fac_cbteVta_det_Bus();
-
-                        Respuesta = Bus_deta.GrabarDB(Info.List_detalle);
-
-
-                    }
-                    else
-                    {
-                        OBus.EliminarDB(Info.IdEmpresa, Info.IdCbteVtaTipo, Info.IdCbteVta);
-                    }
-                }
-
-
-                return Respuesta;
-
+                return OBusCbteVta.GrabarDB(Info);
             }
             catch (Exception)
             {

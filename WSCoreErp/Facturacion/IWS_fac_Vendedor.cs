@@ -14,19 +14,19 @@ namespace WSCoreErp.Facturacion
     public interface IWS_fac_Vendedor
     {
         [OperationContract]
-        public List<fac_Vendedor_Info> Get_List_Vendedor(int IdEmpresa);
-        
-        [OperationContract]
-        public fac_Vendedor_Info Get_Info_Vendedor(int IdEmpresa, decimal IdVendedor);
+        List<fac_Vendedor_Info> Get_List_Vendedor(int IdEmpresa);
 
         [OperationContract]
-        public Boolean GrabarDB(fac_Vendedor_Info Info);
-        
-        [OperationContract]
-         public Boolean ModificarDB(fac_Vendedor_Info Info);
+        fac_Vendedor_Info Get_Info_Vendedor(int IdEmpresa, decimal IdVendedor);
 
         [OperationContract]
-        public Boolean AnularDB(fac_Vendedor_Info Info);
+        Boolean GrabarDB(fac_Vendedor_Info Info);
+
+        [OperationContract]
+        Boolean ModificarDB(fac_Vendedor_Info Info);
+
+        [OperationContract]
+        Boolean AnularDB(fac_Vendedor_Info Info);
 
     }
 }

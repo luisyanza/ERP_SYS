@@ -13,14 +13,16 @@ namespace WSCoreErp.Facturacion
     // NOTE: In order to launch WCF Test Client for testing this service, please select WS_fac_Cliente.svc or WS_fac_Cliente.svc.cs at the Solution Explorer and start debugging.
     public class WS_fac_Cliente : IWS_fac_Cliente
     {
-        fac_cliente_Bus oBus = new fac_cliente_Bus();
+
+
+        fac_cliente_Bus oBusCliente = new fac_cliente_Bus();
 
         public List<fac_cliente_Info> Get_List_Cliente(int IdEmpresa)
         {
 
             try
             {
-                return oBus.Get_List_Cliente(IdEmpresa);
+                return oBusCliente.Get_List_Cliente(IdEmpresa);
             }
             catch (Exception)
             {
@@ -34,7 +36,7 @@ namespace WSCoreErp.Facturacion
         {
             try
             {
-                return oBus.Get_Info_Cliente(IdEmpresa, IdCliente);
+                return oBusCliente.Get_Info_Cliente(IdEmpresa, IdCliente);
             }
             catch (Exception)
             {
@@ -47,7 +49,7 @@ namespace WSCoreErp.Facturacion
         {
             try
             {
-                return oBus.GrabarDB(Info, ref MensajeError);
+                return oBusCliente.GrabarDB(Info, ref MensajeError);
             }
             catch (Exception)
             {
@@ -60,7 +62,7 @@ namespace WSCoreErp.Facturacion
         {
             try
             {
-                return oBus.ModificarDB(Info, ref MensajeError );
+                return oBusCliente.ModificarDB(Info, ref MensajeError );
             }
             catch (Exception)
             {
@@ -73,7 +75,78 @@ namespace WSCoreErp.Facturacion
         {
             try
             {
-                return oBus.AnularDB(Info);
+                return oBusCliente.AnularDB(Info);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        fac_cliente_tipo_Bus oBusClienteTipo = new fac_cliente_tipo_Bus();
+        public List<fac_cliente_tipo_Info> Get_List_ClienteTipo(fac_cliente_tipo_Info Info)
+        {
+            try
+            {
+                return oBusClienteTipo.Get_List_ClienteTipo(Info);
+            }
+            catch (Exception)
+            {
+
+                return new List<fac_cliente_tipo_Info>();
+            }
+
+        }
+
+        public fac_cliente_tipo_Info Get_Info_ClienteTipo(int idEmpresa, int Idtipo_cliente)
+        {
+            try
+            {
+                return oBusClienteTipo.Get_Info_ClienteTipo(idEmpresa, Idtipo_cliente);
+            }
+            catch (Exception)
+            {
+
+                return new fac_cliente_tipo_Info();
+            }
+        }
+
+        public Boolean GrabarDBClienteTipo(fac_cliente_tipo_Info Info)
+        {
+            try
+            {
+                return oBusClienteTipo.GrabarDB(Info);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public Boolean ModificarDBClienteTipo(fac_cliente_tipo_Info Info)
+        {
+            try
+            {
+                return oBusClienteTipo.ModificarDB(Info);
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public Boolean AnularDBClienteTipo(fac_cliente_tipo_Info Info)
+        {
+            try
+            {
+                return oBusClienteTipo.AnularDB(Info);
             }
             catch (Exception)
             {
