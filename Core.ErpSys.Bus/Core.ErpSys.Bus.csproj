@@ -113,7 +113,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturacion\fac_catalogo_Bus.cs" />
+    <Compile Include="Facturacion\fac_catalogo_Bus.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_cbteVta_Bus.cs" />
     <Compile Include="Facturacion\fac_cbteVta_det_Bus.cs">
       <SubType>Code</SubType>

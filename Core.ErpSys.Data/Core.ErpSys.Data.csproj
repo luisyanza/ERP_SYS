@@ -125,7 +125,9 @@
     <Compile Include="Facturacion\fac_catalogo.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\fac_catalogo_Data.cs" />
+    <Compile Include="Facturacion\fac_catalogo_Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Facturacion\fac_catalogo_tipo.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
