@@ -7,7 +7,10 @@ using Core.ErpSys.Info.Facturacion;
 using Core.ErpSys.Data.Facturacion;
 using Core.ErpSys.Bus.General;
 
-
+// kati prueba
+/// <summary>
+/// 
+/// </summary>
 namespace Core.ErpSys.Bus.Facturacion
 {
     public class fac_cliente_Bus
